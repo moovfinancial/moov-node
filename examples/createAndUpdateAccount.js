@@ -23,6 +23,12 @@ async function run() {
     },
   });
 
+  // Allow the system to catch up
+  await sleep(500);
+
+  // Read back the account
+  await moov.accounts.get(account.accountID)
+
   // Update - requires a complete account object
   account.profile.business.phone = { number: "555-555-5555" };
   const updatedAccount = await moov.accounts.update(account);
@@ -36,6 +42,13 @@ async function run() {
       },
     },
   });
+
+  // Read back the account, again
+  await moov.accounts.get(account.accountID)
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 run();

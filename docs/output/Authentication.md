@@ -93,10 +93,24 @@ Available scopes to request on OAuth tokens.
 
 | Value | Description |
 | ----- | ----------- |
-| ACCOUNTS_CREATE | Create new accounts |
-| PROFILE_READ | Read account information |
-| PROFILE_WRITE | Write account information |
-| TRANSFERS_READ | List and retrieve transfers |
-| TRANSFERS_WRITE | Create and update transfers |
+| ACCOUNTS_CREATE | Allows a new Moov account to be created |
+| BANK_ACCOUNTS_READ | Access to view a linked bank account to a Moov account |
+| BANK_ACCOUNTS_WRITE | Access to add a linked bank account to a Moov account |
+| CARDS_READ | Access to view a linked card on a Moov account |
+| CARDS_WRITE | Access add a linked card to a Moov account |
+| CAPABILITIES_READ | Access to view capabilities, determining what actions the account can do |
+| CAPABILITIES_WRITE | Access to request capabilities, determining what actions the account can do |
+| DOCUMENTS_READ | Access to view documents (like I-9s, W-4s) associated with a Moov account |
+| DOCUMENTS_WRITE | Access to upload documents (like I-9s, W-4s) associated with a Moov account |
+| PAYMENT_METHODS_READ | Access to view payment methods for the account specified |
+| PROFILE_ENRICHMENT_READ | Access to view a Moov account’s profile image |
+| PROFILE_READ | Access to view details associated with a Moov account |
+| PROFILE_WRITE | Access to edit details associated with a Moov account |
+| REPRESENTATIVE_READ | Access to view details on business representatives for a Moov account |
+| REPRESENTATIVE_WRITE | Access to add details on business representatives for a Moov account |
+| TRANSFERS_READ | Access to view transfers |
+| TRANSFERS_WRITE | Access to move money by creating transfers |
+| WALLETS_READ | Access to view the balance on an account’s Moov wallet |
+| FED_READ | Allows a developer to use the institutions lookup service to look up a bank name by routing number |
 | PING | Ping Moov servers to test for connectivity |
 
