@@ -84,6 +84,30 @@ try {
 ```
 
 
+### Capabilities
+
+```javascript
+moov.capabilities
+```
+
+More on [capabilities](capabilities).
+
+Gets the Capabilities API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.capabilities.requestCapabilities(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### Transfers
 
 ```javascript

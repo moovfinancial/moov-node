@@ -1,5 +1,5 @@
 {
     "source": {
-        "include": ["./lib/moov.js", "./lib/accounts.js", "./lib/transfers.js"]
+        "include": ["./lib/moov.js", "./lib/accounts.js", "./lib/capabilities.js", "./lib/transfers.js"]
     }
 }
