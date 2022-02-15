@@ -173,7 +173,7 @@ Represents individual and business data necessary to facilitate the enabling of 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
   | requirement | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>|  |
-  | errorCode | `invalid-value`,  `failed-automatic-verification`,  `failed-other`,  `invalid-address`,  `address-restricted`,  `tax-id-mismatch`,  `document-id-mismatch`,  `document-date-of-birth-mismatch`,  `document-name-mismatch`,  `document-address.mismatch`,  `document-number-mismatch`,  `document-incomplete`,  `document-failed-risk`,  `document-illegible`,  `document-unsupported`,  `document-not-uploaded`,  `document-corrupt`,  `document-expired`|  |
+  | errorCode | Array.<[REQUIREMENT_ERROR_CODE](#requirement_error_code)>|  |
 
 
 
@@ -245,4 +245,29 @@ Available capabilities
 | REPRESENTATIVE_IS_OWNER |  |
 | REPRESENTATIVE_IS_OWNERSHIP |  |
 | DOCUMENT |  |
+
+### REQUIREMENT_ERROR_CODE
+
+
+
+| Value | Description |
+| ----- | ----------- |
+| INVALID_VALUE |  |
+| FAILED_AUTOMATIC_VERIFICATION |  |
+| FAILED_OTHER |  |
+| INVALID_ADDRESS |  |
+| ADDRESS_RESTRICTED |  |
+| TAX_ID_MISMATCH |  |
+| DOCUMENT_ID_MISMATCH |  |
+| DOCUMENT_DATE_OF_BIRTH_MISMATCH |  |
+| DOCUMENT_NAME_MISMATCH |  |
+| DOCUMENT_ADDRESS_MISMATCH |  |
+| DOCUMENT_NUMBER_MISMATCH |  |
+| DOCUMENT_INCOMPLETE |  |
+| DOCUMENT_FAILED_RISK |  |
+| DOCUMENT_ILLEGIBLE |  |
+| DOCUMENT_UNSUPPORTED |  |
+| DOCUMENT_NOT_UPLOADED |  |
+| DOCUMENT_CORRUPT |  |
+| DOCUMENT_EXPIRED |  |
 
