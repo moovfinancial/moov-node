@@ -159,7 +159,7 @@ Represents individual and business data necessary to facilitate the enabling of 
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | currentlyDue | `account.tos-acceptance`,  `individual.mobile`,  `individual.email`,  `individual.email-or-mobile`,  `individual.firstname`,  `individual.lastname`,  `individual.address`,  `individual.ssn-last4`,  `individual.ssn`,  `individual.birthdate`,  `business.legalname`,  `business.description-or-website`,  `business.entity-type`,  `business.dba`,  `business.ein`,  `business.address`,  `business.phone`,  `business.admins`,  `business.controllers`,  `business.owners`,  `business.classification`,  `business.industry-code-mcc`,  `bank-accounts.name`,  `bank-accounts.routing-number`,  `bank-accounts.account-number`,  `representative.{rep-uuid}.mobile`,  `representative.{rep-uuid}.email`,  `representative.{rep-uuid}.firstname`,  `representative.{rep-uuid}.lastname`,  `representative.{rep-uuid}.address`,  `representative.{rep-uuid}.ssn-last4`,  `representative.{rep-uuid}.ssn`,  `representative.{rep-uuid}.birthdate`,  `representative.{rep-uuid}.job-title`,  `representative.{rep-uuid}.is-controller`,  `representative.{rep-uuid}.is-owner`,  `representative.{rep-uuid}.ownership`,  `document.{doc-uuid}`|  |
+  | currentlyDue | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>|  |
   | errors | Array.<[RequirementError](#requirementerror)>|  |
 
 
@@ -172,7 +172,7 @@ Represents individual and business data necessary to facilitate the enabling of 
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | requirement | `account.tos-acceptance`,  `individual.mobile`,  `individual.email`,  `individual.email-or-mobile`,  `individual.firstname`,  `individual.lastname`,  `individual.address`,  `individual.ssn-last4`,  `individual.ssn`,  `individual.birthdate`,  `business.legalname`,  `business.description-or-website`,  `business.entity-type`,  `business.dba`,  `business.ein`,  `business.address`,  `business.phone`,  `business.admins`,  `business.controllers`,  `business.owners`,  `business.classification`,  `business.industry-code-mcc`,  `bank-accounts.name`,  `bank-accounts.routing-number`,  `bank-accounts.account-number`,  `representative.{rep-uuid}.mobile`,  `representative.{rep-uuid}.email`,  `representative.{rep-uuid}.firstname`,  `representative.{rep-uuid}.lastname`,  `representative.{rep-uuid}.address`,  `representative.{rep-uuid}.ssn-last4`,  `representative.{rep-uuid}.ssn`,  `representative.{rep-uuid}.birthdate`,  `representative.{rep-uuid}.job-title`,  `representative.{rep-uuid}.is-controller`,  `representative.{rep-uuid}.is-owner`,  `representative.{rep-uuid}.ownership`,  `document.{doc-uuid}`|  |
+  | requirement | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>|  |
   | errorCode | `invalid-value`,  `failed-automatic-verification`,  `failed-other`,  `invalid-address`,  `address-restricted`,  `tax-id-mismatch`,  `document-id-mismatch`,  `document-date-of-birth-mismatch`,  `document-name-mismatch`,  `document-address.mismatch`,  `document-number-mismatch`,  `document-incomplete`,  `document-failed-risk`,  `document-illegible`,  `document-unsupported`,  `document-not-uploaded`,  `document-corrupt`,  `document-expired`|  |
 
 
@@ -200,4 +200,49 @@ Available capabilities
 | ENABLED | Capability is enabled and ready for use. |
 | DISABLED | Capability has been disabled. |
 | PENDING | Capability has been requested and is pending approval. |
+
+### CAPABILITY_REQUIREMENT
+
+
+
+| Value | Description |
+| ----- | ----------- |
+| ACCOUNT_TOS_ACCEPTANCE |  |
+| INDIVIDUAL_MOBILE |  |
+| INDIVIDUAL_EMAIL |  |
+| INDIVIDUAL_EMAIL_OR_MOBILE |  |
+| INDIVIDUAL_FIRSTNAME |  |
+| INDIVIDUAL_LASTNAME |  |
+| INDIVIDUAL_ADDRESS |  |
+| INDIVIDUAL_SSN_LAST4 |  |
+| INDIVIDUAL_SSN |  |
+| INDIVIDUAL_BIRTHDATE |  |
+| BUSINESS_LEGALNAME |  |
+| BUSINESS_DESCRIPTION_OR_WEBSITE |  |
+| BUSINESS_ENTITY_TYPE |  |
+| BUSINESS_DBA |  |
+| BUSINESS_EIN |  |
+| BUSINESS_ADDRESS |  |
+| BUSINESS_PHONE |  |
+| BUSINESS_ADMINS |  |
+| BUSINESS_CONTROLLERS |  |
+| BUSINESS_OWNERS |  |
+| BUSINESS_CLASSIFICATION |  |
+| BUSINESS_INDUSTRY_CODE_MCC |  |
+| BANK_ACCOUNTS_NAME |  |
+| BANK_ACCOUNTS_ROUTING_NUMBER |  |
+| BANK_ACCOUNTS_ACCOUNT_NUMBER |  |
+| REPRESENTATIVE_MOBILE |  |
+| REPRESENTATIVE_EMAIL |  |
+| REPRESENTATIVE_FIRSTNAME |  |
+| REPRESENTATIVE_LASTNAME |  |
+| REPRESENTATIVE_ADDRESS |  |
+| REPRESENTATIVE_SSN_LAST4 |  |
+| REPRESENTATIVE_SSN |  |
+| REPRESENTATIVE_BIRTHDATE |  |
+| REPRESENTATIVE_JOB_TITLE |  |
+| REPRESENTATIVE_IS_CONTROLLER |  |
+| REPRESENTATIVE_IS_OWNER |  |
+| REPRESENTATIVE_IS_OWNERSHIP |  |
+| DOCUMENT |  |
 
