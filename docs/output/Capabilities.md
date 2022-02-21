@@ -14,11 +14,12 @@ capabilities.requestCapabilities(accountID, capabilities)
 ```
 
 **Parameters**
-
+{{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request capabilites |
 | capabilities |  Array.<[CAPABILITIES](#capabilities)> | One or more capability to request |
+{{</ table >}}
 
 
 
@@ -38,11 +39,12 @@ capabilities.get(accountID, capability)
 ```
 
 **Parameters**
-
+{{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request capabilites |
 | capability |  [CAPABILITIES](#capabilities) | Capability to retrieve |
+{{</ table >}}
 
 
 
@@ -62,10 +64,11 @@ capabilities.list(accountID)
 ```
 
 **Parameters**
-
+{{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request capabilites |
+{{</ table >}}
 
 
 
@@ -85,11 +88,12 @@ capabilities.disable(accountID, capability)
 ```
 
 **Parameters**
-
+{{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request capabilites |
 | capability |  [CAPABILITIES](#capabilities) | Capability to retrieve |
+{{</ table >}}
 
 
 
@@ -112,6 +116,7 @@ Describes a Moov capability associated with an account.
 
 {{< tabs>}}
   {{< tab title="Details">}}
+  {{< table >}}
 | Property | Type | Description |
 | ---- | ---- | ----------- |
 | capability |  [CAPABILITIES](#capabilities) | Type of capability |
@@ -119,9 +124,10 @@ Describes a Moov capability associated with an account.
 | status |  [CAPABILITY_STATUS](#capability_status) | The status of the capability requested for an account |
 | requirements |  Array.<[Requirement](#requirement)> | Represents individual and business data necessary to facilitate the enabling of a capability for an account |
 | disabledReason |  `string` | If status is disabled, the reason this capability was disabled |
-| createdOn |  `string` | Date capability was created |
-| updatedOn |  `string` | Date capability was last updated |
-| disabledOn |  `string` | Optional date capability was disabled |
+| createdOn |  `Date` | Date capability was created |
+| updatedOn |  `Date` | Date capability was last updated |
+| disabledOn |  `Date` | Optional date capability was disabled |
+{{</ table >}}
   {{< /tab>}}
 {{< tab title="Example">}}
 ```javascript
@@ -183,6 +189,7 @@ Represents individual and business data necessary to facilitate the enabling of 
 
 Available capabilities
 
+{{< table >}}
 | Value | Description |
 | ----- | ----------- |
 | TRANSFERS | Account contains minimum requirements to participate in a transfer |
@@ -190,21 +197,25 @@ Available capabilities
 | COLLECT_FUNDS | Account can be destination of an ACH debit transfer |
 | WALLET | Account can top up balance or use as a source for another transfer |
 | 1099 | Account has necessary information for 1099-NEC reporting. If requirement not met before $600 in payouts, transfers is disabled. |
+{{</ table >}}
 
 ### CAPABILITY_STATUS
 
 
 
+{{< table >}}
 | Value | Description |
 | ----- | ----------- |
 | ENABLED | Capability is enabled and ready for use. |
 | DISABLED | Capability has been disabled. |
 | PENDING | Capability has been requested and is pending approval. |
+{{</ table >}}
 
 ### CAPABILITY_REQUIREMENT
 
 
 
+{{< table >}}
 | Value | Description |
 | ----- | ----------- |
 | ACCOUNT_TOS_ACCEPTANCE |  |
@@ -245,11 +256,13 @@ Available capabilities
 | REPRESENTATIVE_IS_OWNER |  |
 | REPRESENTATIVE_IS_OWNERSHIP |  |
 | DOCUMENT |  |
+{{</ table >}}
 
 ### REQUIREMENT_ERROR_CODE
 
 
 
+{{< table >}}
 | Value | Description |
 | ----- | ----------- |
 | INVALID_VALUE |  |
@@ -270,4 +283,5 @@ Available capabilities
 | DOCUMENT_NOT_UPLOADED |  |
 | DOCUMENT_CORRUPT |  |
 | DOCUMENT_EXPIRED |  |
+{{</ table >}}
 

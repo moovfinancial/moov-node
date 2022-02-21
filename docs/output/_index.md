@@ -12,7 +12,6 @@ npm i @moovio@node
 Then import it into your project. 
 ```javascript
 import { Moov } from "@moovio/node";
-
 ```
 
 ## Moov
