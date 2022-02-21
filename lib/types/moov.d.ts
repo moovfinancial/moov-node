@@ -52,7 +52,7 @@ export class Moov {
      * @param {string} credentials.publicKey - Public key value from API key
      * @param {string} credentials.secretKey - Secret key value from API key
      * @param {string} credentials.domain - One of the domains from API key
-     * @param {object} gotOptionsOrInstance
+     * @param {object} [gotOptionsOrInstance] - Customized Got options or instance. See [docs](https://github.com/sindresorhus/got).
      *
      * @kind constructor
      * @tag Moov
@@ -70,7 +70,7 @@ export class Moov {
         publicKey: string;
         secretKey: string;
         domain: string;
-    }, gotOptionsOrInstance: object);
+    }, gotOptionsOrInstance?: object);
     credentials: {
         accountID: string;
         publicKey: string;

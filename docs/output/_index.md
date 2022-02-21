@@ -32,7 +32,7 @@ new Moov(credentials, gotOptionsOrInstance)
 | credentials.publicKey |  `string` | Public key value from API key |
 | credentials.secretKey |  `string` | Secret key value from API key |
 | credentials.domain |  `string` | One of the domains from API key |
-| gotOptionsOrInstance |  `object` |  |
+| gotOptionsOrInstance |  `object` | Customized Got options or instance. See [docs](https://github.com/sindresorhus/got). |
 {{</ table >}}
 
 
