@@ -1,7 +1,6 @@
 {
-  "name": "examples-capabilities",
-  "description": "Capabilities example for Moov Node SDK",
-  "main": "requestCapabilites.js",
+  "name": "moov-node-sdk-examples",
+  "description": "Example for Moov Node SDK",
   "type": "module",
   "dependencies": {
     "@moovio/node": "^0.1.6"
