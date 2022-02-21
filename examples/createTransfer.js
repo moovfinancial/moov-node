@@ -1,4 +1,4 @@
-import { Moov } from "../lib/moov.js";
+import { Moov } from "@moovio/node";
 import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
 import { loadCredentials } from "./loadCredentials.js";
 

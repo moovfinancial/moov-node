@@ -1,7 +1,5 @@
-import { Moov } from "../lib/moov.js";
-import { CAPABILITIES } from "../lib/capabilities.js";
+import { Moov, CAPABILITIES } from "@moovio/node";
 import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
-import { loadCredentials } from "./loadCredentials.js";
 
 /**
  * Demonstrates how to request, list, and disable capabilities.

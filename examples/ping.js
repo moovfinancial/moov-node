@@ -1,4 +1,4 @@
-import { Moov } from "../lib/moov.js";
+import { Moov } from "@moovio/node";
 import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
 import { loadCredentials } from "./loadCredentials.js";
 
@@ -8,7 +8,7 @@ import { loadCredentials } from "./loadCredentials.js";
 async function run() {
   // Load credentials and initialize the Moov client
   const credentials = loadCredentials("./secrets/credentials.json");
-  const moov = new Moov(credentials);
+  const moov = new Moov(credentials, gotOptionsForLogging);
 
   // Ping Moov servers
   await moov.ping();

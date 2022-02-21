@@ -1,5 +1,4 @@
-import { Moov } from "../lib/moov.js";
-import { SCOPES } from "../lib/helpers/scopes.js";
+import { Moov, SCOPES } from "@moovio/node";
 import { loadCredentials } from "./loadCredentials.js";
 
 /**
