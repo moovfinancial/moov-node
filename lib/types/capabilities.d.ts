@@ -194,11 +194,11 @@ export class Capabilities {
      *
      * @param {string} accountID - Account on which to request capabilites
      * @param {CAPABILITIES} capability - Capability to retrieve
-     * @returns {Promise<Capability>}
+     * @returns {Promise}
      *
      * @tag Capabilities
      */
-    disable(accountID: string, capability: any): Promise<Capability>;
+    disable(accountID: string, capability: any): Promise<any>;
 }
 /**
  * Describes a Moov capability associated with an account.

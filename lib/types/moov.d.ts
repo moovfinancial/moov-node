@@ -133,6 +133,20 @@ export class Moov {
      */
     get accounts(): Accounts;
     /**
+     * Gets the Bank Accounts API.
+     * @returns {BankAccounts}
+     * @tag Moov
+     * @example
+     * const moov = new Moov(...);
+     * try {
+     *   await moov.bankAccounts.link(...);
+     * } catch (err) {
+     *   // ...
+     * }
+     */
+    get bankAccounts(): BankAccounts;
+    _bankAccounts: BankAccounts;
+    /**
      * Gets the Capabilities API.
      * @returns {Capabilities}
      * @tag Moov
@@ -188,4 +202,5 @@ export type Token = {
 import { Accounts } from "./accounts.js";
 import { Capabilities } from "./capabilities.js";
 import { Transfers } from "./transfers.js";
+import { BankAccounts } from "./bankAccounts.js";
 //# sourceMappingURL=moov.d.ts.map
