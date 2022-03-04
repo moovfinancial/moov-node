@@ -101,7 +101,7 @@ bankaccounts.disable(accountID, bankAccountID)
 
 **Returns**
 
-`Promise`
+`Promise.<void>`
 
 
 
@@ -126,17 +126,17 @@ bankaccounts.initMicroDeposits(accountID, bankAccountID)
 
 **Returns**
 
-`Promise`
+`Promise.<void>`
 
 
 
-## InitMicroDeposits
+## CompleteMicroDeposits
 
 
 Complete the micro-deposit validation process by passing the amounts of the two transfers.
 
 ```javascript
-bankaccounts.initMicroDeposits(accountID, bankAccountID)
+bankaccounts.completeMicroDeposits(accountID, bankAccountID)
 ```
 
 **Parameters**
@@ -151,7 +151,7 @@ bankaccounts.initMicroDeposits(accountID, bankAccountID)
 
 **Returns**
 
-`Promise`
+`Promise.<void>`
 
 
 

@@ -99,31 +99,31 @@ export class BankAccounts {
      *
      * @param {string} accountID - Account on which to request bank account
      * @param {string} bankAccountID - ID of the bank account to disable
-     * @returns {Promise}
+     * @returns {Promise<void>}
      *
      * @tag BankAccounts
      */
-    disable(accountID: string, bankAccountID: string): Promise<any>;
+    disable(accountID: string, bankAccountID: string): Promise<void>;
     /**
      * Discontinue using a specified bank account linked to a Moov account.
      *
      * @param {string} accountID - Account on which to request bank account
      * @param {string} bankAccountID - ID of the bank account to disable
-     * @returns {Promise}
+     * @returns {Promise<void>}
      *
      * @tag BankAccounts
      */
-    initMicroDeposits(accountID: string, bankAccountID: string): Promise<any>;
+    initMicroDeposits(accountID: string, bankAccountID: string): Promise<void>;
     /**
      * Complete the micro-deposit validation process by passing the amounts of the two transfers.
      *
      * @param {string} accountID - Account on which to request bank account
      * @param {string} bankAccountID - ID of the bank account to disable
-     * @returns {Promise}
+     * @returns {Promise<void>}
      *
      * @tag BankAccounts
      */
-    completeMicroDeposits(accountID: string, bankAccountID: string, amounts: any): Promise<any>;
+    completeMicroDeposits(accountID: string, bankAccountID: string, amounts: any): Promise<void>;
 }
 /**
  * Describes a Moov capability associated with an account.
