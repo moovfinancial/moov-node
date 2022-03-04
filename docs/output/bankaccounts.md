@@ -130,6 +130,31 @@ bankaccounts.initMicroDeposits(accountID, bankAccountID)
 
 
 
+## InitMicroDeposits
+
+
+Complete the micro-deposit validation process by passing the amounts of the two transfers.
+
+```javascript
+bankaccounts.initMicroDeposits(accountID, bankAccountID)
+```
+
+**Parameters**
+{{< table >}}
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| accountID |  `string` | Account on which to request bank account |
+| bankAccountID |  `string` | ID of the bank account to disable |
+{{</ table >}}
+
+
+
+**Returns**
+
+`Promise`
+
+
+
 
 
 
