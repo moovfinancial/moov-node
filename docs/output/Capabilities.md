@@ -99,7 +99,7 @@ capabilities.disable(accountID, capability)
 
 **Returns**
 
-`Promise.<Capability>`
+`Promise`
 
 
 

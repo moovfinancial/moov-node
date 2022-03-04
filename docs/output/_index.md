@@ -83,6 +83,30 @@ try {
 ```
 
 
+### BankAccounts
+
+```javascript
+moov.bankAccounts
+```
+
+More on [bankAccounts](bankAccounts).
+
+Gets the Bank Accounts API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.bankAccounts.link(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### Capabilities
 
 ```javascript
