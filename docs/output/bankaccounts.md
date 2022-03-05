@@ -108,7 +108,7 @@ bankaccounts.disable(accountID, bankAccountID)
 ## InitMicroDeposits
 
 
-Discontinue using a specified bank account linked to a Moov account.
+Initiate a micro deposit for a bank account linked to a Moov account.
 
 ```javascript
 bankaccounts.initMicroDeposits(accountID, bankAccountID)
@@ -161,7 +161,7 @@ bankaccounts.completeMicroDeposits(accountID, bankAccountID)
 ## Types
 ### BankAccount
 
-Describes a Moov capability associated with an account.
+Describes a Bank Account.
 
 **Properties**
 

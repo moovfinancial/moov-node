@@ -160,6 +160,20 @@ export class Moov {
      */
     get capabilities(): Capabilities;
     /**
+     * Gets the Payment Methods API.
+     * @returns {PaymentMethods}
+     * @tag Moov
+     * @example
+     * const moov = new Moov(...);
+     * try {
+     *   await moov.paymentMethods.get(...);
+     * } catch (err) {
+     *   // ...
+     * }
+     */
+    get paymentMethods(): PaymentMethods;
+    _paymentMethods: PaymentMethods;
+    /**
      * Gets the Transfers API.
      * @returns {Transfers}
      * @tag Moov
@@ -203,4 +217,5 @@ import { Accounts } from "./accounts.js";
 import { Capabilities } from "./capabilities.js";
 import { Transfers } from "./transfers.js";
 import { BankAccounts } from "./bankAccounts.js";
+import { PaymentMethods } from "./paymentMethods.js";
 //# sourceMappingURL=moov.d.ts.map

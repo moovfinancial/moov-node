@@ -131,6 +131,30 @@ try {
 ```
 
 
+### PaymentMethods
+
+```javascript
+moov.paymentMethods
+```
+
+More on [paymentMethods](paymentMethods).
+
+Gets the Payment Methods API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.paymentMethods.get(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### Transfers
 
 ```javascript

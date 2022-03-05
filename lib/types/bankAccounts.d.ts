@@ -1,63 +1,6 @@
-export type BANK_ACCOUNT_STATUS = any;
-export namespace BANK_ACCOUNT_STATUS {
-    const NEW: string;
-    const VERIFIED: string;
-    const VERIFICATION_FAILED: string;
-    const PENDING: string;
-    const ERRORED: string;
-}
-export type BANK_ACCOUNT_HOLDER_TYPE = any;
-export namespace BANK_ACCOUNT_HOLDER_TYPE {
-    const INDIVIDUAL: string;
-    const BUSINESS: string;
-}
-export type BANK_ACCOUNT_TYPE = any;
-export namespace BANK_ACCOUNT_TYPE {
-    const CHECKING: string;
-    const SAVINGS: string;
-    const UNKNOWN: string;
-}
+/** @external Promise */
 /**
- * Describes a Moov capability associated with an account.
- * @typedef BankAccount
- * @property {string} bankAccountID - Bank Account identifier
- * @property {string} fingerprint - Fingerprint of Bank Account
- * @property {BANK_ACCOUNT_STATUS} status - The bank account status
- * @property {string} holderName - Name of the bank account holder
- * @property {BANK_ACCOUNT_HOLDER_TYPE} holderType - The type of holder on a funding source
- * @property {string} bankName - Name of the bank
- * @property {BANK_ACCOUNT_TYPE} bankAccountType - The bank account type
- * @property {string} routingNumber - Bank account routing number
- * @property {string} lastFourAccountNumber - Last four digits of the bank account number
- *
- * @example
- * {
-  "bankAccountID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43",
-  "fingerprint": "9948962d92a1ce40c9f918cd9ece3a22bde62fb325a2f1fe2e833969de672ba3",
-  "status": "new",
-  "holderName": "Jules Jackson",
-  "holderType": "individual",
-  "bankName": "Chase Bank",
-  "bankAccountType": "checking",
-  "routingNumber": "string",
-  "lastFourAccountNumber": "7000"
-}
- *
- * @tag BankAccounts
- */
-/**
- * Describes a Bank Account to be added.
- * @typedef BankAccountAdd
- * @property {string} holderName - Name of the bank account holder
- * @property {BANK_ACCOUNT_HOLDER_TYPE} holderType - The type of holder on a funding source
- * @property {string} routingNumber - Bank account routing number
- * @property {string} accountNumber - The bank account number
- * @property {BANK_ACCOUNT_TYPE} [bankAccountType] - The bank account type
- *
- * @tag BankAccounts
- */
-/**
- * The BankAccounts API
+ * The Bank Accounts API
  * @tag BankAccounts
  */
 export class BankAccounts {
@@ -105,7 +48,7 @@ export class BankAccounts {
      */
     disable(accountID: string, bankAccountID: string): Promise<void>;
     /**
-     * Discontinue using a specified bank account linked to a Moov account.
+     * Initiate a micro deposit for a bank account linked to a Moov account.
      *
      * @param {string} accountID - Account on which to request bank account
      * @param {string} bankAccountID - ID of the bank account to disable
@@ -125,70 +68,4 @@ export class BankAccounts {
      */
     completeMicroDeposits(accountID: string, bankAccountID: string, amounts: any): Promise<void>;
 }
-/**
- * Describes a Moov capability associated with an account.
- */
-export type BankAccount = {
-    /**
-     * - Bank Account identifier
-     */
-    bankAccountID: string;
-    /**
-     * - Fingerprint of Bank Account
-     */
-    fingerprint: string;
-    /**
-     * - The bank account status
-     */
-    status: any;
-    /**
-     * - Name of the bank account holder
-     */
-    holderName: string;
-    /**
-     * - The type of holder on a funding source
-     */
-    holderType: any;
-    /**
-     * - Name of the bank
-     */
-    bankName: string;
-    /**
-     * - The bank account type
-     */
-    bankAccountType: any;
-    /**
-     * - Bank account routing number
-     */
-    routingNumber: string;
-    /**
-     * - Last four digits of the bank account number
-     */
-    lastFourAccountNumber: string;
-};
-/**
- * Describes a Bank Account to be added.
- */
-export type BankAccountAdd = {
-    /**
-     * - Name of the bank account holder
-     */
-    holderName: string;
-    /**
-     * - The type of holder on a funding source
-     */
-    holderType: any;
-    /**
-     * - Bank account routing number
-     */
-    routingNumber: string;
-    /**
-     * - The bank account number
-     */
-    accountNumber: string;
-    /**
-     * - The bank account type
-     */
-    bankAccountType?: any;
-};
 //# sourceMappingURL=bankAccounts.d.ts.map
