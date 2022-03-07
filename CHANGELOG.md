@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.10] - 2022-03-07
 
-### Updated
+### Added
 
 - Wallets API with examples
 - Updated typescript types
@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.9] - 2022-03-07
 
-### Updated
+### Added
 
 - Payment Methods API with examples
 - Updated typescript types
