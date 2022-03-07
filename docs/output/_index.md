@@ -179,6 +179,30 @@ try {
 ```
 
 
+### Wallets
+
+```javascript
+moov.wallets
+```
+
+More on [wallets](wallets).
+
+Gets the Wallets API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.wallets.get(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 
 
 

@@ -188,6 +188,21 @@ export class Moov {
      */
     get transfers(): Transfers;
     /**
+   * Gets the Wallets API.
+   * @returns {Wallets}
+   * @tag Moov
+   *
+   * @example
+   * const moov = new Moov(...);
+   * try {
+   *   await moov.wallets.get(...);
+   * } catch (err) {
+   *   // ...
+   * }
+   */
+    get wallets(): Wallets;
+    _wallets: Wallets;
+    /**
      * Gets a cached token or creates a new one.
      * @param {string} accountID - Account identifier
      * @returns {Promise<Token>}
@@ -218,4 +233,5 @@ import { Capabilities } from "./capabilities.js";
 import { Transfers } from "./transfers.js";
 import { BankAccounts } from "./bankAccounts.js";
 import { PaymentMethods } from "./paymentMethods.js";
+import { Wallets } from "./wallets.js";
 //# sourceMappingURL=moov.d.ts.map
