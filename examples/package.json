@@ -3,6 +3,6 @@
   "description": "Example for Moov Node SDK",
   "type": "module",
   "dependencies": {
-    "@moovio/node": "^0.1.8"
+    "@moovio/node": "^0.1.9"
   }
 }
