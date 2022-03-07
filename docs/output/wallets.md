@@ -18,7 +18,7 @@ wallets.get(accountID, walletID)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request wallet |
-| walletID |  `string` | The walletID for the wallet associated with an account |
+| walletID |  `string` | The ID for the wallet associated with an account |
 {{</ table >}}
 
 
@@ -50,6 +50,8 @@ wallets.list(accountID)
 **Returns**
 
 `Promise.<Array.<Wallet>>`
+
+
 
 
 

@@ -2,8 +2,8 @@
 /**
  * Describes a Moov Wallet Balance
  * @typedef WalletBalance
- * @property {string} currency A 3-letter ISO 4217 currency code
- * @property {number} value Quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99.
+ * @property {string} currency - A 3-letter ISO 4217 currency code
+ * @property {number} value - Quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99.
  *
  * @tag Wallets
  */
@@ -26,7 +26,7 @@
  */
 /**
  * The Wallets API
- * @tag PaymentMethods
+ * @tag Wallets
  */
 export class Wallets {
     constructor(moov: any);
@@ -35,7 +35,7 @@ export class Wallets {
      * Get information on a specific Moov wallet (e.g., the available balance).
      *
      * @param {string} accountID - Account on which to request wallet
-     * @param {string} walletID - The walletID for the wallet associated with an account
+     * @param {string} walletID - The ID for the wallet associated with an account
      * @returns {Promise<Wallet>}
      *
      * @tag Wallets
@@ -56,11 +56,11 @@ export class Wallets {
  */
 export type WalletBalance = {
     /**
-     * A 3-letter ISO 4217 currency code
+     * - A 3-letter ISO 4217 currency code
      */
     currency: string;
     /**
-     * Quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99.
+     * - Quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99.
      */
     value: number;
 };

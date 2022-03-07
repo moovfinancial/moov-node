@@ -56,8 +56,6 @@ paymentmethods.list(accountID)
 
 
 
-
-
 ## Types
 ### WalletPaymentType
 
