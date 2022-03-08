@@ -1,5 +1,5 @@
 {
     "source": {
-        "include": ["./lib/moov.js", "./lib/accounts.js", "./lib/bankAccounts.js", "./lib/bankAccountsTypedefs.js", "./lib/capabilities.js", "./lib/paymentMethods.js", "./lib/transfers.js", "./lib/wallets.js", "./lib/avatars.js"]
+        "include": ["./lib/moov.js", "./lib/accounts.js", "./lib/avatars.js", "./lib/bankAccounts.js", "./lib/bankAccountsTypedefs.js", "./lib/capabilities.js", "./lib/paymentMethods.js", "./lib/transfers.js", "./lib/wallets.js"]
     }
 }

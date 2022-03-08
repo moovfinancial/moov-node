@@ -83,6 +83,30 @@ try {
 ```
 
 
+### Avatars
+
+```javascript
+moov.avatars
+```
+
+More on [avatars](avatars).
+
+Gets the Avatars API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.avatars.get(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### BankAccounts
 
 ```javascript
@@ -197,30 +221,6 @@ Gets the Wallets API.
 const moov = new Moov(...);
 try {
   await moov.wallets.get(...);
-} catch (err) {
-  // ...
-}
-```
-
-
-### Avatars
-
-```javascript
-moov.avatars
-```
-
-More on [avatars](avatars).
-
-Gets the Avatars API.
-
- 
-
-**Examples**
-
-```javascript
-const moov = new Moov(...);
-try {
-  await moov.avatars.get(...);
 } catch (err) {
   // ...
 }

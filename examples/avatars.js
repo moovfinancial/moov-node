@@ -3,7 +3,7 @@ import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
 import { loadCredentials } from "./loadCredentials.js";
 
 // TODO: Fill in unique ID
-const UNIQUE_ID = "";
+const UNIQUE_ID = "031100649"; // Discover routing number
 
 /**
  * Demonstrate how to get avatar associated with uniqueID.

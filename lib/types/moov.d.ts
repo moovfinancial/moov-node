@@ -133,6 +133,21 @@ export class Moov {
      */
     get accounts(): Accounts;
     /**
+     * Gets the Avatars API.
+     * @returns {Avatars}
+     * @tag Moov
+     *
+     * @example
+     * const moov = new Moov(...);
+     * try {
+     *   await moov.avatars.get(...);
+     * } catch (err) {
+     *   // ...
+     * }
+     */
+    get avatars(): Avatars;
+    _avatars: Avatars;
+    /**
      * Gets the Bank Accounts API.
      * @returns {BankAccounts}
      * @tag Moov
@@ -203,21 +218,6 @@ export class Moov {
     get wallets(): Wallets;
     _wallets: Wallets;
     /**
-     * Gets the Avatars API.
-     * @returns {Avatars}
-     * @tag Moov
-     *
-     * @example
-     * const moov = new Moov(...);
-     * try {
-     *   await moov.avatars.get(...);
-     * } catch (err) {
-     *   // ...
-     * }
-     */
-    get avatars(): Avatars;
-    _avatars: Avatars;
-    /**
      * Gets a cached token or creates a new one.
      * @param {string} accountID - Account identifier
      * @returns {Promise<Token>}
@@ -246,8 +246,8 @@ export type Token = {
 import { Accounts } from "./accounts.js";
 import { Capabilities } from "./capabilities.js";
 import { Transfers } from "./transfers.js";
+import { Avatars } from "./avatars.js";
 import { BankAccounts } from "./bankAccounts.js";
 import { PaymentMethods } from "./paymentMethods.js";
 import { Wallets } from "./wallets.js";
-import { Avatars } from "./avatars.js";
 //# sourceMappingURL=moov.d.ts.map
