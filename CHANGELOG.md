@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Enriched Address API with examples
+- Enriched Profile API with examples
 - Updated typescript types
 - Updated documentation
 

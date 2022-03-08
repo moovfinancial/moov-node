@@ -179,6 +179,30 @@ try {
 ```
 
 
+### EnrichedProfiles
+
+```javascript
+moov.enrichedProfiles
+```
+
+More on [enrichedProfiles](enrichedProfiles).
+
+Gets the Enriched Profile API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.enrichedProfiles.get(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### PaymentMethods
 
 ```javascript

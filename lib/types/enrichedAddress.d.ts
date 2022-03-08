@@ -3,9 +3,11 @@
  * @property {string} addressLine1
  * @property {string} addressLine2
  * @property {string} city
- * @property {number} entries
  * @property {string} stateOrProvince
  * @property {string} postalCode
+ * @property {number} entries
+ *
+ * @tag EnrichedAddresses
  */
 /**
  * @typedef EnrichedAddressGetCriteria
@@ -22,7 +24,9 @@
  * @property {"none"|"city"} [preferGeolocation] - Optional If omitted or set to city it uses the sender's IP address to determine location, then automatically adds the city and state to the preferCities value. This parameter takes precedence over other include or exclude parameters meaning that if it is not set to none you may see addresses from areas you do not wish to see. Example: "city"
  * @property {string} [selected] - Optional Useful for narrowing results with addressLine2 suggestions such as Apt (denotes an apartment building with multiple residences). Example: "Apt"
  * @property {"all"|"postal"} [source] - Optional Include results from alternate data sources. Allowed values are -- all (non-postal addresses) or postal (postal addresses only).
- */
+ *
+ * @tag EnrichedAddresses
+ * */
 /**
  * The Enriched Address API.
  * @tag EnrichedAddresses
@@ -39,7 +43,7 @@ export class EnrichedAddresses {
      *
      * @param {EnrichedAddressGetCriteria} criteria - Criterial for available search parameters.
      * @returns {Promise<EnrichedAddress[]>}
-     * @tag EnrichedAddress
+     * @tag EnrichedAddresses
      *
      * @example
      * const moov = new Moov(...);
@@ -59,9 +63,9 @@ export type EnrichedAddress = {
     addressLine1: string;
     addressLine2: string;
     city: string;
-    entries: number;
     stateOrProvince: string;
     postalCode: string;
+    entries: number;
 };
 export type EnrichedAddressGetCriteria = {
     /**
