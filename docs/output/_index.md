@@ -155,6 +155,30 @@ try {
 ```
 
 
+### EnrichedAddresses
+
+```javascript
+moov.enrichedAddresses
+```
+
+More on [enrichedAddresses](enrichedAddresses).
+
+Gets the Enriched Address API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.enrichedAddresses.get(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### PaymentMethods
 
 ```javascript
