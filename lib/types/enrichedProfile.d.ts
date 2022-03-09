@@ -1,11 +1,4 @@
 /**
- * @typedef EnrichedProfile
- * @property {EnrichedIndividualProfile} individual - Describes a person
- * @property {EnrichedBusinessProfile} business - Describes a company
- *
- * @tag EnrichedProfiles
- */
-/**
  * @typedef EnrichedBusinessProfile
  * @property {string} legalBusinessName
  * @property {EnrichedProfileAddress} address

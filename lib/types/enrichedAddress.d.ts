@@ -1,15 +1,4 @@
 /**
- * @typedef EnrichedAddress
- * @property {string} addressLine1
- * @property {string} addressLine2
- * @property {string} city
- * @property {string} stateOrProvince
- * @property {string} postalCode
- * @property {number} entries
- *
- * @tag EnrichedAddresses
- */
-/**
  * @typedef EnrichedAddressGetCriteria
  * @property {string} search - Partial or complete address to search.
  * @property {number} [maxResults] - Optional Maximum number of results to return.

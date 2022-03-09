@@ -12,5 +12,7 @@ export namespace Err {
     const MISSING_BANK_ACCOUNT_ROUTING_NUMBER_LENGTH_ERROR_MESSAGE: string;
     const MISSING_BANK_ACCOUNT_HOLDER_NAME_ERROR_MESSAGE: string;
     const MISSING_BANK_ACCOUNT_HOLDER_TYPE_ERROR_MESSAGE: string;
+    const MISSING_EMAIL_ERROR_MESSAGE: string;
+    const MISSING_ENRICH_ADDRESS_SEARCH_ERROR_MESSAGE: string;
 }
 //# sourceMappingURL=errors.d.ts.map
