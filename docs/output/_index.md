@@ -227,6 +227,30 @@ try {
 ```
 
 
+### Institutions
+
+```javascript
+moov.institutions
+```
+
+More on [institutions](institutions).
+
+Gets the Institutions API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.institutions.getACHInstitution(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### Transfers
 
 ```javascript

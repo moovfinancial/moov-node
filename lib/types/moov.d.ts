@@ -217,6 +217,20 @@ export class Moov {
     get paymentMethods(): PaymentMethods;
     _paymentMethods: PaymentMethods;
     /**
+     * Gets the Institutions API.
+     * @returns {Institutions}
+     * @tag Moov
+     * @example
+     * const moov = new Moov(...);
+     * try {
+     *   await moov.institutions.getACHInstitution(...);
+     * } catch (err) {
+     *   // ...
+     * }
+     */
+    get institutions(): Institutions;
+    _institutions: Institutions;
+    /**
      * Gets the Transfers API.
      * @returns {Transfers}
      * @tag Moov
@@ -279,5 +293,6 @@ import { BankAccounts } from "./bankAccounts.js";
 import { EnrichedAddresses } from "./enrichedAddress.js";
 import { EnrichedProfiles } from "./enrichedProfile.js";
 import { PaymentMethods } from "./paymentMethods.js";
+import { Institutions } from "./institutions.js";
 import { Wallets } from "./wallets.js";
 //# sourceMappingURL=moov.d.ts.map
