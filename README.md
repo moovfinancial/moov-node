@@ -68,11 +68,11 @@ Node.js minimum version of 14.17.0 is required.
 
 ## Changelog
 
-See [CHANGELOG.md](moovfinancial/moov-node/blob/main/CHANGELOG.md) for details.
+See [CHANGELOG.md](/CHANGELOG.md) for details.
 
 ## License
 
-Apache 2.0. See [LICENSE](moovfinancial/moov-node/blob/main/LICENSE) for details.
+Apache 2.0. See [LICENSE](/LICENSE) for details.
 
 ## Contributing
 
