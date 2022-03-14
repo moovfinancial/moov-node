@@ -11,7 +11,7 @@ export namespace PAYMENT_METHODS_TYPE {
  * Wallet Payment Type
  * @typedef WalletPaymentType
  * @property {string} walletID - Wallet identifier
- * @tag Payment Methods
+ * @tag Payment methods
  */
 /**
  * Describes a Payment Method.
@@ -38,11 +38,11 @@ export namespace PAYMENT_METHODS_TYPE {
   }
 }
  *
- * @tag Payment Methods
+ * @tag Payment methods
  */
 /**
- * The Payment Methods API
- * @tag Payment Methods
+ * The Payment methods API
+ * @tag Payment methods
  */
 export class PaymentMethods {
     constructor(moov: any);
@@ -54,7 +54,7 @@ export class PaymentMethods {
      * @param {string} paymentMethodID - ID of the payment method to retrieve
      * @returns {Promise<PaymentMethod>}
      *
-     * @tag Payment Methods
+     * @tag Payment methods
      */
     get(accountID: string, paymentMethodID: string): Promise<PaymentMethod>;
     /**
@@ -63,7 +63,7 @@ export class PaymentMethods {
      * @param {string} accountID - Account on which to request bank account
      * @returns {Promise<PaymentMethod[]>}
      *
-     * @tag Payment Methods
+     * @tag Payment methods
      */
     list(accountID: string): Promise<PaymentMethod[]>;
 }
