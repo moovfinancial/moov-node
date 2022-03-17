@@ -1,6 +1,7 @@
 export namespace Err {
     const ApiKeyCredentials: string;
     const AccountID: string;
+    const CardID: string;
     const PublicKey: string;
     const SecretKey: string;
     const Domain: string;
