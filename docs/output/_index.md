@@ -155,6 +155,30 @@ try {
 ```
 
 
+### Cards
+
+```javascript
+moov.cards
+```
+
+More on [cards](cards).
+
+Gets the Cards API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.cards.list(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### EnrichedAddresses
 
 ```javascript

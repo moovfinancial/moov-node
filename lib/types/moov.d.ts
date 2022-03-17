@@ -175,6 +175,20 @@ export class Moov {
      */
     get capabilities(): Capabilities;
     /**
+     * Gets the Cards API.
+     * @returns {Cards}
+     * @tag Moov
+     * @example
+     * const moov = new Moov(...);
+     * try {
+     *   await moov.cards.list(...);
+     * } catch (err) {
+     *   // ...
+     * }
+     */
+    get cards(): Cards;
+    _cards: Cards;
+    /**
      * Gets the Enriched Address API.
      * @returns {EnrichedAddresses}
      * @tag Moov
@@ -290,6 +304,7 @@ import { Capabilities } from "./capabilities.js";
 import { Transfers } from "./transfers.js";
 import { Avatars } from "./avatars.js";
 import { BankAccounts } from "./bankAccounts.js";
+import { Cards } from "./cards.js";
 import { EnrichedAddresses } from "./enrichedAddress.js";
 import { EnrichedProfiles } from "./enrichedProfile.js";
 import { PaymentMethods } from "./paymentMethods.js";

@@ -1,16 +1,17 @@
 {
     "source": {
-        "include": ["./lib/moov.js", 
-            "./lib/accounts.js", 
-            "./lib/avatars.js", 
-            "./lib/bankAccounts.js", 
-            "./lib/bankAccountsTypedefs.js", 
-            "./lib/capabilities.js", 
+        "include": ["./lib/moov.js",
+            "./lib/accounts.js",
+            "./lib/avatars.js",
+            "./lib/bankAccounts.js",
+            "./lib/bankAccountsTypedefs.js",
+            "./lib/capabilities.js",
+            "./lib/cards.js",
             "./lib/enrichedAddress.js",
             "./lib/enrichedProfile.js",
-            "./lib/institutions.js", 
-            "./lib/paymentMethods.js", 
-            "./lib/transfers.js", 
+            "./lib/institutions.js",
+            "./lib/paymentMethods.js",
+            "./lib/transfers.js",
             "./lib/wallets.js"
         ]
     }
