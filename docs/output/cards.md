@@ -32,7 +32,7 @@ cards.get(accountID, cardID)
 ## List
 
 
-List all the cards associated with a particular Moov account.
+Lists all the cards associated with a particular Moov account.
 
 ```javascript
 cards.list(accountID)

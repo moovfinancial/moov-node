@@ -113,7 +113,7 @@ export class Cards {
      */
     get(accountID: string, cardID: string): Promise<Card>;
     /**
-     * List all the cards associated with a particular Moov account.
+     * Lists all the cards associated with a particular Moov account.
      *
      * @param {string} accountID - Account to query
      * @returns {Promise<Card[]>}
