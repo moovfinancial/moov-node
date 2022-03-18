@@ -101,6 +101,55 @@ accounts.patch(account)
 
 
 
+## GetCountries
+
+
+Retrieve the specified countries of operation for an account.
+
+```javascript
+accounts.getCountries(accountID)
+```
+
+**Parameters**
+{{< table >}}
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| accountID |  `string` | Account to query |
+{{</ table >}}
+
+
+
+**Returns**
+
+`Promise.<Countries>`
+
+
+
+## AssignCountries
+
+
+Assign the countries of operation for an account. This endpoint will always overwrite the previously assigned values.
+
+```javascript
+accounts.assignCountries(accountID, countries)
+```
+
+**Parameters**
+{{< table >}}
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| accountID |  `string` | Account to query |
+| countries |  [Countries](#countries) | Countries to add to the account. |
+{{</ table >}}
+
+
+
+**Returns**
+
+`Promise.<Countries>`
+
+
+
 
 
 
@@ -371,6 +420,18 @@ Describes customer support contact information for a business account.
 | Property | Type | Description |
 | ---- | ---- | ----------- |
   | statementDescriptor | `string`| Description to display on credit card transactions |
+
+
+
+### Countries
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | countries | `Array.<string>`|  |
 
 
 

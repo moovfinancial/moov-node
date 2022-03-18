@@ -185,6 +185,11 @@
  * @tag Accounts
  */
 /**
+ * @typedef Countries
+ * @property {string[]} countries
+ * @tag Accounts
+ */
+/**
  * The Accounts API.
  * @tag Accounts
  */
@@ -225,6 +230,23 @@ export class Accounts {
      * @tag Accounts
      */
     patch(account: Account): Promise<Account>;
+    /**
+     * Retrieve the specified countries of operation for an account.
+     *
+     * @param {string} accountID - Account to query
+     * @returns {Promise<Countries>}
+     * @tag Accounts
+     */
+    getCountries(accountID: string): Promise<Countries>;
+    /**
+     * Assign the countries of operation for an account. This endpoint will always overwrite the previously assigned values.
+     *
+     * @param {string} accountID - Account to query
+     * @param {Countries} countries - Countries to add to the account.
+     * @returns {Promise<Countries>}
+     * @tag Accounts
+     */
+    assignCountries(accountID: string, countries: Countries): Promise<Countries>;
 }
 /**
  * Describes a Moov account associated with an individual or a business.
@@ -419,5 +441,8 @@ export type CardPaymentSettings = {
      * - Description to display on credit card transactions
      */
     statementDescriptor: string;
+};
+export type Countries = {
+    countries: string[];
 };
 //# sourceMappingURL=accounts.d.ts.map

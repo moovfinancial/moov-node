@@ -44,7 +44,20 @@ async function run() {
   });
 
   // Read back the account, again
-  await moov.accounts.get(account.accountID)
+  await moov.accounts.get(account.accountID);
+
+  // Get the countries
+  await moov.accounts.getCountries(account.accountID);
+
+  const countries = {
+    countries: ["United States", "Canada"]
+  };
+
+  // Assign the countries
+  await moov.accounts.assignCountries(account.accountID, countries);
+
+  // Get the countries
+  await moov.accounts.getCountries(account.accountID);
 }
 
 function sleep(ms) {
