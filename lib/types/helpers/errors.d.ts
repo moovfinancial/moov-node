@@ -2,6 +2,7 @@ export namespace Err {
     const ApiKeyCredentials: string;
     const AccountID: string;
     const CardID: string;
+    const RepresentativeID: string;
     const PublicKey: string;
     const SecretKey: string;
     const Domain: string;
@@ -17,5 +18,6 @@ export namespace Err {
     const MISSING_EMAIL_ERROR_MESSAGE: string;
     const MISSING_ENRICH_ADDRESS_SEARCH_ERROR_MESSAGE: string;
     const MISSING_INSTITUTION_NAME_OR_ROUTING_ERROR_MESSAGE: string;
+    const MISSING_REPRESENTATIVE_ERROR_MESSAGE: string;
 }
 //# sourceMappingURL=errors.d.ts.map

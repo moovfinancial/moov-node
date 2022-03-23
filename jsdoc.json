@@ -11,6 +11,7 @@
             "./lib/enrichedProfile.js",
             "./lib/institutions.js",
             "./lib/paymentMethods.js",
+            "./lib/representatives.js",
             "./lib/transfers.js",
             "./lib/wallets.js"
         ]

@@ -275,6 +275,30 @@ try {
 ```
 
 
+### Representatives
+
+```javascript
+moov.representatives
+```
+
+More on [representatives](representatives).
+
+Gets the Representatives API.
+
+ 
+
+**Examples**
+
+```javascript
+const moov = new Moov(...);
+try {
+  await moov.representatives.create(...);
+} catch (err) {
+  // ...
+}
+```
+
+
 ### Transfers
 
 ```javascript

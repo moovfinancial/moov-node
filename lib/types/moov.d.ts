@@ -245,6 +245,21 @@ export class Moov {
     get institutions(): Institutions;
     _institutions: Institutions;
     /**
+     * Gets the Representatives API.
+     * @returns {Representatives}
+     * @tag Moov
+     *
+     * @example
+     * const moov = new Moov(...);
+     * try {
+     *   await moov.representatives.create(...);
+     * } catch (err) {
+     *   // ...
+     * }
+     */
+    get representatives(): Representatives;
+    _representatives: Representatives;
+    /**
      * Gets the Transfers API.
      * @returns {Transfers}
      * @tag Moov
@@ -309,5 +324,6 @@ import { EnrichedAddresses } from "./enrichedAddress.js";
 import { EnrichedProfiles } from "./enrichedProfile.js";
 import { PaymentMethods } from "./paymentMethods.js";
 import { Institutions } from "./institutions.js";
+import { Representatives } from "./representatives.js";
 import { Wallets } from "./wallets.js";
 //# sourceMappingURL=moov.d.ts.map
