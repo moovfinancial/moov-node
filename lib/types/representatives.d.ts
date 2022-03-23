@@ -1,6 +1,6 @@
 /** @external Promise */
 /**
- * Describes an individuals who represents the business.
+ * Describes an individual who represents the business.
  * @typedef Representative
  * @property {string} representativeID - Representative identifier
  * @property {RepresentativeName} name - Name for an individual
@@ -155,7 +155,7 @@ export class Representatives {
     update(accountID: string, representativeID: string, representative: RepresentativeCreateUpdate): Promise<Representative>;
 }
 /**
- * Describes an individuals who represents the business.
+ * Describes an individual who represents the business.
  */
 export type Representative = {
     /**

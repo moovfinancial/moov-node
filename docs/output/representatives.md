@@ -135,7 +135,7 @@ representatives.update(accountID, representativeID, representative)
 ## Types
 ### Representative
 
-Describes an individuals who represents the business.
+Describes an individual who represents the business.
 
 **Properties**
 
