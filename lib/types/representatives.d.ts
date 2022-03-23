@@ -52,17 +52,17 @@
  * @tag Representatives
  */
 /**
- * Represenatative name
+ * Representative name
  * @typedef RepresentativeName
- * @property {string} firstName - Name this person was given. This is usually the the same as first name.  string <= 64 characters
- * @property {string} middleName - Name this person was given. This is usually the the same as middle name.  string <= 64 characters
- * @property {string} lastName - Family name of this person. This is usually the the same as last name.  string <= 64 characters
+ * @property {string} firstName - Name this person was given. This is usually the same as first name.  string <= 64 characters
+ * @property {string} middleName - Name this person was given. This is usually the same as middle name.  string <= 64 characters
+ * @property {string} lastName - Family name of this person. This is usually the same as last name.  string <= 64 characters
  * @property {string} suffix - Suffix of a given name.  string <= 20 characters
  *
  * @tag Representatives
  */
 /**
- * Represenatative phone
+ * Representative phone
  * @typedef RepresentativePhone
  * @property {string} number - string <phone> <= 10 characters
  * @property {string} countryCode - string <= 1 characters
@@ -204,19 +204,19 @@ export type Representative = {
     disabledOn: Date;
 };
 /**
- * Represenatative name
+ * Representative name
  */
 export type RepresentativeName = {
     /**
-     * - Name this person was given. This is usually the the same as first name.  string <= 64 characters
+     * - Name this person was given. This is usually the same as first name.  string <= 64 characters
      */
     firstName: string;
     /**
-     * - Name this person was given. This is usually the the same as middle name.  string <= 64 characters
+     * - Name this person was given. This is usually the same as middle name.  string <= 64 characters
      */
     middleName: string;
     /**
-     * - Family name of this person. This is usually the the same as last name.  string <= 64 characters
+     * - Family name of this person. This is usually the same as last name.  string <= 64 characters
      */
     lastName: string;
     /**
@@ -225,7 +225,7 @@ export type RepresentativeName = {
     suffix: string;
 };
 /**
- * Represenatative phone
+ * Representative phone
  */
 export type RepresentativePhone = {
     /**

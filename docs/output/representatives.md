@@ -201,22 +201,22 @@ Describes an individual who represents the business.
 
 ### RepresentativeName
 
-Represenatative name
+Representative name
 
 **Properties**
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | firstName | `string`| Name this person was given. This is usually the the same as first name.  string <= 64 characters |
-  | middleName | `string`| Name this person was given. This is usually the the same as middle name.  string <= 64 characters |
-  | lastName | `string`| Family name of this person. This is usually the the same as last name.  string <= 64 characters |
+  | firstName | `string`| Name this person was given. This is usually the same as first name.  string <= 64 characters |
+  | middleName | `string`| Name this person was given. This is usually the same as middle name.  string <= 64 characters |
+  | lastName | `string`| Family name of this person. This is usually the same as last name.  string <= 64 characters |
   | suffix | `string`| Suffix of a given name.  string <= 20 characters |
 
 
 
 ### RepresentativePhone
 
-Represenatative phone
+Representative phone
 
 **Properties**
 
