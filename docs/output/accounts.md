@@ -18,7 +18,7 @@ accounts.create(account)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| account |  [Account](#account) | New account details |
+| account |  [AccountCreate](#accountcreate) | New account details |
 {{</ table >}}
 
 
@@ -199,7 +199,7 @@ Describes a Moov account associated with an individual or a business.
 | metadata |  `object` | Arbitrary key-value pairs |
 | foreignID |  `string` | Optional identification or alias |
 | customerSupport |  [CustomerSupport](#customersupport),  `null` | Displayed on credit card transactions (business only) |
-| settings |  [AccountSettings](#accountsettings) | Account settings |
+| settings |  [AccountSettings](#accountsettings),  `null` | Account settings |
 | createdOn |  `string` | Date account was created |
 | updatedOn |  `string` | Date account was last updated |
 {{</ table >}}
@@ -273,6 +273,148 @@ Describes a Moov account associated with an individual or a business.
 ```
     {{</ tab>}}{{</ tabs>}}
 
+
+
+
+### AccountCreate
+
+
+
+**Properties**
+
+
+{{< tabs>}}
+  {{< tab title="Details">}}
+  {{< table >}}
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+| accountType |  `individual`,  `business` | Type of entity represented by this account |
+| profile |  [Profile](#profile) | Details for individual or business |
+| metadata |  `object` | Arbitrary key-value pairs |
+| termsOfService |  [TermsOfServiceToken](#termsofservicetoken),  `null` | An encrypted value used to record acceptance of Moov's Terms of Service |
+| foreignID |  `string` | Optional identification or alias |
+| customerSupport |  [CustomerSupport](#customersupport),  `null` | Displayed on credit card transactions (business only) |
+| settings |  [AccountSettings](#accountsettings),  `null` | Account settings |
+{{</ table >}}
+  {{< /tab>}}
+{{< tab title="Example">}}
+```javascript
+{
+  "mode": "production",
+  "accountType": "business",
+  "profile": {
+    "individual": {
+      "name": {
+        "firstName": "Amanda",
+        "middleName": "Amanda",
+        "lastName": "Yang",
+        "suffix": "Jr"
+      },
+      "phone": {
+        "number": "8185551212",
+        "countryCode": "1"
+      },
+      "email": "amanda@classbooker.dev",
+      "address": {
+        "addressLine1": "123 Main Street",
+        "addressLine2": "Apt 302",
+        "city": "Boulder",
+        "stateOrProvince": "CO",
+        "postalCode": "80301",
+        "country": "US"
+      },
+      "birthDate": {
+        "day": 9,
+        "month": 11,
+        "year": 1989
+      },
+      "governmentID": {
+        "ssn": {
+          "full": "123-45-6789",
+          "lastFour": "6789"
+        },
+        "itin": {
+          "full": "123-45-6789",
+          "lastFour": "6789"
+        }
+      }
+    },
+    "business": {
+      "legalBusinessName": "Whole Body Fitness LLC",
+      "doingBusinessAs": "Whole Body Fitness",
+      "businessType": "llc",
+      "address": {
+        "addressLine1": "123 Main Street",
+        "addressLine2": "Apt 302",
+        "city": "Boulder",
+        "stateOrProvince": "CO",
+        "postalCode": "80301",
+        "country": "US"
+      },
+      "phone": {
+        "number": "8185551212",
+        "countryCode": "1"
+      },
+      "email": "amanda@classbooker.dev",
+      "website": "www.wholebodyfitnessgym.com",
+      "description": "Local fitness center paying out instructors",
+      "taxID": {
+        "ein": {
+          "number": "123-45-6789"
+        }
+      },
+      "industryCodes": {
+        "naics": "713940",
+        "sic": "7991",
+        "mcc": "7997"
+      }
+    }
+  },
+  "metadata": {
+    "property1": "string",
+    "property2": "string"
+  },
+  "termsOfService": {
+    "token": "kgT1uxoMAk7QKuyJcmQE8nqW_HjpyuXBabiXPi6T83fUQoxsyWYPcYzuHQTqrt7YRp4gCwyDQvb6U5REM9Pgl2EloCe35t-eiMAbUWGo3Kerxme6aqNcKrP_6-v0MTXViOEJ96IBxPFTvMV7EROI2dq3u4e-x4BbGSCedAX-ViAQND6hcreCDXwrO6sHuzh5Xi2IzSqZHxaovnWEboaxuZKRJkA3dsFID6fzitMpm2qrOh4"
+  },
+  "foreignID": "4528aba-b9a1-11eb-8529-0242ac13003",
+  "customerSupport": {
+    "phone": {
+      "number": "8185551212",
+      "countryCode": "1"
+    },
+    "email": "amanda@classbooker.dev",
+    "address": {
+      "addressLine1": "123 Main Street",
+      "addressLine2": "Apt 302",
+      "city": "Boulder",
+      "stateOrProvince": "CO",
+      "postalCode": "80301",
+      "country": "US"
+    },
+    "website": "www.wholebodyfitnessgym.com"
+  },
+  "settings": {
+    "cardPayment": {
+      "statementDescriptor": "Whole Body Fitness"
+    }
+  }
+}
+```
+    {{</ tab>}}{{</ tabs>}}
+
+
+
+
+### TermsOfServiceToken
+
+A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser.  See https://docs.moov.io/moovjs/ for more details.
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | token | `string`| An encrypted value used to record acceptance of Moov's Terms of Service |
 
 
 

@@ -9,7 +9,7 @@
  * @property {object} metadata - Arbitrary key-value pairs
  * @property {string} foreignID - Optional identification or alias
  * @property {CustomerSupport|null} customerSupport - Displayed on credit card transactions (business only)
- * @property {AccountSettings} settings - Account settings
+ * @property {AccountSettings|null} settings - Account settings
  * @property {string} createdOn - Date account was created
  * @property {string} updatedOn - Date account was last updated
  *
@@ -79,6 +79,126 @@
   }
 }
  *
+ * @tag Accounts
+ */
+/**
+ * @typedef AccountCreate
+ * @property {"individual"|"business"} accountType - Type of entity represented by this account
+ * @property {Profile} profile - Details for individual or business
+ * @property {object} metadata - Arbitrary key-value pairs
+ * @property {TermsOfServiceToken|null} termsOfService - An encrypted value used to record acceptance of Moov's Terms of Service
+ * @property {string} foreignID - Optional identification or alias
+ * @property {CustomerSupport|null} customerSupport - Displayed on credit card transactions (business only)
+ * @property {AccountSettings|null} settings - Account settings
+ *
+ * @example
+ * {
+  "mode": "production",
+  "accountType": "business",
+  "profile": {
+    "individual": {
+      "name": {
+        "firstName": "Amanda",
+        "middleName": "Amanda",
+        "lastName": "Yang",
+        "suffix": "Jr"
+      },
+      "phone": {
+        "number": "8185551212",
+        "countryCode": "1"
+      },
+      "email": "amanda@classbooker.dev",
+      "address": {
+        "addressLine1": "123 Main Street",
+        "addressLine2": "Apt 302",
+        "city": "Boulder",
+        "stateOrProvince": "CO",
+        "postalCode": "80301",
+        "country": "US"
+      },
+      "birthDate": {
+        "day": 9,
+        "month": 11,
+        "year": 1989
+      },
+      "governmentID": {
+        "ssn": {
+          "full": "123-45-6789",
+          "lastFour": "6789"
+        },
+        "itin": {
+          "full": "123-45-6789",
+          "lastFour": "6789"
+        }
+      }
+    },
+    "business": {
+      "legalBusinessName": "Whole Body Fitness LLC",
+      "doingBusinessAs": "Whole Body Fitness",
+      "businessType": "llc",
+      "address": {
+        "addressLine1": "123 Main Street",
+        "addressLine2": "Apt 302",
+        "city": "Boulder",
+        "stateOrProvince": "CO",
+        "postalCode": "80301",
+        "country": "US"
+      },
+      "phone": {
+        "number": "8185551212",
+        "countryCode": "1"
+      },
+      "email": "amanda@classbooker.dev",
+      "website": "www.wholebodyfitnessgym.com",
+      "description": "Local fitness center paying out instructors",
+      "taxID": {
+        "ein": {
+          "number": "123-45-6789"
+        }
+      },
+      "industryCodes": {
+        "naics": "713940",
+        "sic": "7991",
+        "mcc": "7997"
+      }
+    }
+  },
+  "metadata": {
+    "property1": "string",
+    "property2": "string"
+  },
+  "termsOfService": {
+    "token": "kgT1uxoMAk7QKuyJcmQE8nqW_HjpyuXBabiXPi6T83fUQoxsyWYPcYzuHQTqrt7YRp4gCwyDQvb6U5REM9Pgl2EloCe35t-eiMAbUWGo3Kerxme6aqNcKrP_6-v0MTXViOEJ96IBxPFTvMV7EROI2dq3u4e-x4BbGSCedAX-ViAQND6hcreCDXwrO6sHuzh5Xi2IzSqZHxaovnWEboaxuZKRJkA3dsFID6fzitMpm2qrOh4"
+  },
+  "foreignID": "4528aba-b9a1-11eb-8529-0242ac13003",
+  "customerSupport": {
+    "phone": {
+      "number": "8185551212",
+      "countryCode": "1"
+    },
+    "email": "amanda@classbooker.dev",
+    "address": {
+      "addressLine1": "123 Main Street",
+      "addressLine2": "Apt 302",
+      "city": "Boulder",
+      "stateOrProvince": "CO",
+      "postalCode": "80301",
+      "country": "US"
+    },
+    "website": "www.wholebodyfitnessgym.com"
+  },
+  "settings": {
+    "cardPayment": {
+      "statementDescriptor": "Whole Body Fitness"
+    }
+  }
+}
+ * @tag Accounts
+ */
+/**
+ * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser.  See https://docs.moov.io/moovjs/ for more details.
+ * @typedef TermsOfServiceToken
+ * @property {string} token - An encrypted value used to record acceptance of Moov's Terms of Service
  * @tag Accounts
  */
 /**
@@ -209,11 +329,11 @@ export class Accounts {
      * Create a new connected account.
      * @tag Accounts
      *
-     * @param {Account} account - New account details
+     * @param {AccountCreate} account - New account details
      * @returns {Promise<Account>}
      * @tag Accounts
      */
-    create(account: Account): Promise<Account>;
+    create(account: AccountCreate): Promise<Account>;
     /**
      * Retrieves details for the list of accounts.
      *
@@ -301,7 +421,7 @@ export type Account = {
     /**
      * - Account settings
      */
-    settings: AccountSettings;
+    settings: AccountSettings | null;
     /**
      * - Date account was created
      */
@@ -310,6 +430,45 @@ export type Account = {
      * - Date account was last updated
      */
     updatedOn: string;
+};
+export type AccountCreate = {
+    /**
+     * - Type of entity represented by this account
+     */
+    accountType: "individual" | "business";
+    /**
+     * - Details for individual or business
+     */
+    profile: Profile;
+    /**
+     * - Arbitrary key-value pairs
+     */
+    metadata: object;
+    /**
+     * - An encrypted value used to record acceptance of Moov's Terms of Service
+     */
+    termsOfService: TermsOfServiceToken | null;
+    /**
+     * - Optional identification or alias
+     */
+    foreignID: string;
+    /**
+     * - Displayed on credit card transactions (business only)
+     */
+    customerSupport: CustomerSupport | null;
+    /**
+     * - Account settings
+     */
+    settings: AccountSettings | null;
+};
+/**
+ * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser.  See https://docs.moov.io/moovjs/ for more details.
+ */
+export type TermsOfServiceToken = {
+    /**
+     * - An encrypted value used to record acceptance of Moov's Terms of Service
+     */
+    token: string;
 };
 /**
  * Profile for a Moov acocunt. May be business or individual.
