@@ -19,7 +19,7 @@ transfers.create(transfer)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| transfer |  [Transfer](#transfer) | Subset of the Transfer object |
+| transfer |  [TransferCreate](#transfercreate) | Subset of the Transfer object |
 {{</ table >}}
 
 
@@ -531,15 +531,80 @@ Models the reason for an ACH return or correction.
 
 
 
+### TransferCreate
+
+
+
+**Properties**
+
+
+{{< tabs>}}
+  {{< tab title="Details">}}
+  {{< table >}}
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+| source |  [PaymentMethod](#paymentmethod) |  |
+| destination |  [PaymentMethod](#paymentmethod) |  |
+| amount |  [Amount](#amount) |  |
+| facilitatorFee |  `object` |  |
+| description |  `string` |  |
+| metadata |  `object` | Arbitrary key-value pairs |
+{{</ table >}}
+  {{< /tab>}}
+{{< tab title="Example">}}
+```javascript
+{
+  "source": {
+    "transferID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43",
+    "paymentMethodID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43",
+    "cardDetails": {}
+  },
+  "destination": {
+    "paymentMethodID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43"
+  },
+  "amount": {
+    "currency": "USD",
+    "value": 1204
+  },
+  "facilitatorFee": {
+    "total": 0,
+    "markup": 0
+  },
+  "description": "Pay Instructor for May 15 Class",
+  "metadata": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+```
+    {{</ tab>}}{{</ tabs>}}
+
+
+
+
 ### TransferResponse
 
 
 
 **Properties**
 
+
+{{< tabs>}}
+  {{< tab title="Details">}}
+  {{< table >}}
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | transferID | `string`|  |
+| transferID |  `string` |  |
+{{</ table >}}
+  {{< /tab>}}
+{{< tab title="Example">}}
+```javascript
+{
+  "transferID": "e23de6dd-5168-4e1d-894d-807fa691dc80"
+}
+```
+    {{</ tab>}}{{</ tabs>}}
+
 
 
 

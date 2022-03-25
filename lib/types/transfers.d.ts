@@ -112,8 +112,48 @@
  * @tag Transfers
  */
 /**
+ * @typedef TransferCreate
+ * @property {PaymentMethod} source
+ * @property {PaymentMethod} destination
+ * @property {Amount} amount
+ * @property {object} facilitatorFee
+ * @property {string} description
+ * @property {object} metadata - Arbitrary key-value pairs
+ *
+ * @example
+ * {
+  "source": {
+    "transferID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43",
+    "paymentMethodID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43",
+    "cardDetails": {}
+  },
+  "destination": {
+    "paymentMethodID": "ec7e1848-dc80-4ab0-8827-dd7fc0737b43"
+  },
+  "amount": {
+    "currency": "USD",
+    "value": 1204
+  },
+  "facilitatorFee": {
+    "total": 0,
+    "markup": 0
+  },
+  "description": "Pay Instructor for May 15 Class",
+  "metadata": {
+    "property1": "string",
+    "property2": "string"
+  }
+}
+ * @tag Transfers
+ */
+/**
  * @typedef TransferResponse
  * @property {string} transferID
+ *
+ * @example
+ * {
+  "transferID": "e23de6dd-5168-4e1d-894d-807fa691dc80"
+}
  * @tag Transfers
  */
 /**
@@ -177,7 +217,7 @@ export class Transfers {
     /**
      * Creates a transfer to move money from a source to a destination.
      *
-     * @param {Transfer} transfer - Subset of the Transfer object
+     * @param {TransferCreate} transfer - Subset of the Transfer object
      * @returns {Promise<TransferResponse>}
      * @tag Transfers
      *
@@ -203,7 +243,7 @@ export class Transfers {
      * }
      *
      */
-    create(transfer: Transfer): Promise<TransferResponse>;
+    create(transfer: TransferCreate): Promise<TransferResponse>;
     /**
      * Lists transfers that match the given criteria.
      *
@@ -455,6 +495,17 @@ export type Transfer = {
      * - Integer quantity of Moov fee in USD, so $0.11 would be 11
      */
     moovFee: number;
+};
+export type TransferCreate = {
+    source: PaymentMethod;
+    destination: PaymentMethod;
+    amount: Amount;
+    facilitatorFee: object;
+    description: string;
+    /**
+     * - Arbitrary key-value pairs
+     */
+    metadata: object;
 };
 export type TransferResponse = {
     transferID: string;
