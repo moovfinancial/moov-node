@@ -58,6 +58,28 @@ async function run() {
 
   // Get the countries
   await moov.accounts.getCountries(account.accountID);
+
+  // Create a second new account
+  await moov.accounts.create({
+    accountType: "business",
+    displayName: "Test Business 2 (from Node SDK)",
+    profile: {
+      business: {
+        businessType: "llc",
+        legalBusinessName: "Testing LLC",
+        website: "https://testing.com",
+      },
+    },
+  });
+
+  // Allow the system to catch up
+  await sleep(500);
+
+  // Get the list of accounts.
+  await moov.accounts.list(credentials.accountID);
+
+  // Get the list of accounts, with a filter criteria.
+  await moov.accounts.list(credentials.accountID, {name: "Testing"});
 }
 
 function sleep(ms) {

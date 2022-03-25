@@ -4,6 +4,7 @@
 export type SCOPES = any;
 export namespace SCOPES {
     const ACCOUNTS_CREATE: string;
+    const ACCOUNTS_READ: string;
     const BANK_ACCOUNTS_READ: string;
     const BANK_ACCOUNTS_WRITE: string;
     const CARDS_READ: string;
@@ -84,7 +85,7 @@ export class Moov {
     _transfers: Transfers;
     /**
      * @summary
-     * Generates an OAuth token required by Moov API requests.
+     * Generates an OAuth token required by Moov API requests. For more on our authentication protocol, read our [quick start guide](/guides/quick-start/#create-an-access-token).
      *
      * @param {SCOPES[]} scopes - One or more permissions to request
      * @param {string} [accountID] - Account on which to request permissions, default is faciliator account ID
@@ -92,8 +93,8 @@ export class Moov {
      * @tag Authentication
      *
      * @description
-     * You only need call this function when generating tokens for Moov.js and
-     * Moov Drops. The other functions in this library generate tokens for you
+     * You only need call this function when generating tokens for [Moov.js](/moovjs) and
+     * [Moov Drops](/moovjs/drops). The other functions in this library generate tokens for you
      * automatically.
      *
      * @example

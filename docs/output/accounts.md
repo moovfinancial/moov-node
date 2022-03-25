@@ -29,6 +29,31 @@ accounts.create(account)
 
 
 
+## List
+
+
+Retrieves details for the list of accounts.
+
+```javascript
+accounts.list(accountID, criteria)
+```
+
+**Parameters**
+{{< table >}}
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| accountID |  `string` | Account to query |
+| criteria |  [AccountListCriteria](#accountlistcriteria) | Optional criteria to limit the list returned. |
+{{</ table >}}
+
+
+
+**Returns**
+
+`Promise.<Account>`
+
+
+
 ## Get
 
 
@@ -433,6 +458,23 @@ Describes customer support contact information for a business account.
 | Property | Type | Description |
 | ---- | ---- | ----------- |
   | countries | `Array.<string>`|  |
+
+
+
+### AccountListCriteria
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | name | `string`| If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs` |
+  | email | `string`| Filter connected accounts by email address. It is not necessary to provided the full email address as partial matches will also be returned. |
+  | type | `individual`,  `business`| Filter connected accounts by AccountType. If the `type` parameter is used in combination with name, only the corresponding type's `name` fields will be searched. For example, if `type=business` and `name=moov`, the search will attempt to find matches against the display name and Business Profile name fields (`legalBusinessName`, and `doingBusinessAs`). |
+  | foreignID | `string`| Serves as an optional alias from a foreign/external system which can be used to reference this resource |
+  | count | `number`| Optional parameter to limit the number of results in the query |
+  | skip | `number`| The number of items to offset before starting to collect the result set |
 
 
 

@@ -190,6 +190,16 @@
  * @tag Accounts
  */
 /**
+ * @typedef AccountListCriteria
+ * @property {string} name - If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs`
+ * @property {string} email - Filter connected accounts by email address. It is not necessary to provided the full email address as partial matches will also be returned.
+ * @property {"individual"|"business"} type - Filter connected accounts by AccountType. If the `type` parameter is used in combination with name, only the corresponding type's `name` fields will be searched. For example, if `type=business` and `name=moov`, the search will attempt to find matches against the display name and Business Profile name fields (`legalBusinessName`, and `doingBusinessAs`).
+ * @property {string} foreignID - Serves as an optional alias from a foreign/external system which can be used to reference this resource
+ * @property {number} count - Optional parameter to limit the number of results in the query
+ * @property {number} skip - The number of items to offset before starting to collect the result set
+ * @tag Accounts
+ */
+/**
  * The Accounts API.
  * @tag Accounts
  */
@@ -205,6 +215,15 @@ export class Accounts {
      * @tag Accounts
      */
     create(account: Account): Promise<Account>;
+    /**
+     * Retrieves details for the list of accounts.
+     *
+     * @param {string} accountID - Account to query
+     * @param {AccountListCriteria} criteria - Optional criteria to limit the list returned.
+     * @returns {Promise<Account>}
+     * @tag Accounts
+     */
+    list(accountID: string, criteria: AccountListCriteria): Promise<Account>;
     /**
      * Retrieves details for the account with the specified ID.
      *
@@ -444,5 +463,31 @@ export type CardPaymentSettings = {
 };
 export type Countries = {
     countries: string[];
+};
+export type AccountListCriteria = {
+    /**
+     * - If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs`
+     */
+    name: string;
+    /**
+     * - Filter connected accounts by email address. It is not necessary to provided the full email address as partial matches will also be returned.
+     */
+    email: string;
+    /**
+     * - Filter connected accounts by AccountType. If the `type` parameter is used in combination with name, only the corresponding type's `name` fields will be searched. For example, if `type=business` and `name=moov`, the search will attempt to find matches against the display name and Business Profile name fields (`legalBusinessName`, and `doingBusinessAs`).
+     */
+    type: "individual" | "business";
+    /**
+     * - Serves as an optional alias from a foreign/external system which can be used to reference this resource
+     */
+    foreignID: string;
+    /**
+     * - Optional parameter to limit the number of results in the query
+     */
+    count: number;
+    /**
+     * - The number of items to offset before starting to collect the result set
+     */
+    skip: number;
 };
 //# sourceMappingURL=accounts.d.ts.map

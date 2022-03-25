@@ -165,7 +165,7 @@ try {
 moov.cards
 ```
 
-More on [cards](cards).
+Read more on [cards](cards) in the Moov Node SDK.
 
 Gets the Cards API.
 
@@ -285,7 +285,7 @@ try {
 moov.representatives
 ```
 
-More on [representatives](representatives).
+Read more on [representatives](representatives) in the Moov Node SDK.
 
 Gets the Representatives API.
 
