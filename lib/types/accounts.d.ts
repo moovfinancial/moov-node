@@ -2,7 +2,6 @@
 /**
  * Describes a Moov account associated with an individual or a business.
  * @typedef Account
- * @property {"sandbox"|"production"} mode - Mode this account is allowed to be used within
  * @property {string} accountID - Account identifier
  * @property {"individual"|"business"} accountType - Type of entity represented by this account
  * @property {string} displayName - Name of individual or business
@@ -271,10 +270,6 @@ export class Accounts {
  * Describes a Moov account associated with an individual or a business.
  */
 export type Account = {
-    /**
-     * - Mode this account is allowed to be used within
-     */
-    mode: "sandbox" | "production";
     /**
      * - Account identifier
      */

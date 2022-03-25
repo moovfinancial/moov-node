@@ -192,7 +192,6 @@ Describes a Moov account associated with an individual or a business.
   {{< table >}}
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-| mode |  `sandbox`,  `production` | Mode this account is allowed to be used within |
 | accountID |  `string` | Account identifier |
 | accountType |  `individual`,  `business` | Type of entity represented by this account |
 | displayName |  `string` | Name of individual or business |
