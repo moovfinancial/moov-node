@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Accounts API to include accounts list, with examples
 - Updated typescript types
 - Updated documentation
-- Remove unneeded property
+- Remove unneeded mode property from Accounts
 
 ## [0.1.15] - 2022-03-23
 
