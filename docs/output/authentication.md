@@ -96,7 +96,7 @@ Available scopes to request on OAuth tokens.
 | Value | Description |
 | ----- | ----------- |
 | ACCOUNTS_CREATE | Allows a new Moov account to be created |
-| ACCOUNTS_READ | Allows a view Moov accounts |
+| ACCOUNTS_READ | Access to view Moov accounts |
 | BANK_ACCOUNTS_READ | Access to view a linked bank account to a Moov account |
 | BANK_ACCOUNTS_WRITE | Access to add a linked bank account to a Moov account |
 | CARDS_READ | Access to view a linked card on a Moov account |
