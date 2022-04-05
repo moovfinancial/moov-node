@@ -36,6 +36,7 @@ async function run() {
     "routingNumber": "107005047",
     "accountNumber": "1234567890"
   }
+
   let linkResult = await moov.bankAccounts.link(credentials.accountID, bankAccount);
 
   // Get the bank account
@@ -76,9 +77,12 @@ async function run() {
 
   // Initiate micro deposits
   await moov.bankAccounts.initMicroDeposits(credentials.connectedAccountID, fredBankAccountID);
+
+  // complete micro deposits
+  await moov.bankAccounts.completeMicroDeposits(credentials.connectedAccountID, fredBankAccountID, [0, 0])
 }
 
-function usage() {
+function usage() {s
   console.log("Usage:");
   console.log("  Required:");
   console.log("    Either:");
