@@ -82,7 +82,7 @@ async function run() {
   await moov.bankAccounts.completeMicroDeposits(credentials.connectedAccountID, fredBankAccountID, [0, 0])
 }
 
-function usage() {s
+function usage() {
   console.log("Usage:");
   console.log("  Required:");
   console.log("    Either:");
