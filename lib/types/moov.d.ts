@@ -79,7 +79,7 @@ export class Moov {
         domain: string;
     };
     tokenCache: {};
-    got: import("got").Got;
+    got: import("got-cjs").Got;
     _accounts: Accounts;
     _capabilities: Capabilities;
     _transfers: Transfers;

@@ -137,7 +137,7 @@ bankaccounts.initMicroDeposits(accountID, bankAccountID)
 Complete the micro-deposit validation process by passing the amounts of the two transfers.
 
 ```javascript
-bankaccounts.completeMicroDeposits(accountID, bankAccountID)
+bankaccounts.completeMicroDeposits(accountID, bankAccountID, amounts)
 ```
 
 **Parameters**
@@ -146,6 +146,7 @@ bankaccounts.completeMicroDeposits(accountID, bankAccountID)
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request bank account |
 | bankAccountID |  `string` | ID of the bank account to disable |
+| amounts |  `Array.<number>` | List of integer quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99. |
 {{</ table >}}
 
 

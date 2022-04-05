@@ -1,10 +1,16 @@
 {
     "name": "@moovio/node",
-    "version": "0.1.17",
+    "version": "0.1.19",
     "description": "Node SDK for the Moov API and Dashboard",
-    "main": "lib/index.js",
+    "module": "dist/mjs/index.js",
+    "main": "dist/cjs/index.js",
+    "exports": {
+        ".": {
+            "import": "./dist/mjs/index.js",
+            "require": "./dist/cjs/index.js"
+        }
+    },
     "types": "lib/types/index.d.ts",
-    "type": "module",
     "engines": {
         "node": ">=14"
     },
@@ -26,9 +32,11 @@
     },
     "homepage": "https://github.com/moovfinancial/moov-node#readme",
     "files": [
+        "dist/**/*",
         "lib/**/*"
     ],
     "scripts": {
+        "build": "chmod +x fixup.sh && rm -fr dist/* && tsc -p tsconfig-esm.json && tsc -p tsconfig-cjs.json && ./fixup.sh",
         "docs": "node ./scripts/generateDocs.cjs",
         "docs-watch": "watch \"npm run docs\" ./docs/templates",
         "docs-clean": "rm ./docs/output/*.*",
@@ -47,6 +55,6 @@
         "watch": "^0.13.0"
     },
     "dependencies": {
-        "got": "^12.0.0"
+        "got-cjs": "^12.0.0"
     }
 }
