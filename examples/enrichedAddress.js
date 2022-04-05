@@ -28,3 +28,5 @@ const SEARCH_CRITERIA = {
 
   const addresses = await moov.enrichedAddresses.get(SEARCH_CRITERIA);
 }
+
+run()

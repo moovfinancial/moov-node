@@ -15,3 +15,5 @@ async function run() {
 
   const avatar = moov.avatars.get(UNIQUE_ID);
 }
+
+run();

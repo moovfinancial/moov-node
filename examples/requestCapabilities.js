@@ -1,5 +1,6 @@
 import { Moov, CAPABILITIES } from "@moovio/node";
 import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
+import { loadCredentials } from "./loadCredentials.js";
 
 /**
  * Demonstrates how to request, list, and disable capabilities.
@@ -12,8 +13,12 @@ import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
   }
 
   let credentials = {};
-  for (var index = 0; index < args.length; index += 2) {
-    credentials[args[index].substring(1)] = args[index +1];
+  if (args[0] === "-credentials") {
+    credentials = loadCredentials("./secrets/credentials.json");
+  } else {
+    for (var index = 0; index < args.length; index += 2) {
+      credentials[args[index].substring(1)] = args[index +1];
+    }
   }
 
   if(!credentials["accountID"] || !credentials["publicKey"] || !credentials["secretKey"] || !credentials["domain"]) {

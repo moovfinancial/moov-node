@@ -1,6 +1,6 @@
 import { Moov } from "@moovio/node";
-import { gotOptionsForLogging } from "./gotOptionsForLogging";
-import { loadCredentials } from "./loadCredentials";
+import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
+import { loadCredentials } from "./loadCredentials.js";
 
 // TODO: Enter an email to retreive.
 const PROFILE_EMAIL = "employee@business.com";
@@ -15,3 +15,5 @@ async function run() {
 
   const profile = await moov.enrichedProfiles.get(PROFILE_EMAIL);
 }
+
+run();

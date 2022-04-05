@@ -24,6 +24,53 @@
             "name": "[live] createAndUpdateAccount",
             "skipFiles": ["<node_internals>/**"],
             "program": "${workspaceFolder}/examples/createAndUpdateAccount.js"
-        }
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "[live] bankAccounts",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/examples/bankAccounts.js",
+            "args": [
+                "-credentials", ""
+            ]
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "[live] avatars",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/examples/avatars.js"
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "[live] cards",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/examples/cards.js",
+            "args": [
+                "-credentials", ""
+            ]
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "[live] createTransfer",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/examples/createTransfer.js",
+            "args": [
+                "-credentials", ""
+            ]
+        },
+        {
+            "type": "pwa-node",
+            "request": "launch",
+            "name": "[live] enrichedAddress",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/examples/enrichedAddress.js",
+            "args": [
+                "-credentials", ""
+            ]
+        },
     ]
 }
