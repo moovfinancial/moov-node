@@ -62,7 +62,7 @@ export class BankAccounts {
      *
      * @param {string} accountID - Account on which to request bank account
      * @param {string} bankAccountID - ID of the bank account to disable
-     * @param {Array.<number>} amounts - List of integer quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99.
+     * @param {Array.<number>} amounts - Array of two positive integers, in cents, equal to the values of the micro-deposits sent to the bank account.
      * @returns {Promise<void>}
      *
      * @tag Bank accounts

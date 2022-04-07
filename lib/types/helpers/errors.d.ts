@@ -2,7 +2,12 @@ export namespace Err {
     const ApiKeyCredentials: string;
     const AccountID: string;
     const CardID: string;
+    const BankAccountID: string;
     const RepresentativeID: string;
+    const PaymentMethodID: string;
+    const TransferID: string;
+    const RefundID: string;
+    const WalletID: string;
     const PublicKey: string;
     const SecretKey: string;
     const Domain: string;
@@ -19,5 +24,12 @@ export namespace Err {
     const MISSING_ENRICH_ADDRESS_SEARCH_ERROR_MESSAGE: string;
     const MISSING_INSTITUTION_NAME_OR_ROUTING_ERROR_MESSAGE: string;
     const MISSING_REPRESENTATIVE_ERROR_MESSAGE: string;
+    const MISSING_UNIQUE_ID_ERROR_MESSAGE: string;
+    const MISSING_CAPABILITIES: string;
+    const MISSING_CAPABILITY: string;
+    const MISSING_TRANSFER_ERROR_MESSAGE: string;
+    const MISSING_TRANSFER_OPTION_CRITERIA_ERROR_MESSAGE: string;
+    const MISSING_COUNTRIES: string;
+    const MISSING_AMOUNTS: string;
 }
 //# sourceMappingURL=errors.d.ts.map

@@ -146,7 +146,7 @@ bankaccounts.completeMicroDeposits(accountID, bankAccountID, amounts)
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request bank account |
 | bankAccountID |  `string` | ID of the bank account to disable |
-| amounts |  `Array.<number>` | List of integer quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99. |
+| amounts |  `Array.<number>` | Array of two positive integers, in cents, equal to the values of the micro-deposits sent to the bank account. |
 {{</ table >}}
 
 

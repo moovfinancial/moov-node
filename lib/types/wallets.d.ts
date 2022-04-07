@@ -1,4 +1,3 @@
-/** @external Promise */
 /**
  * Describes a Moov Wallet Balance
  * @typedef WalletBalance
