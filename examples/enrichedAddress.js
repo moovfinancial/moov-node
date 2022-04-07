@@ -26,7 +26,9 @@ const SEARCH_CRITERIA = {
   const credentials = loadCredentials("./secrets/credentials.json");
   const moov = new Moov(credentials, gotOptionsForLogging);
 
-  const addresses = await moov.enrichedAddresses.get(SEARCH_CRITERIA);
+  const addresses = await moov.enrichedAddresses.get(SEARCH_CRITERIA).catch((error) => {
+    console.error("Error: ", error.message);
+  });
 }
 
 run()

@@ -11,7 +11,9 @@ async function run() {
   const moov = new Moov(credentials, gotOptionsForLogging);
 
   // Ping Moov servers
-  await moov.ping();
+  await moov.ping().catch((error) => {
+    console.error("Error: ", error);
+  });
 }
 
 run();

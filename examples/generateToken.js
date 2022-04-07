@@ -11,17 +11,25 @@ async function run() {
   const credentials = loadCredentials("./secrets/credentials.json");
   const moov = new Moov(credentials);
 
-  // Create a token with permissions to create a new connected account
-  const createAccountToken = await moov.generateToken([SCOPES.ACCOUNTS_CREATE]);
-  console.log("== create accounts ==\n", createAccountToken.token);
+  try
+  {
+    // Create a token with permissions to create a new connected account
+    const createAccountToken = await moov.generateToken([SCOPES.ACCOUNTS_CREATE]);
+    console.log("== create accounts ==\n", createAccountToken.token);
 
-  // Create a token with permissions to update a connected account's profile
-  const connectedAccountID = "..."; // Fill in with an actual account ID
-  const profileToken = await moov.generateToken(
-    [SCOPES.PROFILE_READ, SCOPES.PROFILE_WRITE],
-    connectedAccountID
-  );
-  console.log("== update profile ==\n", profileToken.token);
+    // Create a token with permissions to update a connected account's profile
+    const connectedAccountID = "..."; // Fill in with an actual account ID
+    const profileToken = await moov.generateToken(
+      [SCOPES.PROFILE_READ, SCOPES.PROFILE_WRITE],
+      connectedAccountID
+    );
+    console.log("== update profile ==\n", profileToken.token);
+  }
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
+  }
 }
 
 run();

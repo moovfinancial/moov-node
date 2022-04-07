@@ -28,12 +28,19 @@ async function run() {
 
   const moov = new Moov(credentials, gotOptionsForLogging);
 
-  // Get a list of the payment methods
-  let result = await moov.wallets.list(credentials.connectedAccountID);
+  try
+  {
+    // Get a list of the payment methods
+    let result = await moov.wallets.list(credentials.connectedAccountID);
 
-  // Get a specific payment method
-  result = await moov.wallets.get(credentials.connectedAccountID, result[0].walletID);
-
+    // Get a specific payment method
+    result = await moov.wallets.get(credentials.connectedAccountID, result[0].walletID);
+  }
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
+  }
 }
 
 function usage() {

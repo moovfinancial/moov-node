@@ -28,122 +28,130 @@ async function run() {
 
   const moov = new Moov(credentials, gotOptionsForLogging);
 
+  try
+  {
   // Get a list of the representatives
-  let result = await moov.representatives.list(credentials.connectedAccountID);
+    let result = await moov.representatives.list(credentials.connectedAccountID);
 
-  const newRep1 = {
-    "name": {
-      "firstName": "Amanda",
-      "middleName": "Amanda",
-      "lastName": "Yang",
-      "suffix": "Jr"
-    },
-    "phone": {
-      "number": "8185551212",
-      "countryCode": "1"
-    },
-    "email": "amanda@classbooker.dev",
-    "address": {
-      "addressLine1": "123 Main Street",
-      "addressLine2": "Apt 302",
-      "city": "Boulder",
-      "stateOrProvince": "CO",
-      "postalCode": "80301",
-      "country": "US"
-    },
-    "birthDate": {
-      "day": 9,
-      "month": 11,
-      "year": 1989
-    },
-    "governmentID": {
-      "ssn": {
-        "full": "123-45-6789",
-        "lastFour": "6789"
-      },
-      "itin": {
-        "full": "123-45-6789",
-        "lastFour": "6789"
-      }
-    },
-    "responsibilities": {
-      "isController": false,
-      "isOwner": true,
-      "ownershipPercentage": 38,
-      "jobTitle": "CEO"
-    }
-  }
-
-  // Create a new representative
-  result = await moov.representatives.create(credentials.connectedAccountID, newRep1);
-
-  const newRep2 = {
-    "name": {
-        "firstName": "Steve",
-        "middleName": "J.",
-        "lastName": "Bartowski",
+    const newRep1 = {
+      "name": {
+        "firstName": "Amanda",
+        "middleName": "Amanda",
+        "lastName": "Yang",
         "suffix": "Jr"
-    },
-    "phone": {
-        "number": "818.555.1212",
+      },
+      "phone": {
+        "number": "8185551212",
         "countryCode": "1"
-    },
-    "email": "amanda@classbooker.dev",
-    "address": {
+      },
+      "email": "amanda@classbooker.dev",
+      "address": {
         "addressLine1": "123 Main Street",
         "addressLine2": "Apt 302",
         "city": "Boulder",
         "stateOrProvince": "CO",
         "postalCode": "80301",
         "country": "US"
-    },
-    "birthDate": {
+      },
+      "birthDate": {
         "day": 9,
         "month": 11,
         "year": 1989
-    },
-    "governmentID": {
+      },
+      "governmentID": {
         "ssn": {
-            "full": "123-45-6789",
-            "lastFour": "6789"
+          "full": "123-45-6789",
+          "lastFour": "6789"
         },
         "itin": {
-            "full": "123-45-6789",
-            "lastFour": "6789"
+          "full": "123-45-6789",
+          "lastFour": "6789"
         }
-    },
-    "responsibilities": {
+      },
+      "responsibilities": {
         "isController": false,
         "isOwner": true,
-        "ownershipPercentage": 25,
-        "jobTitle": "CTO"
+        "ownershipPercentage": 38,
+        "jobTitle": "CEO"
+      }
     }
+
+    // Create a new representative
+    result = await moov.representatives.create(credentials.connectedAccountID, newRep1);
+
+    const newRep2 = {
+      "name": {
+          "firstName": "Steve",
+          "middleName": "J.",
+          "lastName": "Bartowski",
+          "suffix": "Jr"
+      },
+      "phone": {
+          "number": "818.555.1212",
+          "countryCode": "1"
+      },
+      "email": "amanda@classbooker.dev",
+      "address": {
+          "addressLine1": "123 Main Street",
+          "addressLine2": "Apt 302",
+          "city": "Boulder",
+          "stateOrProvince": "CO",
+          "postalCode": "80301",
+          "country": "US"
+      },
+      "birthDate": {
+          "day": 9,
+          "month": 11,
+          "year": 1989
+      },
+      "governmentID": {
+          "ssn": {
+              "full": "123-45-6789",
+              "lastFour": "6789"
+          },
+          "itin": {
+              "full": "123-45-6789",
+              "lastFour": "6789"
+          }
+      },
+      "responsibilities": {
+          "isController": false,
+          "isOwner": true,
+          "ownershipPercentage": 25,
+          "jobTitle": "CTO"
+      }
+    }
+
+    // Create a second new representative
+    result = await moov.representatives.create(credentials.connectedAccountID, newRep2);
+
+    // Get list of the representatives, again
+    result = await moov.representatives.list(credentials.connectedAccountID);
+
+    let updateRep = result[0];
+
+    // Get a specific representative
+    result = await moov.representatives.get(credentials.connectedAccountID, updateRep.representativeID);
+
+    updateRep.email = "steve@classbooker.dev";
+
+    // Update a specific representative
+    result = await moov.representatives.update(credentials.connectedAccountID, updateRep.representativeID, updateRep);
+
+    // Get list of the representatives, again
+    result = await moov.representatives.list(credentials.connectedAccountID);
+
+    // Delete a specific representative
+    result = await moov.representatives.delete(credentials.connectedAccountID, updateRep.representativeID);
+
+    // Get list of the representatives, again
+    result = await moov.representatives.list(credentials.connectedAccountID);
   }
-
-  // Create a second new representative
-  result = await moov.representatives.create(credentials.connectedAccountID, newRep2);
-
-  // Get list of the representatives, again
-  result = await moov.representatives.list(credentials.connectedAccountID);
-
-  let updateRep = result[0];
-
-  // Get a specific representative
-  result = await moov.representatives.get(credentials.connectedAccountID, updateRep.representativeID);
-
-  updateRep.email = "steve@classbooker.dev";
-
-  // Update a specific representative
-  result = await moov.representatives.update(credentials.connectedAccountID, updateRep.representativeID, updateRep);
-
-  // Get list of the representatives, again
-  result = await moov.representatives.list(credentials.connectedAccountID);
-
-  // Delete a specific representative
-  result = await moov.representatives.delete(credentials.connectedAccountID, updateRep.representativeID);
-
-  // Get list of the representatives, again
-  result = await moov.representatives.list(credentials.connectedAccountID);
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
+  }
 }
 
 function usage() {

@@ -43,22 +43,30 @@ import { loadCredentials } from "./loadCredentials.js";
     accountID = credentials["accountID"];
   }
 
+  try
+  {
   // Request capabilities
-  const capabilites = await moov.capabilities.requestCapabilities(
-    accountID, 
-    [CAPABILITIES.TRANSFERS, CAPABILITIES.SEND_FUNDS, CAPABILITIES.WALLET]
-    );
+    const capabilites = await moov.capabilities.requestCapabilities(
+      accountID, 
+      [CAPABILITIES.TRANSFERS, CAPABILITIES.SEND_FUNDS, CAPABILITIES.WALLET]
+      );
 
-  // Get back a particular capability
-  let sendFunds = await moov.capabilities.get(accountID, CAPABILITIES.SEND_FUNDS);
+    // Get back a particular capability
+    let sendFunds = await moov.capabilities.get(accountID, CAPABILITIES.SEND_FUNDS);
 
-  // List all capabilities for the account
-  let list = await moov.capabilities.list(accountID);
+    // List all capabilities for the account
+    let list = await moov.capabilities.list(accountID);
 
-  // Disable a capability
-  const disableSendFunds = await moov.capabilities.disable(accountID, CAPABILITIES.SEND_FUNDS);
-  
-  list = await moov.capabilities.list(accountID);
+    // Disable a capability
+    const disableSendFunds = await moov.capabilities.disable(accountID, CAPABILITIES.SEND_FUNDS);
+    
+    list = await moov.capabilities.list(accountID);
+  }
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
+  }
  }
 
  function usage() {

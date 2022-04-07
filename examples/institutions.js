@@ -32,12 +32,20 @@ async function run() {
     routingNumber: "107005047"
   }
 
-  // Get an ACH institution
-  let result = await moov.institutions.getACHInstitution(criteriaFirstBank);
-  console.log(result.achParticipants[0].achLocation);
+  try
+  {
+    // Get an ACH institution
+    let result = await moov.institutions.getACHInstitution(criteriaFirstBank);
+    console.log(result.achParticipants[0].achLocation);
 
-  // Get an WIRE institution
-  result = await moov.institutions.getWireInstitution(criteriaFirstBank);
+    // Get an WIRE institution
+    result = await moov.institutions.getWireInstitution(criteriaFirstBank);
+  }
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
+  }
 }
 
 function usage() {

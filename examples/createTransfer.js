@@ -28,37 +28,45 @@ async function run() {
     amount: TRANSFER_AMOUNT,
   });
 
+  try
+  {
   // Select ACH
-  const sourcePaymentMethodID = sourceOptions.find(
-    (x) => x.paymentMethodType === "ach-debit-fund"
-  ).paymentMethodID;
+    const sourcePaymentMethodID = sourceOptions.find(
+      (x) => x.paymentMethodType === "ach-debit-fund"
+    ).paymentMethodID;
 
-  // Get destination transfer options given the source transfer option
-  const { destinationOptions } = await moov.transfers.getTransferOptions({
-    source: {
-      paymentMethodID: sourcePaymentMethodID,
-    },
-    destination: {
-      accountID: DESTINATION_ACCOUNT_ID,
-    },
-    amount: TRANSFER_AMOUNT,
-  });
+    // Get destination transfer options given the source transfer option
+    const { destinationOptions } = await moov.transfers.getTransferOptions({
+      source: {
+        paymentMethodID: sourcePaymentMethodID,
+      },
+      destination: {
+        accountID: DESTINATION_ACCOUNT_ID,
+      },
+      amount: TRANSFER_AMOUNT,
+    });
 
-  // Select ACH standard
-  const destinationPaymentMethodID = destinationOptions.find(
-    (x) => x.paymentMethodType === "ach-credit-standard"
-  ).paymentMethodID;
+    // Select ACH standard
+    const destinationPaymentMethodID = destinationOptions.find(
+      (x) => x.paymentMethodType === "ach-credit-standard"
+    ).paymentMethodID;
 
-  // Create the transfer
-  const transfer = await moov.transfers.create({
-    source: {
-      paymentMethodID: sourcePaymentMethodID,
-    },
-    destination: {
-      paymentMethodID: destinationPaymentMethodID,
-    },
-    amount: TRANSFER_AMOUNT,
-  });
+    // Create the transfer
+    const transfer = await moov.transfers.create({
+      source: {
+        paymentMethodID: sourcePaymentMethodID,
+      },
+      destination: {
+        paymentMethodID: destinationPaymentMethodID,
+      },
+      amount: TRANSFER_AMOUNT,
+    });
+  }
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
+  }
 }
 
 run();

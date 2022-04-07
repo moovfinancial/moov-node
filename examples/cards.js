@@ -28,15 +28,22 @@ async function run() {
 
   const moov = new Moov(credentials, gotOptionsForLogging);
 
-  // Get lsit of all cards for connected account.
-  const results = await moov.cards.list(credentials.connectedAccountID);
-  console.log(results);
+  try
+  {
+    // Get lsit of all cards for connected account.
+    const results = await moov.cards.list(credentials.connectedAccountID);
+    console.log(results);
 
-  // Get a specific card.
-  const result = await moov.cards.get(credentials.connectedAccountID, results[0].cardID);
+    // Get a specific card.
+    const result = await moov.cards.get(credentials.connectedAccountID, results[0].cardID);
 
-  // Disable a specific card.
-  await moov.cards.disable(credentials.connectedAccountID, results[0].cardID);
+    // Disable a specific card.
+    await moov.cards.disable(credentials.connectedAccountID, results[0].cardID);
+  }
+  catch(err)
+  {
+    console.error("Error: ", err.message);
+  }
 }
 
 function usage() {

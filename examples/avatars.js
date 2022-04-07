@@ -13,7 +13,14 @@ async function run() {
   const credentials = loadCredentials("./secrets/credentials.json");
   const moov = new Moov(credentials, gotOptionsForLogging);
 
-  const avatar = moov.avatars.get(UNIQUE_ID);
+  try
+  {
+    const avatar = moov.avatars.get(UNIQUE_ID);
+  }
+  catch(err)
+  {
+    console.error("Error: ", err.message);
+  }
 }
 
 run();

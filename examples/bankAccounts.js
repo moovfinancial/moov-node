@@ -37,49 +37,59 @@ async function run() {
     "accountNumber": "1234567890"
   }
 
-  let linkResult = await moov.bankAccounts.link(credentials.accountID, bankAccount);
+  try
+  {
+    let linkResult = await moov.bankAccounts.link(credentials.accountID, bankAccount).catch((error) => {
+      console.error("Promise Error: ", error.message);
+    });
 
-  // Get the bank account
-  let result = await moov.bankAccounts.get(credentials.accountID, linkResult.bankAccountID)
+    // Get the bank account
+    let result = await moov.bankAccounts.get(credentials.accountID, linkResult.bankAccountID)
 
-  // Link bank account to connected account
-  bankAccount = {
-    "holderName": "Fred Flintstone",
-    "holderType": "individual",
-    "bankAccountType": "checking",
-    "routingNumber": "107005047",
-    "accountNumber": "123412340"
+    // Link bank account to connected account
+    bankAccount = {
+      "holderName": "Fred Flintstone",
+      "holderType": "individual",
+      "bankAccountType": "checking",
+      "routingNumber": "107005047",
+      "accountNumber": "123412340"
+    }
+    linkResult = await moov.bankAccounts.link(credentials.connectedAccountID, bankAccount);
+
+    // Get the bank account
+    result = await moov.bankAccounts.get(credentials.connectedAccountID, linkResult.bankAccountID)
+    const fredBankAccountID = result.bankAccountID;
+
+    // Add one more
+    bankAccount = {
+      "holderName": "Barney Rubble",
+      "holderType": "individual",
+      "bankAccountType": "checking",
+      "routingNumber": "107005047",
+      "accountNumber": "777777000"
+    }
+    linkResult = await moov.bankAccounts.link(credentials.connectedAccountID, bankAccount);
+
+    // Get a list of the bank accounts
+    result = await moov.bankAccounts.list(credentials.connectedAccountID);
+
+    // Disable Barney's bank account
+    await moov.bankAccounts.disable(credentials.connectedAccountID, linkResult.bankAccountID);
+
+    // Get a list of the bank accounts
+    result = await moov.bankAccounts.list(credentials.connectedAccountID);
+
+    // Initiate micro deposits
+    await moov.bankAccounts.initMicroDeposits(credentials.connectedAccountID, fredBankAccountID);
+
+    // complete micro deposits
+    await moov.bankAccounts.completeMicroDeposits(credentials.connectedAccountID, fredBankAccountID, [0, 0])
   }
-  linkResult = await moov.bankAccounts.link(credentials.connectedAccountID, bankAccount);
-
-  // Get the bank account
-  result = await moov.bankAccounts.get(credentials.connectedAccountID, linkResult.bankAccountID)
-  const fredBankAccountID = result.bankAccountID;
-
-  // Add one more
-  bankAccount = {
-    "holderName": "Barney Rubble",
-    "holderType": "individual",
-    "bankAccountType": "checking",
-    "routingNumber": "107005047",
-    "accountNumber": "777777000"
+  catch(err)
+  {
+    // catch an exception you plan to handle, if not allow it to bubble up
+    console.error("Error: ", err.message);
   }
-  linkResult = await moov.bankAccounts.link(credentials.connectedAccountID, bankAccount);
-
-  // Get a list of the bank accounts
-  result = await moov.bankAccounts.list(credentials.connectedAccountID);
-
-  // Disable Barney's bank account
-  await moov.bankAccounts.disable(credentials.connectedAccountID, linkResult.bankAccountID);
-
-  // Get a list of the bank accounts
-  result = await moov.bankAccounts.list(credentials.connectedAccountID);
-
-  // Initiate micro deposits
-  await moov.bankAccounts.initMicroDeposits(credentials.connectedAccountID, fredBankAccountID);
-
-  // complete micro deposits
-  await moov.bankAccounts.completeMicroDeposits(credentials.connectedAccountID, fredBankAccountID, [0, 0])
 }
 
 function usage() {
