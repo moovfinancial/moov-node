@@ -184,7 +184,7 @@ try {
   | city | `string`|  |
   | stateOrProvince | `string`|  |
   | postalCode | `string`|  |
-  | country | `country`|  |
+  | country | `string`|  |
 
 
 

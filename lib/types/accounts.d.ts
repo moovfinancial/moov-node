@@ -347,6 +347,7 @@ export class Accounts {
      * @param {Account} account - Account to update
      * @returns {Promise<Account>}
      * @tag Accounts
+     * @deprecated update call for accounts is deprecated, please use the patch call.
      */
     update(account: Account): Promise<Account>;
     /**

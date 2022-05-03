@@ -442,7 +442,7 @@ Describes a business account.
   | legalBusinessName | `string`|  |
   | doingBusinessAs | `string`|  |
   | businessType | `soleProprietorship`,  `unincorporatedAssociation`,  `trust`,  `publicCorporation`,  `privateCorporation`,  `privateCorporation`,  `llc`,  `partnership`,  `unincorporatedNonProfit`,  `incorporatedNonProfit`|  |
-  | address | [Address](#address)|  |
+  | address | `Address`|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
   | website | `string`|  |
@@ -465,7 +465,7 @@ Describes the individual associated with a non-business account.
   | name | `string`|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
-  | address | [Address](#address)|  |
+  | address | `Address`|  |
   | birthDateProvided | `boolean`| True if individual's birthdate has been provided |
   | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
 
@@ -481,23 +481,6 @@ Describes the individual associated with a non-business account.
 | ---- | ---- | ----------- |
   | number | `string`| Phone number |
   | countryCode | `string`| 1 digit country code |
-
-
-
-### Address
-
-
-
-**Properties**
-
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | addressLine1 | `string`|  |
-  | addressLine2 | `string`|  |
-  | city | `string`|  |
-  | stateOrProvince | `string`| 2 characters |
-  | postalCode | `string`| 5 characters |
-  | country | `string`| 2 characters |
 
 
 
@@ -526,7 +509,7 @@ Describes an individual who represents a business account.
   | name | `string`|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
-  | address | [Address](#address)|  |
+  | address | `Address`|  |
   | birthDateProvided | `boolean`| True if individual's birthdate has been provided |
   | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
   | responsibilities | Array.<[Responsibility](#responsibility)>|  |
@@ -546,7 +529,7 @@ Describes the responsibilities associated with a business representative.
 | ---- | ---- | ----------- |
   | isController | `boolean`|  |
   | isOwner | `boolean`|  |
-  | ownershipPercentage | `integer`| Required if `isOwner` is true |
+  | ownershipPercentage | `number`| Required if `isOwner` is true |
   | jobTitle | `string`|  |
 
 
@@ -561,7 +544,7 @@ Describes customer support contact information for a business account.
 | ---- | ---- | ----------- |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
-  | address | [Address](#address)|  |
+  | address | `Address`|  |
   | website | `string`|  |
 
 
