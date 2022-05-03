@@ -442,7 +442,7 @@ Describes a business account.
   | legalBusinessName | `string`|  |
   | doingBusinessAs | `string`|  |
   | businessType | `soleProprietorship`,  `unincorporatedAssociation`,  `trust`,  `publicCorporation`,  `privateCorporation`,  `privateCorporation`,  `llc`,  `partnership`,  `unincorporatedNonProfit`,  `incorporatedNonProfit`|  |
-  | address | `Address`|  |
+  | address | [Address](#address)|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
   | website | `string`|  |
@@ -465,7 +465,7 @@ Describes the individual associated with a non-business account.
   | name | `string`|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
-  | address | `Address`|  |
+  | address | [Address](#address)|  |
   | birthDateProvided | `boolean`| True if individual's birthdate has been provided |
   | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
 
@@ -509,7 +509,7 @@ Describes an individual who represents a business account.
   | name | `string`|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
-  | address | `Address`|  |
+  | address | [Address](#address)|  |
   | birthDateProvided | `boolean`| True if individual's birthdate has been provided |
   | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
   | responsibilities | Array.<[Responsibility](#responsibility)>|  |
@@ -544,7 +544,7 @@ Describes customer support contact information for a business account.
 | ---- | ---- | ----------- |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
-  | address | `Address`|  |
+  | address | [Address](#address)|  |
   | website | `string`|  |
 
 
@@ -599,6 +599,23 @@ Describes customer support contact information for a business account.
   | foreignID | `string`| Serves as an optional alias from a foreign/external system which can be used to reference this resource |
   | count | `number`| Optional parameter to limit the number of results in the query |
   | skip | `number`| The number of items to offset before starting to collect the result set |
+
+
+
+### Address
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | addressLine1 | `string`|  |
+  | addressLine2 | `string`|  |
+  | city | `string`|  |
+  | stateOrProvince | `string`| 2 characters |
+  | postalCode | `string`| 5 characters |
+  | country | `string`| 2 characters |
 
 
 

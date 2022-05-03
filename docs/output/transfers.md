@@ -426,7 +426,7 @@ The results of submitting cardholder data to a card network for verification.
   | bin | `string`|  |
   | expiration | [CardExpiration](#cardexpiration)|  |
   | holderName | `string`|  |
-  | billingAddress | `Address`|  |
+  | billingAddress | [Address](#address)|  |
   | cardVerification | [CardVerification](#cardverification)|  |
 
 
