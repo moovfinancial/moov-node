@@ -90,13 +90,35 @@
  * @tag Representatives
  */
 /**
+ * @typedef RepresentativeBirthDate
+ * @property {number} day
+ * @property {number} month
+ * @property {number} year - 4 digit year
+ *
+ * @tag Representatives
+ */
+/**
+ * @typedef GovernmentID
+ * @property {string} full - string <= 64 characters
+ * @property {string} lastFour - string <= 4 characters
+ *
+ * @tag Representatives
+ */
+/**
+ * @typedef RepresentativeGovernmentID
+ * @property {GovernmentID} ssn
+ * @property {GovernmentID} itin
+ *
+ * @tag Representatives
+ */
+/**
  * @typedef RepresentativeCreateUpdate
  * @property {RepresentativeName} name - Name for an individual
  * @property {RepresentativePhone} phone - Phone for an individual
  * @property {string} email - Email Address.  string <email> <= 255 characters
  * @property {RepresentativeAddress} address - Address for an individual.
- * @property {boolean} birthDateProvided - Indicates whether this Representative's birth date has been provided
- * @property {boolean} governmentIDProvided - Indicates whether a government ID (SSN, ITIN, etc.) has been provided for this Representative
+ * @property {RepresentativeBirthDate} birthDate - Birthdate for an individual
+ * @property {RepresentativeGovernmentID} governmentID
  * @property {RepresentativeResponsibilities} responsibilities - Describes the job responsibilities of an individual
  *
  * @tag Representatives
@@ -281,6 +303,28 @@ export type RepresentativeResponsibilities = {
      */
     jobTitle: string;
 };
+export type RepresentativeBirthDate = {
+    day: number;
+    month: number;
+    /**
+     * - 4 digit year
+     */
+    year: number;
+};
+export type GovernmentID = {
+    /**
+     * - string <= 64 characters
+     */
+    full: string;
+    /**
+     * - string <= 4 characters
+     */
+    lastFour: string;
+};
+export type RepresentativeGovernmentID = {
+    ssn: GovernmentID;
+    itin: GovernmentID;
+};
 export type RepresentativeCreateUpdate = {
     /**
      * - Name for an individual
@@ -299,13 +343,10 @@ export type RepresentativeCreateUpdate = {
      */
     address: RepresentativeAddress;
     /**
-     * - Indicates whether this Representative's birth date has been provided
+     * - Birthdate for an individual
      */
-    birthDateProvided: boolean;
-    /**
-     * - Indicates whether a government ID (SSN, ITIN, etc.) has been provided for this Representative
-     */
-    governmentIDProvided: boolean;
+    birthDate: RepresentativeBirthDate;
+    governmentID: RepresentativeGovernmentID;
     /**
      * - Describes the job responsibilities of an individual
      */

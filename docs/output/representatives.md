@@ -259,6 +259,46 @@ Representative phone
 
 
 
+### RepresentativeBirthDate
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | day | `number`|  |
+  | month | `number`|  |
+  | year | `number`| 4 digit year |
+
+
+
+### GovernmentID
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | full | `string`| string <= 64 characters |
+  | lastFour | `string`| string <= 4 characters |
+
+
+
+### RepresentativeGovernmentID
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | ssn | [GovernmentID](#governmentid)|  |
+  | itin | [GovernmentID](#governmentid)|  |
+
+
+
 ### RepresentativeCreateUpdate
 
 
@@ -271,8 +311,8 @@ Representative phone
   | phone | [RepresentativePhone](#representativephone)| Phone for an individual |
   | email | `string`| Email Address.  string <email> <= 255 characters |
   | address | [RepresentativeAddress](#representativeaddress)| Address for an individual. |
-  | birthDateProvided | `boolean`| Indicates whether this Representative's birth date has been provided |
-  | governmentIDProvided | `boolean`| Indicates whether a government ID (SSN, ITIN, etc.) has been provided for this Representative |
+  | birthDate | [RepresentativeBirthDate](#representativebirthdate)| Birthdate for an individual |
+  | governmentID | [RepresentativeGovernmentID](#representativegovernmentid)|  |
   | responsibilities | [RepresentativeResponsibilities](#representativeresponsibilities)| Describes the job responsibilities of an individual |
 
 
