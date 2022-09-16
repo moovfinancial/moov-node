@@ -1,6 +1,6 @@
 {
     "name": "@moovio/node",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Node SDK for the Moov API and Dashboard",
     "module": "dist/mjs/index.js",
     "main": "dist/cjs/index.js",
