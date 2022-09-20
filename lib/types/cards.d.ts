@@ -28,6 +28,17 @@ export namespace CARD_VERIFICATION_STATUS {
  * @tag Cards
  */
 /**
+ * Information required to link a new card
+ * @typedef LinkCard
+ * @property {string} cardNumber - All digits of the card
+ * @property {CardExpiration} expiration - Card expiration date
+ * @property {string} cardCvv - 3-4 digit card verification value
+ * @property {string} holderName - Full name of the card holder
+ * @property {CardBillingAddress} billingAddress - The billing address of the card
+ *
+ * @tag Cards
+ */
+/**
  * Card billing address
  * @typedef CardBillingAddress
  * @property {string} addressLine1 - string <= 32 characters
@@ -45,17 +56,6 @@ export namespace CARD_VERIFICATION_STATUS {
  * @property {CARD_VERIFICATION_STATUS} cvv - Verification status of the CVV
  * @property {CARD_VERIFICATION_STATUS} addressLine1 - Verification status of addressLine1
  * @property {CARD_VERIFICATION_STATUS} postalCode - Verification status of the postalCode
- *
- * @tag Cards
- */
-/**
- * Card external info
- * @typedef CardExternalInfo
- * @property {CardExpiration} expiration - The expiration info of the card
- * @property {string} cardNumber - All digits of the card
- * @property {string} cardCvv - Verification status of the CVV
- * @property {string} holderName - The name of the card holder
-* @property {CardBillingAddress} billingAddress - The billing address of the card
  *
  * @tag Cards
  */
@@ -132,14 +132,15 @@ export class Cards {
      */
     list(accountID: string): Promise<Card[]>;
     /**
-     * link card to account
+     * Links a card to a Moov account. Only use this endpoint if you have provided Moov with a
+     * copy of your PCI attestation of compliance.
      *
-     * @param {string} accountID - Account to query
-     * @param {CardExternalInfo} cardInfo
+     * @param {string} accountID - Account to link
+     * @param {LinkCard} card - Card information
      * @returns {Promise<Card>}
      * @tag Cards
      */
-     link(accountID: string, cardInfo: any): Promise<Card>;
+    link(accountID: string, card: LinkCard): Promise<Card>;
     /**
      * Disables a card with the specified ID.
      *
@@ -162,6 +163,31 @@ export type CardExpiration = {
      * - 2 character year
      */
     year: string;
+};
+/**
+ * Information required to link a new card
+ */
+export type LinkCard = {
+    /**
+     * - All digits of the card
+     */
+    cardNumber: string;
+    /**
+     * - Card expiration date
+     */
+    expiration: CardExpiration;
+    /**
+     * - 3-4 digit card verification value
+     */
+    cardCvv: string;
+    /**
+     * - Full name of the card holder
+     */
+    holderName: string;
+    /**
+     * - The billing address of the card
+     */
+    billingAddress: CardBillingAddress;
 };
 /**
  * Card billing address

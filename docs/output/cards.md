@@ -53,6 +53,32 @@ cards.list(accountID)
 
 
 
+## Link
+
+
+Links a card to a Moov account. Only use this endpoint if you have provided Moov with a
+copy of your PCI attestation of compliance.
+
+```javascript
+cards.link(accountID, card)
+```
+
+**Parameters**
+{{< table >}}
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| accountID |  `string` | Account to link |
+| card |  [LinkCard](#linkcard) | Card information |
+{{</ table >}}
+
+
+
+**Returns**
+
+`Promise.<Card>`
+
+
+
 ## Disable
 
 
@@ -92,6 +118,22 @@ Card account expiration date
 | ---- | ---- | ----------- |
   | month | `string`| 2 character month |
   | year | `string`| 2 character year |
+
+
+
+### LinkCard
+
+Card information collected for acquisition.
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | cardNumber | `string`| All digits of the card |
+  | expiration | [CardExpiration](#cardexpiration)| Card expiration date |
+  | cardCvv | `string`| 3-4 digit card verification value |
+  | holderName | `string`| Full name of the card holder |
+  | billingAddress | [CardBillingAddress](#cardbillingaddress)| The billing address of the card |
 
 
 
