@@ -49,6 +49,17 @@ export namespace CARD_VERIFICATION_STATUS {
  * @tag Cards
  */
 /**
+ * Card external info
+ * @typedef CardExternalInfo
+ * @property {CardExpiration} expiration - The expiration info of the card
+ * @property {string} cardNumber - All digits of the card
+ * @property {string} cardCvv - Verification status of the CVV
+ * @property {string} holderName - The name of the card holder
+* @property {CardBillingAddress} billingAddress - The billing address of the card
+ *
+ * @tag Cards
+ */
+/**
  * Describes a Card account.
  * @typedef Card
  * @property {string} cardID - Card account identifier
@@ -120,6 +131,15 @@ export class Cards {
      * @tag Cards
      */
     list(accountID: string): Promise<Card[]>;
+    /**
+     * link card to account
+     *
+     * @param {string} accountID - Account to query
+     * @param {CardExternalInfo} cardInfo
+     * @returns {Promise<Card>}
+     * @tag Cards
+     */
+     link(accountID: string, cardInfo: any): Promise<Card>;
     /**
      * Disables a card with the specified ID.
      *
