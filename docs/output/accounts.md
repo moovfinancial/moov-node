@@ -50,7 +50,7 @@ accounts.list(accountID, criteria)
 
 **Returns**
 
-`Promise.<Account>`
+`Promise.<Array.<Account>>`
 
 
 

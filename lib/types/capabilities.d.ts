@@ -152,7 +152,7 @@ export namespace REQUIREMENT_ERROR_CODE {
  * @property {Array.<REQUIREMENT_ERROR_CODE>} errorCode
  *
  * @tag Capabilities
-*/
+ */
 /**
  * The Capabilities API
  * @tag Capabilities

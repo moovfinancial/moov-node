@@ -279,7 +279,7 @@ export class Moov {
      * @returns {Wallets}
      * @tag Moov
      *
-    * @example
+     * @example
      * const moov = new Moov(...);
      * try {
      *   await moov.wallets.get(...);

@@ -37,7 +37,7 @@ try {
     search: "123 Fake St",
     includeCities: "Springfield"
     // ...
-  }); 
+  });
 } catch (err) {
   // ...
 }
