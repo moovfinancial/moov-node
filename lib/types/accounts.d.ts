@@ -345,10 +345,10 @@ export class Accounts {
      *
      * @param {string} accountID - Account to query
      * @param {AccountListCriteria} criteria - Optional criteria to limit the list returned.
-     * @returns {Promise<Account>}
+     * @returns {Promise<Account[]>}
      * @tag Accounts
      */
-    list(accountID: string, criteria: AccountListCriteria): Promise<Account>;
+    list(accountID: string, criteria: AccountListCriteria): Promise<Account[]>;
     /**
      * Retrieves details for the account with the specified ID.
      *
