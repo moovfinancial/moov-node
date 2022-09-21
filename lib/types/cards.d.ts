@@ -28,7 +28,7 @@ export namespace CARD_VERIFICATION_STATUS {
  * @tag Cards
  */
 /**
- * Information required to link a new card
+ * Card information collected for acquisition.
  * @typedef LinkCard
  * @property {string} cardNumber - All digits of the card
  * @property {CardExpiration} expiration - Card expiration date
@@ -165,7 +165,7 @@ export type CardExpiration = {
     year: string;
 };
 /**
- * Information required to link a new card
+ * Card information collected for acquisition.
  */
 export type LinkCard = {
     /**
