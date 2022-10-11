@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Updated
 
-- Added idempotency key parameter `transfers.create` #75
+- Added idempotency key parameter `transfers.create()` and `transfers.refund()` #75
 - Removed unnecessary payload from `Cards.list()` #73
 
 ## [1.1.1] - 2022-09-21

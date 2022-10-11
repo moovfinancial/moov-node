@@ -345,6 +345,7 @@ export class Transfers {
      * Initiate a refund for a card transfer.
      *
      * @param {string} transferID
+     * @param {string} [idempotencyKey] - Optional UUID to prevent duplicate refunds
      * @returns {Promise<TransferResponse>}
      * @tag Transfers
      *
@@ -356,7 +357,7 @@ export class Transfers {
      *   // ...
      * }
      */
-    refund(transferID: string): Promise<TransferResponse>;
+    refund(transferID: string, idempotencyKey?: string): Promise<TransferResponse>;
     /**
      * List refunds for a card transfer.
      *

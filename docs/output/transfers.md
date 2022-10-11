@@ -231,7 +231,7 @@ try {
 Initiate a refund for a card transfer.
 
 ```javascript
-transfers.refund(transferID)
+transfers.refund(transferID, idempotencyKey)
 ```
 
 **Parameters**
@@ -239,6 +239,7 @@ transfers.refund(transferID)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | transferID |  `string` |  |
+| idempotencyKey |  `string` | Optional UUID to prevent duplicate refunds |
 {{</ table >}}
 
 
