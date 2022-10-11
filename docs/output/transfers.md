@@ -12,7 +12,7 @@ A transfer is the movement of money between Moov accounts, from source to destin
 Creates a transfer to move money from a source to a destination.
 
 ```javascript
-transfers.create(transfer)
+transfers.create(transfer, idempotencyKey)
 ```
 
 **Parameters**
@@ -20,6 +20,7 @@ transfers.create(transfer)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | transfer |  [TransferCreate](#transfercreate) | Subset of the Transfer object |
+| idempotencyKey |  `string` | Optional UUID to prevent duplicate transfers |
 {{</ table >}}
 
 

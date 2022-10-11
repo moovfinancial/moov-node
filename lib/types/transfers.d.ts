@@ -225,6 +225,7 @@ export class Transfers {
      * Creates a transfer to move money from a source to a destination.
      *
      * @param {TransferCreate} transfer - Subset of the Transfer object
+     * @param {string} [idempotencyKey] - Optional UUID to prevent duplicate transfers
      * @returns {Promise<TransferResponse>}
      * @tag Transfers
      *
@@ -250,7 +251,7 @@ export class Transfers {
      * }
      *
      */
-    create(transfer: TransferCreate): Promise<TransferResponse>;
+    create(transfer: TransferCreate, idempotencyKey?: string): Promise<TransferResponse>;
     /**
      * Lists transfers that match the given criteria.
      *
