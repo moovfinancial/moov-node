@@ -117,7 +117,7 @@ try {
 moov.bankAccounts
 ```
 
-Read more on [bankAccounts](bank-accounts) in the Moov Node SDK.
+Read more on [bankAccounts](bankAccounts) in the Moov Node SDK.
 
 Gets the Bank Accounts API.
 
@@ -188,6 +188,7 @@ try {
 ```javascript
 moov.enrichedAddresses
 ```
+
 
 Read more on [enrichedAddresses](enriched-addresses) in the Moov Node SDK.
 
