@@ -117,7 +117,7 @@ try {
 moov.bankAccounts
 ```
 
-Read more on [bankAccounts](bank-accounts) in the Moov Node SDK.
+Read more on [bankAccounts](bankAccounts) in the Moov Node SDK.
 
 Gets the Bank Accounts API.
 
@@ -189,7 +189,7 @@ try {
 moov.enrichedAddresses
 ```
 
-Read more on [enrichedAddresses](enriched-Addresses) in the Moov Node SDK.
+Read more on [enrichedAddresses](enrichedAddresses) in the Moov Node SDK.
 
 Gets the Enriched Address API.
 
@@ -213,7 +213,7 @@ try {
 moov.enrichedProfiles
 ```
 
-Read more on [enrichedProfiles](enriched-Profiles) in the Moov Node SDK.
+Read more on [enrichedProfiles](enrichedProfiles) in the Moov Node SDK.
 
 Gets the Enriched Profile API.
 
@@ -237,7 +237,7 @@ try {
 moov.paymentMethods
 ```
 
-Read more on [paymentMethods](payment-Methods) in the Moov Node SDK.
+Read more on [paymentMethods](paymentMethods) in the Moov Node SDK.
 
 Gets the Payment Methods API.
 
