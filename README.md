@@ -1,6 +1,6 @@
-# Node SDK for Moov API and Dashboard
+# Node SDK for Moov API
 
-TBD
+This SDK provides convenient configurations and methods for using the Moov API in a server-side Node.js environment. 
 
 ## Installation
 
@@ -65,8 +65,19 @@ The following JSDoc tags should be included on any functions, methods, types, an
 
 @enum - To document Enums
 
-@private - To not include the in any public documentation for customers. 
+@private - To not include the in any public documentation for customers.
 
+## Documentation generation
+
+To generate the documentation, run
+
+```bash
+npm run docs
+```
+
+The generation logic is in `scripts/generateDocs.cjs`. We parse the raw data produced by JSDoc and then run it through a set of handlebars templates in `docs/templates`. The final output is in `docs/output`.
+
+Handlebars "helpers" do a lot of the custom documentation generation we require for our documentation website. See the calls to `handlebars.registerHelper()` in `scripts/generateDocs.cjs` for more information.
 
 ## Troubleshooting and support
 

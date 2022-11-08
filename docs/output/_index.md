@@ -189,7 +189,8 @@ try {
 moov.enrichedAddresses
 ```
 
-Read more on [enrichedAddresses](enrichedAddresses) in the Moov Node SDK.
+
+Read more on [enrichedAddresses](enriched-addresses) in the Moov Node SDK.
 
 Gets the Enriched Address API.
 
@@ -213,7 +214,7 @@ try {
 moov.enrichedProfiles
 ```
 
-Read more on [enrichedProfiles](enrichedProfiles) in the Moov Node SDK.
+Read more on [enrichedProfiles](enriched-profiles) in the Moov Node SDK.
 
 Gets the Enriched Profile API.
 
@@ -237,7 +238,7 @@ try {
 moov.paymentMethods
 ```
 
-Read more on [paymentMethods](paymentMethods) in the Moov Node SDK.
+Read more on [paymentMethods](payment-methods) in the Moov Node SDK.
 
 Gets the Payment Methods API.
 

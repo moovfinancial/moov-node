@@ -2,8 +2,9 @@ const child_process = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
+const { paramCase } = require("change-case");
 const handlebars = require("handlebars");
-var helpers = require('handlebars-helpers');
+var helpers = require("handlebars-helpers");
 helpers.string();
 const _ = require("lodash");
 const { inspect } = require("util");
@@ -75,45 +76,46 @@ function parseData(jsdocsData) {
 
   // Adds relative links to typedef properties
   // TODO: Handle parameters in functions
-  const typeAndEnumNames = jsdocDataFiltered.filter((doc, i) => doc.kind === "typedef" || "enum").map(doc => doc.name.toLowerCase());
+  const typeAndEnumNames = jsdocDataFiltered
+    .filter((doc, i) => doc.kind === "typedef" || "enum")
+    .map((doc) => doc.name.toLowerCase());
   const mappedJsdoc = jsdocDataFiltered.map((doc, i) => {
     function mapTypes(propOrParam) {
-      if(propOrParam.type.names) {
+      if (propOrParam.type.names) {
         propOrParam.type.names.forEach((name, index) => {
           // Check if the value is an array
 
-          let isArray =  name.includes("Array.<");
-          const tagName = name.replace("Array.<", "").replace(">", "")
+          let isArray = name.includes("Array.<");
+          const tagName = name.replace("Array.<", "").replace(">", "");
           // Find link value for each name
-          const typeToMatch = isArray? tagName : name;
+          const typeToMatch = isArray ? tagName : name;
           const i = typeAndEnumNames.indexOf(typeToMatch.toLowerCase());
           // Hydrate the names array with an object with additional information
           propOrParam.type.names[index] = {
             link: i >= 0 ? `#${typeToMatch.toLowerCase()}` : null,
             name: name,
-            isArray
+            isArray,
           };
-        })
+        });
         return propOrParam;
       }
     }
-    if(doc.kind === "typedef") {
-      doc.properties = doc.properties.map((prop) => mapTypes(prop))
+    if (doc.kind === "typedef") {
+      doc.properties = doc.properties.map((prop) => mapTypes(prop));
     }
-    if(doc.kind == "function") {
-      doc.params = doc.params.map((param) => mapTypes(param))
+    if (doc.kind == "function") {
+      doc.params = doc.params.map((param) => mapTypes(param));
     }
-    if(doc.kind === "constructor") {
-      doc.params = doc.params.map((param) => mapTypes(param))
+    if (doc.kind === "constructor") {
+      doc.params = doc.params.map((param) => mapTypes(param));
     }
-    if(doc.kind === "member") {
+    if (doc.kind === "member") {
       // TODO: Add link to the member that goes to the proper page
       // doc.params = doc.params.map((param) => mapTypes(param))
     }
     return doc;
-  })
+  });
 
-  
   // Group identifiers by tag
   const jsdocDataByTag = _.groupBy(mappedJsdoc, (x) =>
     x.tags?.length ? x.tags[0].text : "untagged"
@@ -127,10 +129,10 @@ function parseData(jsdocsData) {
     // Get weight to ensure proper order of
     const tagIndex = menuOrder.indexOf(tag);
     const weight = (tagIndex + 1) * 10;
-    if(tag === "Moov") tag = "Node SDK";
+    if (tag === "Moov") tag = "Node SDK";
     docData[tag] = {
       name: tag,
-      weight
+      weight,
     };
 
     // Classes and their members
@@ -218,19 +220,19 @@ function writeDataToTemplates(data) {
     "summaryOrDescription",
     (x) => x.summary || x.description
   );
-  handlebars.registerHelper("capitalizeFirst")
+  handlebars.registerHelper("paramCase", (x) => paramCase(x));
+  handlebars.registerHelper("capitalizeFirst");
   // Renders the inline link
   handlebars.registerHelper("renderLink", (name, link, isArray) => {
-    if(isArray && link != null){
+    if (isArray && link != null) {
       const linkText = name.replace("Array.<", "").replace(">", "");
-      return `Array.<[${linkText}](${link})>`
-    } else if (link != null){
-      return `[${name}](${link})`
-    }else {
+      return `Array.<[${linkText}](${link})>`;
+    } else if (link != null) {
+      return `[${name}](${link})`;
+    } else {
       const noQuotes = name.replace(/"/g, "");
       return `\`${noQuotes}\``;
     }
-
   });
 
   // Register partials
@@ -292,21 +294,30 @@ function writeDataToTemplates(data) {
     const tagTemplate = handlebars.compile(tagContent, { noEscape: true });
 
     // Write the final file
-    let filename =  tag; 
+    let filename = tag;
     // Rename Moov tag to index;
-    if(tag === 'Node SDK')filename = '_index';
-    const filenameWithDashes = filename.replace(' ', '-');
-    const outputPath = path.join(OUTPUT_PATH, `${filenameWithDashes.toLowerCase()}.md`);
+    if (tag === "Node SDK") filename = "_index";
+    const filenameWithDashes = filename.replace(" ", "-");
+    const outputPath = path.join(
+      OUTPUT_PATH,
+      `${filenameWithDashes.toLowerCase()}.md`
+    );
     try {
-      fs.writeFileSync(outputPath, tagTemplate(usingTagTemplate ? data[tag] : apiDocs));
+      fs.writeFileSync(
+        outputPath,
+        tagTemplate(usingTagTemplate ? data[tag] : apiDocs)
+      );
 
       const localCopy = false;
-      if(localCopy){
-        const pathToDocRepo = '/Users/scottmoov/Documents/projects/'; // Replace with path to cloned docs repo
-        const localpath = 'docs/content/node/' + filenameWithDashes.toLowerCase() + '.md'
-        fs.writeFileSync(pathToDocRepo + localpath, tagTemplate(usingTagTemplate ? data[tag] : apiDocs));
+      if (localCopy) {
+        const pathToDocRepo = "/Users/scottmoov/Documents/projects/"; // Replace with path to cloned docs repo
+        const localpath =
+          "docs/content/node/" + filenameWithDashes.toLowerCase() + ".md";
+        fs.writeFileSync(
+          pathToDocRepo + localpath,
+          tagTemplate(usingTagTemplate ? data[tag] : apiDocs)
+        );
       }
-
     } catch (err) {
       console.error(`Unable to write docs to "${outputPath}"`);
       console.error(err.message);

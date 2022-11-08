@@ -5,6 +5,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2] - 2022-10-11
+
+### Updated
+
+- Added idempotency key parameter `transfers.create()` and `transfers.refund()` #75
+- Removed unnecessary payload from `Cards.list()` #73
+
+## [1.1.1] - 2022-09-21
+
+### Updated
+
+- Merged a dependabot alert that got left behind on the previous release
+
+## [1.1.0] - 2022-09-21
+
+### Added
+
+- Cards.link() function, thanks https://github.com/paulMery
+
+### Updated
+
+- Fixed documentation for listing accounts #69
+- Applied documentation standards to recently updated Card endpoints
+- Applied Node conventions to internal error messages
+
+## [1.0.6] - 2022-09-16
+
+### Updated
+
+- Fixed documentation for name objects #67
+
+## [1.0.5] - 2022-09-16
+
+### Updated
+
+- Failed to include the /dist folder in the previous NPM publish
+
+## [1.0.4] - 2022-08-30
+
+### Updated
+
+- Updated typescripts types for Accounts to include verification property
+
 ## [1.0.3] - 2022-05-25
 
 ### Updated

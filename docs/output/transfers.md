@@ -12,7 +12,7 @@ A transfer is the movement of money between Moov accounts, from source to destin
 Creates a transfer to move money from a source to a destination.
 
 ```javascript
-transfers.create(transfer)
+transfers.create(transfer, idempotencyKey)
 ```
 
 **Parameters**
@@ -20,6 +20,7 @@ transfers.create(transfer)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | transfer |  [TransferCreate](#transfercreate) | Subset of the Transfer object |
+| idempotencyKey |  `string` | Optional UUID to prevent duplicate transfers |
 {{</ table >}}
 
 
@@ -230,7 +231,7 @@ try {
 Initiate a refund for a card transfer.
 
 ```javascript
-transfers.refund(transferID)
+transfers.refund(transferID, idempotencyKey)
 ```
 
 **Parameters**
@@ -238,6 +239,7 @@ transfers.refund(transferID)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | transferID |  `string` |  |
+| idempotencyKey |  `string` | Optional UUID to prevent duplicate refunds |
 {{</ table >}}
 
 
@@ -337,6 +339,19 @@ try {
 
 
 ## Types
+### CardDetails
+
+
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | dynamicDescriptor | `string`| An optional override of the default card statement descriptor for a single transfer. |
+  | transactionSource | `first-recurring`,  `recurring`,  `unscheduled`,  `null`| Enum: [first-recurring recurring unscheduled] Describes how the card transaction was initiated |
+
+
+
 ### PaymentMethodAccount
 
 High-level account information associated with a payment method.

@@ -8,6 +8,7 @@
  * @property {Profile} profile - Details for individual or business
  * @property {object} metadata - Arbitrary key-value pairs
  * @property {string} foreignID - Optional identification or alias
+ * @property {AccountVerification} verification - Describes identity verification status and relevant identity verification documents
  * @property {CustomerSupport|null} customerSupport - Displayed on credit card transactions (business only)
  * @property {AccountSettings|null} settings - Account settings
  * @property {string} createdOn - Date account was created
@@ -202,6 +203,15 @@
  * @tag Accounts
  */
 /**
+ * A person's name.
+ * @typedef Name
+ * @property {string} firstName
+ * @property {string} middleName
+ * @property {string} lastName
+ * @property {string} suffix
+ * @tag Accounts
+ */
+/**
  * Profile for a Moov acocunt. May be business or individual.
  * @typedef Profile
  * @property {BusinessProfile} [business]
@@ -228,7 +238,7 @@
 /**
  * Describes the individual associated with a non-business account.
  * @typedef IndividualProfile
- * @property {string} name
+ * @property {Name} name
  * @property {Phone} phone
  * @property {string} email
  * @property {Address} address
@@ -253,7 +263,7 @@
 /**
  * Describes an individual who represents a business account.
  * @typedef Representative
- * @property {string} name
+ * @property {Name} name
  * @property {Phone} phone
  * @property {string} email
  * @property {Address} address
@@ -272,6 +282,12 @@
  * @property {boolean} isOwner
  * @property {number} ownershipPercentage - Required if `isOwner` is true
  * @property {string} jobTitle
+ * @tag Accounts
+ */
+/**
+ * Describes the verification state of an account
+ * @typedef AccountVerification
+ * @property {"unverified"|"pending"|"resubmit"|"review"|"verified"|"failed"} verificationStatus - The status of an identity verification for a profile
  * @tag Accounts
  */
 /**
@@ -300,7 +316,7 @@
  */
 /**
  * @typedef AccountListCriteria
- * @property {string} name - If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs`
+ * @property {Name} name - If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs`
  * @property {string} email - Filter connected accounts by email address. It is not necessary to provided the full email address as partial matches will also be returned.
  * @property {"individual"|"business"} type - Filter connected accounts by AccountType. If the `type` parameter is used in combination with name, only the corresponding type's `name` fields will be searched. For example, if `type=business` and `name=moov`, the search will attempt to find matches against the display name and Business Profile name fields (`legalBusinessName`, and `doingBusinessAs`).
  * @property {string} foreignID - Serves as an optional alias from a foreign/external system which can be used to reference this resource
@@ -329,10 +345,10 @@ export class Accounts {
      *
      * @param {string} accountID - Account to query
      * @param {AccountListCriteria} criteria - Optional criteria to limit the list returned.
-     * @returns {Promise<Account>}
+     * @returns {Promise<Account[]>}
      * @tag Accounts
      */
-    list(accountID: string, criteria: AccountListCriteria): Promise<Account>;
+    list(accountID: string, criteria: AccountListCriteria): Promise<Account[]>;
     /**
      * Retrieves details for the account with the specified ID.
      *
@@ -406,6 +422,10 @@ export type Account = {
      */
     foreignID: string;
     /**
+     * - Describes identity verification status and relevant identity verification documents
+     */
+    verification: AccountVerification;
+    /**
      * - Displayed on credit card transactions (business only)
      */
     customerSupport: CustomerSupport | null;
@@ -462,6 +482,15 @@ export type TermsOfServiceToken = {
     token: string;
 };
 /**
+ * A person's name.
+ */
+export type Name = {
+    firstName: string;
+    middleName: string;
+    lastName: string;
+    suffix: string;
+};
+/**
  * Profile for a Moov acocunt. May be business or individual.
  */
 export type Profile = {
@@ -495,7 +524,7 @@ export type BusinessProfile = {
  * Describes the individual associated with a non-business account.
  */
 export type IndividualProfile = {
-    name: string;
+    name: Name;
     phone: Phone;
     email: string;
     address: Address;
@@ -530,7 +559,7 @@ export type IndustryCodes = {
  * Describes an individual who represents a business account.
  */
 export type Representative = {
-    name: string;
+    name: Name;
     phone: Phone;
     email: string;
     address: Address;
@@ -569,6 +598,15 @@ export type Responsibility = {
     jobTitle: string;
 };
 /**
+ * Describes the verification state of an account
+ */
+export type AccountVerification = {
+    /**
+     * - The status of an identity verification for a profile
+     */
+    verificationStatus: "unverified" | "pending" | "resubmit" | "review" | "verified" | "failed";
+};
+/**
  * Describes customer support contact information for a business account.
  */
 export type CustomerSupport = {
@@ -596,7 +634,7 @@ export type AccountListCriteria = {
     /**
      * - If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs`
      */
-    name: string;
+    name: Name;
     /**
      * - Filter connected accounts by email address. It is not necessary to provided the full email address as partial matches will also be returned.
      */

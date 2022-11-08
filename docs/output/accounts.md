@@ -50,7 +50,7 @@ accounts.list(accountID, criteria)
 
 **Returns**
 
-`Promise.<Account>`
+`Promise.<Array.<Account>>`
 
 
 
@@ -198,6 +198,7 @@ Describes a Moov account associated with an individual or a business.
 | profile |  [Profile](#profile) | Details for individual or business |
 | metadata |  `object` | Arbitrary key-value pairs |
 | foreignID |  `string` | Optional identification or alias |
+| verification |  [AccountVerification](#accountverification) | Describes identity verification status and relevant identity verification documents |
 | customerSupport |  [CustomerSupport](#customersupport),  `null` | Displayed on credit card transactions (business only) |
 | settings |  [AccountSettings](#accountsettings),  `null` | Account settings |
 | createdOn |  `string` | Date account was created |
@@ -418,6 +419,21 @@ A token that can then be used to accept Moov's Terms of Service. Must be generat
 
 
 
+### Name
+
+A person's name.
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | firstName | `string`|  |
+  | middleName | `string`|  |
+  | lastName | `string`|  |
+  | suffix | `string`|  |
+
+
+
 ### Profile
 
 Profile for a Moov acocunt. May be business or individual.
@@ -462,7 +478,7 @@ Describes the individual associated with a non-business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | name | `string`|  |
+  | name | [Name](#name)|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
   | address | [Address](#address)|  |
@@ -506,7 +522,7 @@ Describes an individual who represents a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | name | `string`|  |
+  | name | [Name](#name)|  |
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
   | address | [Address](#address)|  |
@@ -531,6 +547,18 @@ Describes the responsibilities associated with a business representative.
   | isOwner | `boolean`|  |
   | ownershipPercentage | `number`| Required if `isOwner` is true |
   | jobTitle | `string`|  |
+
+
+
+### AccountVerification
+
+Describes the verification state of an account
+
+**Properties**
+
+| Property | Type | Description |
+| ---- | ---- | ----------- |
+  | verificationStatus | `unverified`,  `pending`,  `resubmit`,  `review`,  `verified`,  `failed`| The status of an identity verification for a profile |
 
 
 
@@ -593,7 +621,7 @@ Describes customer support contact information for a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | name | `string`| If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs` |
+  | name | [Name](#name)| If provided, this query will attempt to find matches (including partial) against the following Account and Profile fields: Account `displayName`, Individual Profile `firstName`, `middleName`, `lastName`, and `suffix`, and Business Profile `legalBusinessName`, and `doingBusinessAs` |
   | email | `string`| Filter connected accounts by email address. It is not necessary to provided the full email address as partial matches will also be returned. |
   | type | `individual`,  `business`| Filter connected accounts by AccountType. If the `type` parameter is used in combination with name, only the corresponding type's `name` fields will be searched. For example, if `type=business` and `name=moov`, the search will attempt to find matches against the display name and Business Profile name fields (`legalBusinessName`, and `doingBusinessAs`). |
   | foreignID | `string`| Serves as an optional alias from a foreign/external system which can be used to reference this resource |

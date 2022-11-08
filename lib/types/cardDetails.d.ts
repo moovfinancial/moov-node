@@ -5,8 +5,8 @@ export type CardDetails = {
      */
     dynamicDescriptor: string;
     /**
-     * - Enum: [recurring unscheduled] Describes how the card transaction was initiated
+     * - Enum: [first-recurring recurring unscheduled] Describes how the card transaction was initiated
      */
-    merchantInitiatedType: "recurring" | "unscheduled" | null;
+    transactionSource: "first-recurring" | "recurring" | "unscheduled" | null;
 };
 //# sourceMappingURL=cardDetails.d.ts.map
