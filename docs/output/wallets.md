@@ -128,8 +128,8 @@ Describes a Moov Wallet
   {{< table >}}
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-| walletID |  `string` |  |
-| availableBalance |  [Amount](#amount) |  |
+| walletID |  `string` | UUID v4 |
+| availableBalance |  [Amount](#amount) | Balance based on all completed transactions against the wallet. |
 {{</ table >}}
   {{< /tab>}}
 {{< tab title="Example">}}

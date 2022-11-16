@@ -116,7 +116,13 @@ export class Wallets {
  * Describes a Moov Wallet
  */
 export type Wallet = {
+    /**
+     * - UUID v4
+     */
     walletID: string;
+    /**
+     * - Balance based on all completed transactions against the wallet.
+     */
     availableBalance: Amount;
 };
 export type WalletTransaction = {
