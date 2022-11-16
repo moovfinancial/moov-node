@@ -8,7 +8,7 @@ on:
 jobs:
   changedfiles:
     name: Publish to docs
-    runs-on: [ubuntu-latest]
+    runs-on: [self-hosted, services, X64]
     outputs:
       all: ${{ steps.changes.outputs.all }}
     steps:
