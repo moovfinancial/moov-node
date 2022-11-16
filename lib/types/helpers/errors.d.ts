@@ -31,5 +31,6 @@ export namespace Err {
     const MISSING_TRANSFER_OPTION_CRITERIA: string;
     const MISSING_UNIQUE_ID: string;
     const MISSING_WALLET_ID: string;
+    const MISSING_WALLET_TRANSACTION_ID: string;
 }
 //# sourceMappingURL=errors.d.ts.map
