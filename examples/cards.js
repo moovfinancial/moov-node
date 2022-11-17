@@ -5,7 +5,7 @@ import { loadCredentials } from "./loadCredentials.js";
 async function run() {
   const args = process.argv.slice(2);
 
-  if (args.length < 2 || args.length % 2) {
+  if (args.length < 1) {
     usage();
   }
 
@@ -14,34 +14,36 @@ async function run() {
     credentials = loadCredentials("./secrets/credentials.json");
   } else {
     for (var index = 0; index < args.length; index += 2) {
-      credentials[args[index].substring(1)] = args[index +1];
+      credentials[args[index].substring(1)] = args[index + 1];
     }
   }
 
-  if(!credentials["accountID"] 
-    || !credentials["publicKey"] 
-    || !credentials["secretKey"] 
-    || !credentials["domain"] 
-    || !credentials["connectedAccountID"]) {
+  if (
+    !credentials["accountID"] ||
+    !credentials["publicKey"] ||
+    !credentials["secretKey"] ||
+    !credentials["domain"] ||
+    !credentials["connectedAccountID"]
+  ) {
     usage();
   }
 
   const moov = new Moov(credentials, gotOptionsForLogging);
 
-  try
-  {
-    // Get lsit of all cards for connected account.
+  try {
+    // Get list of all cards for connected account.
     const results = await moov.cards.list(credentials.connectedAccountID);
     console.log(results);
 
     // Get a specific card.
-    const result = await moov.cards.get(credentials.connectedAccountID, results[0].cardID);
+    const result = await moov.cards.get(
+      credentials.connectedAccountID,
+      results[0].cardID
+    );
 
     // Disable a specific card.
     await moov.cards.disable(credentials.connectedAccountID, results[0].cardID);
-  }
-  catch(err)
-  {
+  } catch (err) {
     console.error("Error: ", err.message);
   }
 }
