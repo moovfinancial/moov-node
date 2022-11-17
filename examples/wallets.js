@@ -68,6 +68,15 @@ async function run() {
         transactionType: WALLET_TRANSACTION_TYPE.TOP_UP,
       }
     );
+
+    // Retrieve a specific transaction
+    if (transactions && transactions.length) {
+      const transaction = await moov.wallets.getTransaction(
+        credentials.connectedAccountID,
+        wallets[0].walletID,
+        transactions[0].transactionID
+      );
+    }
   } catch (err) {
     // catch an exception you plan to handle, if not allow it to bubble up
     console.error("Error: ", err.message);
