@@ -1,11 +1,18 @@
-import { Moov } from "@moovio/node";
+import {
+  Moov,
+  WALLET_TRANSACTION_TYPE,
+  WALLET_TRANSACTION_STATUS,
+} from "@moovio/node";
 import { gotOptionsForLogging } from "./gotOptionsForLogging.js";
 import { loadCredentials } from "./loadCredentials.js";
 
+/**
+ * Demonstrate how to list and examine wallet transactions.
+ */
 async function run() {
   const args = process.argv.slice(2);
 
-  if (args.length < 2 || args.length % 2) {
+  if (args.length < 1) {
     usage();
   }
 
@@ -14,30 +21,54 @@ async function run() {
     credentials = loadCredentials("./secrets/credentials.json");
   } else {
     for (var index = 0; index < args.length; index += 2) {
-      credentials[args[index].substring(1)] = args[index +1];
+      credentials[args[index].substring(1)] = args[index + 1];
     }
   }
 
-  if(!credentials["accountID"] 
-    || !credentials["publicKey"] 
-    || !credentials["secretKey"] 
-    || !credentials["domain"] 
-    || !credentials["connectedAccountID"]) {
+  if (
+    !credentials["accountID"] ||
+    !credentials["publicKey"] ||
+    !credentials["secretKey"] ||
+    !credentials["domain"] ||
+    !credentials["connectedAccountID"]
+  ) {
     usage();
   }
 
   const moov = new Moov(credentials, gotOptionsForLogging);
 
-  try
-  {
-    // Get a list of the payment methods
-    let result = await moov.wallets.list(credentials.connectedAccountID);
+  try {
+    // Get a list of wallets for this account
+    const wallets = await moov.wallets.list(credentials.connectedAccountID);
 
-    // Get a specific payment method
-    result = await moov.wallets.get(credentials.connectedAccountID, result[0].walletID);
-  }
-  catch(err)
-  {
+    // Get a specific wallet
+    const wallet = await moov.wallets.get(
+      credentials.connectedAccountID,
+      wallets[0].walletID
+    );
+
+    console.log(
+      `Wallet ${wallet.walletID} has a balance of ${
+        wallet.availableBalance.value / 100
+      } ${wallet.availableBalance.currency}`
+    );
+
+    // Get a list of wallet transactions, no criteria
+    const transactions = await moov.wallets.listTransactions(
+      credentials.connectedAccountID,
+      wallets[0].walletID
+    );
+
+    // Get a list of pending "top-up" wallet transactions
+    const topUpTransactions = await moov.wallets.listTransactions(
+      credentials.connectedAccountID,
+      wallets[0].walletID,
+      {
+        status: WALLET_TRANSACTION_STATUS.PENDING,
+        transactionType: WALLET_TRANSACTION_TYPE.TOP_UP,
+      }
+    );
+  } catch (err) {
     // catch an exception you plan to handle, if not allow it to bubble up
     console.error("Error: ", err.message);
   }
