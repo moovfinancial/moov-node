@@ -1,38 +1,38 @@
-name: Pull Request
+# name: Pull Request
 
-on:
-  push:
-    branches: ["main"]
-  pull_request: {}
+# on:
+#   push:
+#     branches: ["main"]
+#   pull_request: {}
 
-jobs:
-  changedfiles:
-    name: Publish to docs
-    runs-on: [ubuntu-latest]
-    outputs:
-      all: ${{ steps.changes.outputs.all }}
-    steps:
+# jobs:
+#   changedfiles:
+#     name: Publish to docs
+#     runs-on: [ubuntu-latest]
+#     outputs:
+#       all: ${{ steps.changes.outputs.all }}
+#     steps:
 
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+#       - name: Checkout Repo
+#         uses: actions/checkout@v2
+#         with:
+#           fetch-depth: 0
 
-      - name: Check Changes
-        id: changes
-        run: |
-          echo "::set-output name=all::$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs | grep -o "docs/")"
+#       - name: Check Changes
+#         id: changes
+#         run: |
+#           echo "::set-output name=all::$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | xargs | grep -o "docs/")"
 
-      - name: Create pull request
-        uses: ./
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_folder: 'docs/output/*'
-          destination_repo: 'moovfinancial/docs'
-          destination_folder: 'content/node'
-          user_email: 'moov-bot@moov.io'
-          user_name: 'moov-bot'
-          head_branch: ${{ github.head_ref }}
-          pull_request_number: ${{ github.event.number }}
+#       - name: Create pull request
+#         uses: ./
+#         env:
+#           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+#         with:
+#           source_folder: 'docs/output/*'
+#           destination_repo: 'moovfinancial/docs'
+#           destination_folder: 'content/node'
+#           user_email: 'moov-bot@moov.io'
+#           user_name: 'moov-bot'
+#           head_branch: ${{ github.head_ref }}
+#           pull_request_number: ${{ github.event.number }}
   
