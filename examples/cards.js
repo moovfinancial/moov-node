@@ -31,7 +31,7 @@ async function run() {
   const moov = new Moov(credentials, gotOptionsForLogging);
 
   try {
-    // Get lsit of all cards for connected account.
+    // Get list of all cards for connected account.
     const results = await moov.cards.list(credentials.connectedAccountID);
     console.log(results);
 
