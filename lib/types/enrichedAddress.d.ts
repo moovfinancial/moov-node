@@ -15,11 +15,11 @@
  * @property {number} [maxResults] - Optional Maximum number of results to return.
  * @property {string} [includeCities] - Optional Limits results to a list of given cities. Example: "chicago;honolulu;portland"
  * @property {string} [includeStates] - Optional Limits results to a list of given states. Example: "illinois;hawaii;oregon"
- * @property {string} [includeZipcodes] - Optional Limits results to a list of given zipcodes. Example: "60412;96818;97209"
- * @property {string} [excludeStates] - Optional Exclude list of states from results. No include pararmeters may be used with this parameter. Example: "AZ;WA;SC"
+ * @property {string} [includeZipcodes] - Optional Limits results to a list of given ZIP codes. Example: "60412;96818;97209"
+ * @property {string} [excludeStates] - Optional Exclude list of states from results. No include parameters may be used with this parameter. Example: "AZ;WA;SC"
  * @property {string} [preferCities] - Optional Display results with the listed cities at the top. Example: "denver;aurora;omaha"
  * @property {string} [preferStates] - Optional Display results with the listed states at the top. Example: "CO;MN;WI"
- * @property {string} [preferZipcodes] - Optional Display results with the listed zipcodes at the top. Example: "60412;96818;97209"
+ * @property {string} [preferZipcodes] - Optional Display results with the listed ZIP codes at the top. Example: "60412;96818;97209"
  * @property {number} [preferRatio] - Optional Specifies the percentage of address suggestions that should be preferred and will appear at the top of the results.
  * @property {"none"|"city"} [preferGeolocation] - Optional If omitted or set to city it uses the sender's IP address to determine location, then automatically adds the city and state to the preferCities value. This parameter takes precedence over other include or exclude parameters meaning that if it is not set to none you may see addresses from areas you do not wish to see. Example: "city"
  * @property {string} [selected] - Optional Useful for narrowing results with addressLine2 suggestions such as Apt (denotes an apartment building with multiple residences). Example: "Apt"
@@ -85,11 +85,11 @@ export type EnrichedAddressGetCriteria = {
      */
     includeStates?: string;
     /**
-     * - Optional Limits results to a list of given zipcodes. Example: "60412;96818;97209"
+     * - Optional Limits results to a list of given ZIP codes. Example: "60412;96818;97209"
      */
     includeZipcodes?: string;
     /**
-     * - Optional Exclude list of states from results. No include pararmeters may be used with this parameter. Example: "AZ;WA;SC"
+     * - Optional Exclude list of states from results. No include parameters may be used with this parameter. Example: "AZ;WA;SC"
      */
     excludeStates?: string;
     /**
@@ -101,7 +101,7 @@ export type EnrichedAddressGetCriteria = {
      */
     preferStates?: string;
     /**
-     * - Optional Display results with the listed zipcodes at the top. Example: "60412;96818;97209"
+     * - Optional Display results with the listed ZIP codes at the top. Example: "60412;96818;97209"
      */
     preferZipcodes?: string;
     /**
