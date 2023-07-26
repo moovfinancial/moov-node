@@ -255,7 +255,10 @@ transfers.refund(transferID, idempotencyKey)
 ```javascript
 const moov = new Moov(...);
 try {
-  const { transferID } = moov.transfers.refund("...");
+  const { transferID } = moov.transfers.refund(
+   "...",
+   { amount: 200 } // omit if creating a refund for the full amount
+ );
 } catch (err) {
   // ...
 }

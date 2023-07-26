@@ -50,7 +50,7 @@ async function run() {
 
   try {
     // Request capabilities
-    const capabilites = await moov.capabilities.requestCapabilities(accountID, [
+    const capabilities = await moov.capabilities.requestCapabilities(accountID, [
       CAPABILITIES.TRANSFERS,
       CAPABILITIES.SEND_FUNDS,
       CAPABILITIES.WALLET,
