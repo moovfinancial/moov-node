@@ -197,7 +197,7 @@
  * @tag Accounts
  */
 /**
- * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser.  See https://docs.moov.io/moovjs/ for more details.
+ * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/ for more details.
  * @typedef TermsOfServiceToken
  * @property {string} token - An encrypted value used to record acceptance of Moov's Terms of Service
  * @tag Accounts
@@ -473,7 +473,7 @@ export type AccountCreate = {
     settings: AccountSettings | null;
 };
 /**
- * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser.  See https://docs.moov.io/moovjs/ for more details.
+ * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/ for more details.
  */
 export type TermsOfServiceToken = {
     /**

@@ -18,7 +18,7 @@ capabilities.requestCapabilities(accountID, capabilities)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| accountID |  `string` | Account on which to request capabilites |
+| accountID |  `string` | Account on which to request capabilities |
 | capabilities |  Array.<[CAPABILITIES](#capabilities)> | One or more capability to request |
 {{</ table >}}
 
@@ -43,7 +43,7 @@ capabilities.get(accountID, capability)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| accountID |  `string` | Account on which to request capabilites |
+| accountID |  `string` | Account on which to request capabilities |
 | capability |  [CAPABILITIES](#capabilities) | Capability to retrieve |
 {{</ table >}}
 
@@ -68,7 +68,7 @@ capabilities.list(accountID)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| accountID |  `string` | Account on which to request capabilites |
+| accountID |  `string` | Account on which to request capabilities |
 {{</ table >}}
 
 
@@ -92,7 +92,7 @@ capabilities.disable(accountID, capability)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| accountID |  `string` | Account on which to request capabilites |
+| accountID |  `string` | Account on which to request capabilities |
 | capability |  [CAPABILITIES](#capabilities) | Capability to retrieve |
 {{</ table >}}
 

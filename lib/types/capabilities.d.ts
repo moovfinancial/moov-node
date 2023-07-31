@@ -163,7 +163,7 @@ export class Capabilities {
     /**
      * Request a capability to be added to an account
      *
-     * @param {string} accountID - Account on which to request capabilites
+     * @param {string} accountID - Account on which to request capabilities
      * @param {CAPABILITIES[]} capabilities - One or more capability to request
      * @returns {Promise<Capability[]>}
      *
@@ -173,7 +173,7 @@ export class Capabilities {
     /**
      * Retrieve a capability of an account
      *
-     * @param {string} accountID - Account on which to request capabilites
+     * @param {string} accountID - Account on which to request capabilities
      * @param {CAPABILITIES} capability - Capability to retrieve
      * @returns {Promise<Capability>}
      *
@@ -183,7 +183,7 @@ export class Capabilities {
     /**
      * List capabilities on an account
      *
-     * @param {string} accountID - Account on which to request capabilites
+     * @param {string} accountID - Account on which to request capabilities
      * @returns {Promise<Capability[]>}
      *
      * @tag Capabilities
@@ -192,7 +192,7 @@ export class Capabilities {
     /**
      * Disable a capability of an account
      *
-     * @param {string} accountID - Account on which to request capabilites
+     * @param {string} accountID - Account on which to request capabilities
      * @param {CAPABILITIES} capability - Capability to retrieve
      * @returns {Promise<void>}
      *
