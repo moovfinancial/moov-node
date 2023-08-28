@@ -96,7 +96,7 @@ Available scopes to request on OAuth tokens.
 | Value | Description |
 | ----- | ----------- |
 | ACCOUNTS_CREATE | Allows a new Moov account to be created |
-| ACCOUNTS_READ | Access to view Moov accounts |
+| ACCOUNTS_READ | List connected accounts -- see also PROFILE_READ |
 | BANK_ACCOUNTS_READ | Access to view a linked bank account to a Moov account |
 | BANK_ACCOUNTS_WRITE | Access to add a linked bank account to a Moov account |
 | CARDS_READ | Access to view a linked card on a Moov account |
@@ -107,7 +107,7 @@ Available scopes to request on OAuth tokens.
 | DOCUMENTS_WRITE | Access to upload documents (like I-9s, W-4s) associated with a Moov account |
 | PAYMENT_METHODS_READ | Access to view payment methods for the account specified |
 | PROFILE_ENRICHMENT_READ | Access to view a Moov account’s profile image |
-| PROFILE_READ | Access to view details associated with a Moov account |
+| PROFILE_READ | Access to view details associated with a Moov account -- see also ACCOUNTS_READ |
 | PROFILE_WRITE | Access to edit details associated with a Moov account |
 | REPRESENTATIVE_READ | Access to view details on business representatives for a Moov account |
 | REPRESENTATIVE_WRITE | Access to add details on business representatives for a Moov account |
