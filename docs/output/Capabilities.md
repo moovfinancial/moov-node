@@ -99,10 +99,10 @@ Describes a Moov capability associated with an account.
 
 {{< tab title="Details">}}
 {{< table >}}
-| Name           | Type      | Description |
+| Property       | Type      | Description |
 |----------------|-----------|-------------|
 | capability     | [CAPABILITIES](#capabilities) | Type of capability |
-| accountID      | `string` | Account identifier |
+| accountID      | `string`  | Account identifier |
 | status         | [CAPABILITY_STATUS](#capability_status) | The status of the capability requested for an account |
 | requirements   | Array.<[Requirement](#requirement)> | Represents individual and business data necessary to facilitate the enabling of a capability for an account |
 | disabledReason | `string` | If status is disabled, the reason this capability was disabled |

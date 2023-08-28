@@ -158,7 +158,7 @@ Describes a Moov account associated with an individual or a business.
 
 {{< tab title="Details">}}
 {{< table >}}
-| Name            | Type                                        | Description |
+| Property        | Type                                        | Description |
 |-----------------|---------------------------------------------|-------------|
 | accountID       | `string`                                    | Account identifier |
 | accountType     | `individual`, `business`                    | Type of entity represented by this account |
@@ -253,7 +253,7 @@ Describes a Moov account associated with an individual or a business.
 
 {{< tab title="Details">}}
 {{< table >}}
-| Name            | Type                                                | Description |
+| Property        | Type                                                | Description |
 |-----------------|-----------------------------------------------------|-------------|
 | accountType     | `individual`, `business`                            | Type of entity represented by this account |
 | profile         | [Profile](#profile)                                 | Details for individual or business |

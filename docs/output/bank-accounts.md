@@ -144,7 +144,7 @@ Describes a Bank Account.
 
 {{< tab title="Details">}}
 {{< table >}}
-| Name                  | Type     | Description |
+| Property              | Type     | Description |
 |-----------------------|----------|-------------|
 | bankAccountID         | `string` | Bank Account identifier |
 | fingerprint           | `string` | Fingerprint of Bank Account |
