@@ -3,9 +3,7 @@ title: "Cards"
 weight: 70
 ---
 
-
 ## Get
-
 
 Retrieves details for the card with the specified ID.
 
@@ -14,23 +12,19 @@ cards.get(accountID, cardID)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| accountID |  `string` | Account to query |
-| cardID |  `string` | Card to query |
+| Name      | Type     | Description      |
+|-----------|----------|------------------|
+| accountID | `string` | Account to query |
+| cardID    | `string` | Card to query    |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Card>`
 
-
-
 ## List
-
 
 Lists all the cards associated with a particular Moov account.
 
@@ -40,21 +34,16 @@ cards.list(accountID)
 
 **Parameters**
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| accountID |  `string` | Account to query |
+| Name      | Type     | Description      |
+|-----------|----------|------------------|
+| accountID | `string` | Account to query |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Array.<Card>>`
 
-
-
 ## Link
-
 
 Links a card to a Moov account. Only use this endpoint if you have provided Moov with a
 copy of your PCI attestation of compliance.
@@ -64,23 +53,19 @@ cards.link(accountID, card)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| accountID |  `string` | Account to link |
-| card |  [LinkCard](#linkcard) | Card information |
+| Name      | Type                  | Description      |
+|-----------|-----------------------|------------------|
+| accountID | `string`              | Account to link  |
+| card      | [LinkCard](#linkcard) | Card information |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Card>`
 
-
-
 ## Disable
-
 
 Disables a card with the specified ID.
 
@@ -89,23 +74,17 @@ cards.disable(accountID, cardID)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
+| Name      | Type      | Description      |
+|-----------|-----------|------------------|
 | accountID |  `string` | Account to query |
-| cardID |  `string` | Card to query |
+| cardID    |  `string` | Card to query    |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<void>`
-
-
-
-
-
 
 ## Types
 ### CardExpiration
@@ -114,12 +93,12 @@ Card account expiration date
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | month | `string`| 2 character month |
-  | year | `string`| 2 character year |
-
-
+{{< table >}}
+| Property | Type     | Description       |
+|----------|----------| ------------------|
+| month    | `string` | 2 character month |
+| year     | `string` | 2 character year  |
+{{</ table >}}
 
 ### LinkCard
 
@@ -127,15 +106,15 @@ Card information collected for acquisition.
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | cardNumber | `string`| All digits of the card |
-  | expiration | [CardExpiration](#cardexpiration)| Card expiration date |
-  | cardCvv | `string`| 3-4 digit card verification value |
-  | holderName | `string`| Full name of the card holder |
-  | billingAddress | [CardBillingAddress](#cardbillingaddress)| The billing address of the card |
-
-
+{{< table >}}
+| Property       | Type     | Description       |
+|----------------|----------|-------------------|
+| cardNumber     | `string` | All digits of the card |
+| expiration     | [CardExpiration](#cardexpiration) | Card expiration date |
+| cardCvv        | `string` | 3-4 digit card verification value |
+| holderName     | `string` | Full name of the card holder |
+| billingAddress | [CardBillingAddress](#cardbillingaddress) | The billing address of the card |
+{{</ table >}}
 
 ### CardBillingAddress
 
@@ -143,30 +122,30 @@ Card billing address
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | addressLine1 | `string`| string <= 32 characters |
-  | addressLine2 | `string`| string <= 32 characters |
-  | city | `string`| string <= 24 characters |
-  | stateOrProvince | `string`| string <= 2 characters |
-  | postalCode | `string`| string <= 5 characters |
-  | country | `string`| string <= 2 characters |
+{{< table >}}
+| Property        | Type     | Description             |
+|-----------------|----------|-------------------------|
+| addressLine1    | `string` | string <= 32 characters |
+| addressLine2    | `string` | string <= 32 characters |
+| city            | `string` | string <= 24 characters |
+| stateOrProvince | `string` | string <= 2 characters  |
+| postalCode      | `string` | string <= 5 characters  |
+| country         | `string` | string <= 2 characters  |
+{{</ table >}}
 
-
-
-### CardVerficationStatuses
+### CardVerificationStatuses
 
 Card verification statuses
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | cvv | [CARD_VERIFICATION_STATUS](#card_verification_status)| Verification status of the CVV |
-  | addressLine1 | [CARD_VERIFICATION_STATUS](#card_verification_status)| Verification status of addressLine1 |
-  | postalCode | [CARD_VERIFICATION_STATUS](#card_verification_status)| Verification status of the postalCode |
-
-
+{{< table >}}
+| Property     | Type                                                  | Description                           |
+|--------------|-------------------------------------------------------|---------------------------------------|
+| cvv          | [CARD_VERIFICATION_STATUS](#card_verification_status) | Verification status of the CVV        |
+| addressLine1 | [CARD_VERIFICATION_STATUS](#card_verification_status) | Verification status of addressLine1   |
+| postalCode   | [CARD_VERIFICATION_STATUS](#card_verification_status) | Verification status of the postalCode |
+{{</ table >}}
 
 ### Card
 
@@ -174,26 +153,27 @@ Describes a Card account.
 
 **Properties**
 
+{{< tabs >}}
 
-{{< tabs>}}
-  {{< tab title="Details">}}
-  {{< table >}}
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-| cardID |  `string` | Card account identifier |
-| fingerprint |  `string` | string <= 100 characters that is a unique fingerprint of a card |
-| brand |  [CARD_BRAND](#card_brand) | The card brand |
-| cardType |  [CARD_TYPE](#card_type) | The type of the card |
-| lastFourCardNumber |  `string` | Last four digits of the card |
-| bin |  `string` | The BIN number of the card |
-| expiration |  [CardExpiration](#cardexpiration) | The expiration info of the card |
-| holderName |  `string` | The name of the card holder |
-| billingAddress |  [CardBillingAddress](#cardbillingaddress) | The billing address of the card |
-| cardVerfication |  [CardVerficationStatuses](#cardverficationstatuses) | The results of submitting cardholder data to a card network for verification |
-| issuer |  `string` | The name of the issuer |
-| issuerCountry |  `string` | The country of the issuer |
+{{< tab title="Details">}}
+{{< table >}}
+| Property           | Type     | Description |
+|--------------------|----------|-------------|
+| cardID             | `string` | Card account identifier |
+| fingerprint        | `string` | string <= 100 characters that is a unique fingerprint of a card |
+| brand              | [CARD_BRAND](#card_brand) | The card brand |
+| cardType           | [CARD_TYPE](#card_type) | The type of the card |
+| lastFourCardNumber | `string` | Last four digits of the card |
+| bin                | `string` | The BIN number of the card |
+| expiration         | [CardExpiration](#cardexpiration) | The expiration info of the card |
+| holderName         | `string` | The name of the card holder |
+| billingAddress     | [CardBillingAddress](#cardbillingaddress) | The billing address of the card |
+| cardVerification   | [CardVerificationStatuses](#cardverificationstatuses) | The results of submitting cardholder data to a card network for verification |
+| issuer             | `string` | The name of the issuer |
+| issuerCountry      | `string` | The country of the issuer |
 {{</ table >}}
-  {{< /tab>}}
+{{< /tab>}}
+
 {{< tab title="Example">}}
 ```javascript
 {
@@ -227,60 +207,47 @@ Describes a Card account.
 ```
     {{</ tab>}}{{</ tabs>}}
 
-
-
-
 ### CardDetails
-
-
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | dynamicDescriptor | `string`| An optional override of the default card statement descriptor for a single transfer. |
-  | merchantInitiatedType | `recurring`,  `unscheduled`,  `null`| Enum: [recurring unscheduled] Describes how the card transaction was initiated |
-
-
-
+{{< table >}}
+| Property              | Type     | Description |
+|-----------------------|----------|-------------|
+| dynamicDescriptor     | `string` | An optional override of the default card statement descriptor for a single transfer |
+| merchantInitiatedType | `recurring`, `unscheduled`, `null` | Enum: [recurring unscheduled] Describes how the card transaction was initiated |
+{{</ table >}}
 
 ## Enums
 ### CARD_BRAND
 
-
-
 {{< table >}}
-| Value | Description |
-| ----- | ----------- |
-| AMEX | American Express |
-| DISCOVER | Discover |
-| MC | MasterCard |
-| VISA | Visa |
+| Value    | Description      |
+|----------|------------------|
+| AMEX     | American Express |
+| DISCOVER | Discover         |
+| MC       | MasterCard       |
+| VISA     | Visa             |
 {{</ table >}}
 
 ### CARD_TYPE
 
-
-
 {{< table >}}
-| Value | Description |
-| ----- | ----------- |
-| DEBIT | Debit card |
-| CREDIT | Credit card |
+| Value   | Description  |
+|---------|--------------|
+| DEBIT   | Debit card   |
+| CREDIT  | Credit card  |
 | PREPAID | Prepaid card |
 | UNKNOWN | Unknown type |
 {{</ table >}}
 
 ### CARD_VERIFICATION_STATUS
 
-
-
 {{< table >}}
-| Value | Description |
-| ----- | ----------- |
-| NO_MATCH | No Match |
-| MATCH | Match |
-| NOT_CHECKED | Not Checked |
-| UNAVAILABLE | Unavailable |
+| Value       | Description  |
+|-------------|--------------|
+| NO_MATCH    | No Match     |
+| MATCH       | Match        |
+| NOT_CHECKED | Not Checked  |
+| UNAVAILABLE | Unavailable  |
 {{</ table >}}
-

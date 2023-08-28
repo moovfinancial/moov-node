@@ -5,9 +5,7 @@ weight: 90
 
 A transfer is the movement of money between Moov accounts, from source to destination. Provided you have linked a bank account which has been verified, you can initiate a transfer to another Moov account. For more context, read our [guide on transfers](/guides/money-movement).
 
-
 ## Create
-
 
 Creates a transfer to move money from a source to a destination.
 
@@ -16,20 +14,17 @@ transfers.create(transfer, idempotencyKey)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transfer |  [TransferCreate](#transfercreate) | Subset of the Transfer object |
-| idempotencyKey |  `string` | Optional UUID to prevent duplicate transfers |
+| Name           | Type                              | Description                                  |
+|----------------|-----------------------------------|----------------------------------------------|
+| transfer       | [TransferCreate](#transfercreate) | Subset of the Transfer object                |
+| idempotencyKey | `string`                          | Optional UUID to prevent duplicate transfers |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<TransferResponse>`
-
-
 
 **Examples**
 
@@ -55,9 +50,7 @@ try {
 }
 ```
 
-
 ## List
-
 
 Lists transfers that match the given criteria.
 
@@ -66,19 +59,16 @@ transfers.list(criteria)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| criteria |  [TransferListCriteria](#transferlistcriteria) |  |
+| Name     | Type                                          |
+|----------|-----------------------------------------------|
+| criteria | [TransferListCriteria](#transferlistcriteria) |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Array.<Transfer>>`
-
-
 
 **Examples**
 
@@ -99,9 +89,7 @@ try {
 }
 ```
 
-
 ## Get
-
 
 Gets the details of a transfer.
 
@@ -110,19 +98,16 @@ transfers.get(transferID)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| Name       | Type     |
+|------------|----------|
+| transferID | `string` |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Transfer>`
-
-
 
 **Examples**
 
@@ -135,9 +120,7 @@ try {
 }
 ```
 
-
 ## UpdateMetadata
-
 
 Update the metadata on a transfer.
 
@@ -146,20 +129,17 @@ transfers.updateMetadata(transferID, metadata)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transferID |  `string` |  |
-| metadata |  `object` | Arbitrary key-value pairs |
+| Name       | Type     | Description (if applicable) |
+|------------|----------|-----------------------------|
+| transferID | `string` |                             |
+| metadata   | `object` | Arbitrary key-value pairs   |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Transfer>`
-
-
 
 **Examples**
 
@@ -175,9 +155,7 @@ try {
 }
 ```
 
-
 ## GetTransferOptions
-
 
 Gets the available payment options for a transfer.
 
@@ -186,19 +164,16 @@ transfers.getTransferOptions(transferOptionsCriteria)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transferOptionsCriteria |  [TransferOptionsCriteria](#transferoptionscriteria) | Criteria for available payment options |
+| Name                    | Type                                                | Description                            |
+|-------------------------|-----------------------------------------------------|----------------------------------------|
+| transferOptionsCriteria | [TransferOptionsCriteria](#transferoptionscriteria) | Criteria for available payment options |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<AvailableTransferOptions>`
-
-
 
 **Examples**
 
@@ -224,9 +199,7 @@ try {
 }
 ```
 
-
 ## Refund
-
 
 Initiate a refund for a card transfer.
 
@@ -235,20 +208,17 @@ transfers.refund(transferID, idempotencyKey)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transferID |  `string` |  |
-| idempotencyKey |  `string` | Optional UUID to prevent duplicate refunds |
+| Name           | Type     | Description (if applicable)                |
+|----------------|----------|--------------------------------------------|
+| transferID     | `string` |                                            |
+| idempotencyKey | `string` | Optional UUID to prevent duplicate refunds |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<TransferResponse>`
-
-
 
 **Examples**
 
@@ -264,9 +234,7 @@ try {
 }
 ```
 
-
 ## ListRefunds
-
 
 List refunds for a card transfer.
 
@@ -275,19 +243,16 @@ transfers.listRefunds(transferID)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| Name       | Type     |
+|------------|----------|
+| transferID | `string` |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Array.<Refund>>`
-
-
 
 **Examples**
 
@@ -300,9 +265,7 @@ try {
 }
 ```
 
-
 ## GetRefund
-
 
 Get details of a specific refund.
 
@@ -311,20 +274,17 @@ transfers.getRefund(transferID, refundID)
 ```
 
 **Parameters**
+
 {{< table >}}
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| transferID |  `string` |  |
-| refundID |  `string` |  |
+| Name       | Type     |
+|------------|----------|
+| transferID | `string` |
+| refundID   | `string` |
 {{</ table >}}
-
-
 
 **Returns**
 
 `Promise.<Refund>`
-
-
 
 **Examples**
 
@@ -337,23 +297,17 @@ try {
 }
 ```
 
-
-
-
-
 ## Types
 ### CardDetails
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | dynamicDescriptor | `string`| An optional override of the default card statement descriptor for a single transfer. |
-  | transactionSource | `first-recurring`,  `recurring`,  `unscheduled`,  `null`| Enum: [first-recurring recurring unscheduled] Describes how the card transaction was initiated |
-
-
+{{< table >}}
+| Property          | Type     | Description |
+|-------------------|----------|-------------|
+| dynamicDescriptor | `string` | An optional override of the default card statement descriptor for a single transfer |
+| transactionSource | `first-recurring`, `recurring`, `unscheduled`, `null`| Enum: [first-recurring recurring unscheduled] Describes how the card transaction was initiated |
+{{</ table >}}
 
 ### PaymentMethodAccount
 
@@ -361,58 +315,52 @@ High-level account information associated with a payment method.
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | accountID | `string`|  |
-  | email | `string`|  |
-  | displayName | `string`|  |
-
-
+{{< table >}}
+| Property    | Type     |
+|-------------|----------|
+| accountID   | `string` |
+| email       | `string` |
+| displayName | `string` |
+{{</ table >}}
 
 ### BankAccount
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | bankAccountID | `string`|  |
-  | fingerprint | `string`|  |
-  | status | `new`,  `verified`,  `verificationFailed`,  `pending`,  `errored`|  |
-  | holderName | `string`|  |
-  | holderType | `individual`,  `business`|  |
-  | bankName | `string`|  |
-  | bankAccountType | `checking`,  `savings`,  `unknown`|  |
-  | routingNumber | `string`|  |
-  | lastFourAccountNumber | `string`|  |
-
-
+{{< table >}}
+| Property              | Type     |
+|-----------------------|----------|
+| bankAccountID         | `string` |
+| fingerprint           | `string` |
+| status                | `new`, `verified`, `verificationFailed`, `pending`, `errored` |
+| holderName            | `string` |
+| holderType            | `individual`, `business` |
+| bankName              | `string` |
+| bankAccountType       | `checking`, `savings`, `unknown` |
+| routingNumber         | `string` |
+| lastFourAccountNumber | `string` |
+{{</ table >}}
 
 ### Wallet
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | walletID | `string`|  |
-
-
+{{< table >}}
+| Property | Type     |
+|----------|----------|
+| walletID | `string` |
+{{</ table >}}
 
 ### CardExpiration
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | month | `string`| Two-character month |
-  | year | `string`| Two-character year |
-
-
+{{< table >}}
+| Property | Type     | Description         |
+|----------|----------|---------------------|
+| month    | `string` | Two-character month |
+| year     | `string` | Two-character year  |
+{{</ table >}}
 
 ### CardVerification
 
@@ -420,34 +368,32 @@ The results of submitting cardholder data to a card network for verification.
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | cvv | `noMatch`,  `match`,  `notChecked`,  `unavailable`|  |
-  | addressLine1 | `noMatch`,  `match`,  `notChecked`,  `unavailable`|  |
-  | postalCode | `noMatch`,  `match`,  `notChecked`,  `unavailable`|  |
-
-
+{{< table >}}
+| Property     | Type                                            |
+|--------------|-------------------------------------------------|
+| cvv          | `noMatch`, `match`, `notChecked`, `unavailable` |
+| addressLine1 | `noMatch`, `match`, `notChecked`, `unavailable` |
+| postalCode   | `noMatch`, `match`, `notChecked`, `unavailable` |
+{{</ table >}}
 
 ### Card
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | cardID | `string`|  |
-  | fingerprint | `string`|  |
-  | brand | `American Express`,  `Discover`,  `MasterCard`,  `Visa`|  |
-  | cardType | `debit`,  `credit`,  `prepaid`,  `unknown`|  |
-  | lastFourCardNumber | `string`|  |
-  | bin | `string`|  |
-  | expiration | [CardExpiration](#cardexpiration)|  |
-  | holderName | `string`|  |
-  | billingAddress | [Address](#address)|  |
-  | cardVerification | [CardVerification](#cardverification)|  |
-
-
+{{< table >}}
+| Property           | Type                                                 |
+|--------------------|------------------------------------------------------|
+| cardID             | `string`                                             |
+| fingerprint        | `string`                                             |
+| brand              | `American Express`, `Discover`, `MasterCard`, `Visa` |
+| cardType           | `debit`, `credit`, `prepaid`, `unknown`              |
+| lastFourCardNumber | `string`                                             |
+| bin                | `string`                                             |
+| expiration         | [CardExpiration](#cardexpiration)                    |
+| holderName         | `string`                                             |
+| billingAddress     | [Address](#address)                                  |
+| cardVerification   | [CardVerification](#cardverification)                |
+{{</ table >}}
 
 ### ACHCode
 
@@ -455,120 +401,109 @@ Models the reason for an ACH return or correction.
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | code | `string`|  |
-  | reason | `string`|  |
-  | description | `string`|  |
-
-
+{{< table >}}
+| Property    | Type     |
+|-------------|----------|
+| code        | `string` |
+| reason      | `string` |
+| description | `string` |
+{{</ table >}}
 
 ### ACHDetails
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  |  | `initiated`,  `originated`,  `corrected`,  `returned`,  `completed`|  |
-  | traceNumber | `string`|  |
-  | return | [ACHCode](#achcode)|  |
-  | correction | [ACHCode](#achcode)|  |
-
-
+{{< table >}}
+| Property    | Type                                                            |
+|-------------|-----------------------------------------------------------------|
+| status      | `initiated`, `originated`, `corrected`, `returned`, `completed` |
+| traceNumber | `string`                                                        |
+| return      | [ACHCode](#achcode)                                             |
+| correction  | [ACHCode](#achcode)                                             |
+{{</ table >}}
 
 ### PaymentMethod
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | paymentMethodID | `string`|  |
-  | paymentMethodType | `moov-wallet`,  `ach-debit-fund`,  `ach-debit-collect`,  `ach-credit-standard`,  `ach-credit-same-day`,  `rtp-credit`,  `card-payment`|  |
-  | account | [PaymentMethodAccount](#paymentmethodaccount)|  |
-  | bankAccount | [BankAccount](#bankaccount)|  |
-  | wallet | [Wallet](#wallet)|  |
-  | card | [Card](#card)|  |
-  | achDetails | [ACHDetails](#achdetails)|  |
-  | cardDetails | [CardDetails](#carddetails)|  |
-
-
+{{< table >}}
+| Property          | Type     |
+|-------------------|----------|
+| paymentMethodID   | `string` |
+| paymentMethodType | `moov-wallet`, `ach-debit-fund`, `ach-debit-collect`, `ach-credit-standard`, `ach-credit-same-day`, `rtp-credit`, `card-payment`|
+| account           | [PaymentMethodAccount](#paymentmethodaccount) |
+| bankAccount       | [BankAccount](#bankaccount) |
+| wallet            | [Wallet](#wallet) |
+| card              | [Card](#card) |
+| achDetails        | [ACHDetails](#achdetails) |
+| cardDetails       | [CardDetails](#carddetails) |
+{{</ table >}}
 
 ### Amount
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | value | `number`| Integer quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99. |
-  | currency | `string`| Three-letter ISO 4217 currency code |
-
-
+{{< table >}}
+| Property | Type     | Description |
+|----------|----------|-------------|
+| value    | `number` | Integer quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99. |
+| currency | `string` | Three-letter ISO 4217 currency code |
+{{</ table >}}
 
 ### Refund
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | refundID | `string`|  |
-  | createdOn | `string`|  |
-  | updatedOn | `string`|  |
-  | status | `created`,  `pending`,  `completed`,  `failed`|  |
-  | amount | [Amount](#amount)|  |
-
-
+{{< table >}}
+| Property  | Type                                        |
+|-----------|---------------------------------------------|
+| refundID  | `string`                                    |
+| createdOn | `string`                                    |
+| updatedOn | `string`                                    |
+| status    | `created`, `pending`, `completed`, `failed` |
+| amount    | [Amount](#amount)                           |
+{{</ table >}}
 
 ### Transfer
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | transferID | `string`|  |
-  | createdAt | `string`|  |
-  | status | `created`,  `pending`,  `completed`,  `failed`,  `reversed`|  |
-  | source | [PaymentMethod](#paymentmethod)|  |
-  | destination | [PaymentMethod](#paymentmethod)|  |
-  | amount | [Amount](#amount)|  |
-  | description | `string`|  |
-  | metadata | `object`| Arbitrary key-value pairs |
-  | refundedAmount | [Amount](#amount)|  |
-  | refunds | Array.<[Refund](#refund)>|  |
-  | facilitatorFee | `object`|  |
-  | moovFee | `number`| Integer quantity of Moov fee in USD, so $0.11 would be 11 |
-
-
+{{< table >}}
+| Property       | Type                            | Description (if applicable) |
+|----------------|---------------------------------|-----------------------------|
+| transferID     | `string`                        |  |
+| createdAt      | `string`                        |  |
+| status         | `created`, `pending`, `completed`, `failed`, `reversed` |  |
+| source         | [PaymentMethod](#paymentmethod) |  |
+| destination    | [PaymentMethod](#paymentmethod) |  |
+| amount         | [Amount](#amount)               |  |
+| description    | `string`                        |  |
+| metadata       | `object`                        | Arbitrary key-value pairs |
+| refundedAmount | [Amount](#amount)               |  |
+| refunds        | Array.<[Refund](#refund)>       |  |
+| facilitatorFee | `object`                        |  |
+| moovFee        | `number`                        | Integer quantity of Moov fee in USD, so $0.11 would be 11 |
+{{</ table >}}
 
 ### TransferCreate
 
-
-
 **Properties**
 
+{{< tabs> }}
 
-{{< tabs>}}
-  {{< tab title="Details">}}
-  {{< table >}}
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-| source |  [PaymentMethod](#paymentmethod) |  |
-| destination |  [PaymentMethod](#paymentmethod) |  |
-| amount |  [Amount](#amount) |  |
-| facilitatorFee |  `object` |  |
-| description |  `string` |  |
-| metadata |  `object` | Arbitrary key-value pairs |
+{{< tab title="Details">}}
+{{< table >}}
+| Property       | Type                            | Description (if applicable) |
+|----------------|---------------------------------|-----------------------------|
+| source         | [PaymentMethod](#paymentmethod) |                             |
+| destination    | [PaymentMethod](#paymentmethod) |                             |
+| amount         | [Amount](#amount)               |                             |
+| facilitatorFee | `object`                        |                             |
+| description    | `string`                        |                             |
+| metadata       | `object`                        | Arbitrary key-value pairs   |
 {{</ table >}}
-  {{< /tab>}}
+{{< /tab>}}
+
 {{< tab title="Example">}}
 ```javascript
 {
@@ -595,53 +530,47 @@ Models the reason for an ACH return or correction.
   }
 }
 ```
-    {{</ tab>}}{{</ tabs>}}
+{{</ tab>}}
 
-
-
+{{</ tabs>}}
 
 ### TransferResponse
 
-
-
 **Properties**
 
-
-{{< tabs>}}
-  {{< tab title="Details">}}
-  {{< table >}}
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-| transferID |  `string` |  |
+{{< tabs> }}
+{{< tab title="Details">}}
+{{< table >}}
+| Property   | Type     |
+|------------|----------|
+| transferID | `string` |
 {{</ table >}}
-  {{< /tab>}}
+{{< /tab>}}
+
 {{< tab title="Example">}}
 ```javascript
 {
   "transferID": "e23de6dd-5168-4e1d-894d-807fa691dc80"
 }
 ```
-    {{</ tab>}}{{</ tabs>}}
+{{</ tab>}}
 
-
-
+{{</ tabs>}}
 
 ### TransferListCriteria
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | accountIDs | `Array.<string>`| Optional list of account IDs to filter sources and destinations |
-  | status | `string`| Optional transfer status by which to filter the transfers |
-  | startDateTime | `string`| Optional date-time which inclusively filters all transfers created after this starting date-time |
-  | endDateTime | `string`| Optional date-time which exclusively filters all transfers created before this date-time |
-  | count | `number`| Optional parameter to limit the number of results in the query |
-  | skip | `number`| Optional number of items to offset before starting to collect the result set |
-
-
+{{< table >}}
+| Property      | Type             | Description                                                                                      |
+|---------------|------------------|--------------------------------------------------------------------------------------------------|
+| accountIDs    | `Array.<string>` | Optional list of account IDs to filter sources and destinations                                  |
+| status        | `string`         | Optional transfer status by which to filter the transfers                                        |
+| startDateTime | `string`         | Optional date-time which inclusively filters all transfers created after this starting date-time |
+| endDateTime   | `string`         | Optional date-time which exclusively filters all transfers created before this date-time         |
+| count         | `number`         | Optional parameter to limit the number of results in the query                                   |
+| skip          | `number`         | Optional number of items to offset before starting to collect the result set                     |
+{{</ table >}}
 
 ### TransferOptionsCriteria
 
@@ -649,62 +578,53 @@ Criteria for finding available payment types for a transfer.
 
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | source | `object`|  |
-  | source.accountID | `string`|  |
-  | source.paymentMethodID | `string`|  |
-  | destination | `object`|  |
-  | destination.accountID | `string`|  |
-  | destination.paymentMethodID | `string`|  |
-  | amount | [Amount](#amount)|  |
-
-
+{{< table >}}
+| Property                    | Type              |
+|-----------------------------|-------------------|
+| source                      | `object`          |
+| source.accountID            | `string`          |
+| source.paymentMethodID      | `string`          |
+| destination                 | `object`          |
+| destination.accountID       | `string`          |
+| destination.paymentMethodID | `string`          |
+| amount                      | [Amount](#amount) |
+{{</ table >}}
 
 ### TransferOptions
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | paymentMethodID | `string`|  |
-  | paymentMethodType | `moov-wallet`,  `ach-debit-fund`,  `ach-debit-collect`,  `ach-credit-standard`,  `ach-credit-same-day`,  `rtp-credit`,  `card-payment`|  |
-  | wallet | [Wallet](#wallet)| Populated when `paymentMethodType` is "moov-wallet" |
-  | bankAccount | [BankAccount](#bankaccount)| Populated when `paymentMethodType` is one of the ACH or FTP variations |
-  | card | [Card](#card)| Populated when `paymentMethodType` is "card-payment" |
-
-
+{{< table >}}
+| Property           | Type                      | Description (if applicable) |
+|-------------------|----------------------------|-----------------------------|
+| paymentMethodID   | `string`                   |  |
+| paymentMethodType | `moov-wallet`, `ach-debit-fund`, `ach-debit-collect`, `ach-credit-standard`, `ach-credit-same-day`, `rtp-credit`, `card-payment`|  |
+| wallet            | [Wallet](#wallet)          | Populated when `paymentMethodType` is "moov-wallet" |
+| bankAccount       | [BankAccount](#bankaccount)| Populated when `paymentMethodType` is one of the ACH or FTP variations |
+| card              | [Card](#card)              | Populated when `paymentMethodType` is "card-payment" |
+{{</ table >}}
 
 ### AvailableTransferOptions
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | sourceOptions | Array.<[TransferOptions](#transferoptions)>|  |
-  | destinationOptions | Array.<[TransferOptions](#transferoptions)>|  |
-
-
+{{< table >}}
+| Property           | Type                                        |
+|--------------------|---------------------------------------------|
+| sourceOptions      | Array.<[TransferOptions](#transferoptions)> |
+| destinationOptions | Array.<[TransferOptions](#transferoptions)> |
+{{</ table >}}
 
 ### Refund
 
-
-
 **Properties**
 
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | refundID | `string`|  |
-  | createdOn | `string`|  |
-  | updatedOn | `string`|  |
-  | status | `created`,  `pending`,  `completed`,  `failed`|  |
-  | amount | [Amount](#amount)|  |
-
-
-
-
-
+{{< table >}}
+| Property  | Type                                        |
+|-----------|---------------------------------------------|
+| refundID  | `string`                                    |
+| createdOn | `string`                                    |
+| updatedOn | `string`                                    |
+| status    | `created`, `pending`, `completed`, `failed` |
+| amount    | [Amount](#amount)                           |
+{{</ table >}}
