@@ -409,7 +409,7 @@ Describes a Moov account associated with an individual or a business.
 
 ### TermsOfServiceToken
 
-A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See the Moovjs documentation for more details.
+A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See the [Moovjs](/moovjs/accounts/accounts/#platform-agreement) documentation for more details.
 
 **Properties**
 
