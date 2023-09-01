@@ -197,7 +197,7 @@
  * @tag Accounts
  */
 /**
- * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/ for more details.
+ * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/accounts/accounts/#platform-agreement for more details.
  * @typedef TermsOfServiceToken
  * @property {string} token - An encrypted value used to record acceptance of Moov's Terms of Service
  * @tag Accounts
@@ -242,7 +242,7 @@
  * @property {Phone} phone
  * @property {string} email
  * @property {Address} address
- * @property {boolean} birthDateProvided - True if individual's birthdate has been provided
+ * @property {boolean} birthDateProvided - True if individual's birth date has been provided
  * @property {boolean} governmentIDProvided - True if individual's government-issued ID has been provided
  * @tag Accounts
  */
@@ -267,7 +267,7 @@
  * @property {Phone} phone
  * @property {string} email
  * @property {Address} address
- * @property {boolean} birthDateProvided - True if individual's birthdate has been provided
+ * @property {boolean} birthDateProvided - True if individual's birth date has been provided
  * @property {boolean} governmentIDProvided - True if individual's government-issued ID has been provided
  * @property {Responsibility[]} responsibilities
  * @property {string} createdOn - Date representative was recorded
@@ -473,7 +473,7 @@ export type AccountCreate = {
     settings: AccountSettings | null;
 };
 /**
- * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/ for more details.
+ * A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/accounts/accounts/#platform-agreement for more details.
  */
 export type TermsOfServiceToken = {
     /**
@@ -529,7 +529,7 @@ export type IndividualProfile = {
     email: string;
     address: Address;
     /**
-     * - True if individual's birthdate has been provided
+     * - True if individual's birth date has been provided
      */
     birthDateProvided: boolean;
     /**
@@ -564,7 +564,7 @@ export type Representative = {
     email: string;
     address: Address;
     /**
-     * - True if individual's birthdate has been provided
+     * - True if individual's birth date has been provided
      */
     birthDateProvided: boolean;
     /**

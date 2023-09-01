@@ -8,7 +8,7 @@ You can retrieve an account's profile image. This is especially useful if you'd 
 ## Get
 
 
-Gets a binary represention of an avatar.
+Gets a binary representation of an avatar.
 
 ```javascript
 avatars.get(uniqueId)
