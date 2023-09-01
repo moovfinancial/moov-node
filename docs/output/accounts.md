@@ -409,7 +409,7 @@ Describes a Moov account associated with an individual or a business.
 
 ### TermsOfServiceToken
 
-A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See https://docs.moov.io/moovjs/ for more details.
+A token that can then be used to accept Moov's Terms of Service. Must be generated from a web browser. See the Moovjs documentation for more details.
 
 **Properties**
 
@@ -482,7 +482,7 @@ Describes the individual associated with a non-business account.
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
   | address | [Address](#address)|  |
-  | birthDateProvided | `boolean`| True if individual's birthdate has been provided |
+  | birthDateProvided | `boolean`| True if individual's birth date has been provided |
   | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
 
 
@@ -526,7 +526,7 @@ Describes an individual who represents a business account.
   | phone | [Phone](#phone)|  |
   | email | `string`|  |
   | address | [Address](#address)|  |
-  | birthDateProvided | `boolean`| True if individual's birthdate has been provided |
+  | birthDateProvided | `boolean`| True if individual's birth date has been provided |
   | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
   | responsibilities | Array.<[Responsibility](#responsibility)>|  |
   | createdOn | `string`| Date representative was recorded |
