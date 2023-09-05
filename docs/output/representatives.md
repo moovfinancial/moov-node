@@ -2,6 +2,7 @@
 title: "Representatives"
 weight: 40
 ---
+We require all business accounts to have valid information for at least one representative. Moov accounts must have verified business representatives before a business account can send funds, collect money from other accounts, or store funds in a wallet. 
 
 
 ## Create

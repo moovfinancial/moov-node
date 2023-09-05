@@ -3,6 +3,8 @@ title: "Cards"
 weight: 70
 ---
 
+You can link credit or debit cards to Moov accounts. You can use a card as a source for making transfers, which charges the card. 
+
 
 ## Get
 

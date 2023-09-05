@@ -3,6 +3,8 @@ title: "Authentication"
 weight: 20
 ---
 
+Every Moov API request requires a valid OAuth token. Our authentication flow follows the OAuth 2.0 standard.
+
 
 ## GenerateToken
 

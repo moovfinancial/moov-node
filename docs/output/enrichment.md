@@ -3,6 +3,8 @@ title: "Enrichment"
 weight: 120
 ---
 
+Access different enrichment data such as address suggestions or profile data. Our profile enrichment service is offered in collaboration with Clearbit.
+
 
 ## Get
 
