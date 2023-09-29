@@ -67,7 +67,7 @@ accounts.get(connectedAccountID)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| connectedAccountID |  `string` | User account to query |
+| connectedAccountID |  `string` | Account to query |
 {{</ table >}}
 
 
