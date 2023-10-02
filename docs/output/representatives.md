@@ -268,9 +268,9 @@ Representative phone
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | day | `number`|  |
-  | month | `number`|  |
-  | year | `number`| 4 digit year |
+  | day | `number`| 1 or 2 digit day of birth |
+  | month | `number`| 1 or 2 digit month of birth |
+  | year | `number`| 4 digit year of birth |
 
 
 
@@ -295,8 +295,8 @@ Representative phone
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | ssn | [GovernmentID](#governmentid)|  |
-  | itin | [GovernmentID](#governmentid)|  |
+  | ssn | [GovernmentID](#governmentid)| Social Security Number |
+  | itin | [GovernmentID](#governmentid)| Individual Taxpayer Identification Number |
 
 
 
@@ -311,9 +311,9 @@ Representative phone
   | name | [RepresentativeName](#representativename)| Name for an individual |
   | phone | [RepresentativePhone](#representativephone)| Phone for an individual |
   | email | `string`| Email Address.  string <email> <= 255 characters |
-  | address | [RepresentativeAddress](#representativeaddress)| Address for an individual. |
-  | birthDate | [RepresentativeBirthDate](#representativebirthdate)| Birthdate for an individual |
-  | governmentID | [RepresentativeGovernmentID](#representativegovernmentid)|  |
+  | address | [RepresentativeAddress](#representativeaddress)| Address for an individual |
+  | birthDate | [RepresentativeBirthDate](#representativebirthdate)| Birth date for an individual |
+  | governmentID | [RepresentativeGovernmentID](#representativegovernmentid)| SSN, or ITIN |
   | responsibilities | [RepresentativeResponsibilities](#representativeresponsibilities)| Describes the job responsibilities of an individual |
 
 
