@@ -352,7 +352,7 @@ export class Accounts {
     /**
      * Retrieves details for the account with the specified ID.
      *
-     * @param {string} connectedAccountID - Account to query
+     * @param {string} connectedAccountID - User account to query
      * @returns {Promise<Account>}
      * @tag Accounts
      */
