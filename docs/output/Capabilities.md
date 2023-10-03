@@ -8,7 +8,7 @@ Capabilities determine what a Moov account can do. Each capability has specific 
 ## RequestCapabilities
 
 
-Request a capability to be added to an account
+Request a capability to be added to an account.
 
 ```javascript
 capabilities.requestCapabilities(accountID, capabilities)
@@ -160,14 +160,14 @@ Describes a Moov capability associated with an account.
 
 ### Requirement
 
-Represents individual and business data necessary to facilitate the enabling of a capability for an account
+Represents individual and business data necessary to facilitate the enabling of a capability for an account.
 
 **Properties**
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | currentlyDue | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>|  |
-  | errors | Array.<[RequirementError](#requirementerror)>|  |
+  | currentlyDue | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>| List of required documents and data |
+  | errors | Array.<[RequirementError](#requirementerror)>| List of missing requirements |
 
 
 
@@ -179,8 +179,8 @@ Represents individual and business data necessary to facilitate the enabling of 
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | requirement | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>|  |
-  | errorCode | Array.<[REQUIREMENT_ERROR_CODE](#requirement_error_code)>|  |
+  | requirement | Array.<[CAPABILITY_REQUIREMENT](#capability_requirement)>| The unique ID of the missing requirement |
+  | errorCode | Array.<[REQUIREMENT_ERROR_CODE](#requirement_error_code)>| List of relevant error codes (for example, `invalid-value`) |
 
 
 
@@ -207,9 +207,9 @@ Available capabilities
 {{< table >}}
 | Value | Description |
 | ----- | ----------- |
-| ENABLED | Capability is enabled and ready for use. |
-| DISABLED | Capability has been disabled. |
-| PENDING | Capability has been requested and is pending approval. |
+| ENABLED | Capability is enabled and ready for use |
+| DISABLED | Capability has been disabled |
+| PENDING | Capability has been requested and is pending approval |
 {{</ table >}}
 
 ### CAPABILITY_REQUIREMENT
@@ -219,44 +219,44 @@ Available capabilities
 {{< table >}}
 | Value | Description |
 | ----- | ----------- |
-| ACCOUNT_TOS_ACCEPTANCE |  |
-| INDIVIDUAL_MOBILE |  |
-| INDIVIDUAL_EMAIL |  |
-| INDIVIDUAL_EMAIL_OR_MOBILE |  |
-| INDIVIDUAL_FIRSTNAME |  |
-| INDIVIDUAL_LASTNAME |  |
-| INDIVIDUAL_ADDRESS |  |
-| INDIVIDUAL_SSN_LAST4 |  |
-| INDIVIDUAL_SSN |  |
-| INDIVIDUAL_BIRTHDATE |  |
-| BUSINESS_LEGALNAME |  |
-| BUSINESS_DESCRIPTION_OR_WEBSITE |  |
-| BUSINESS_ENTITY_TYPE |  |
-| BUSINESS_DBA |  |
-| BUSINESS_EIN |  |
-| BUSINESS_ADDRESS |  |
-| BUSINESS_PHONE |  |
-| BUSINESS_ADMINS |  |
-| BUSINESS_CONTROLLERS |  |
-| BUSINESS_OWNERS |  |
-| BUSINESS_CLASSIFICATION |  |
-| BUSINESS_INDUSTRY_CODE_MCC |  |
-| BANK_ACCOUNTS_NAME |  |
-| BANK_ACCOUNTS_ROUTING_NUMBER |  |
-| BANK_ACCOUNTS_ACCOUNT_NUMBER |  |
-| REPRESENTATIVE_MOBILE |  |
-| REPRESENTATIVE_EMAIL |  |
-| REPRESENTATIVE_FIRSTNAME |  |
-| REPRESENTATIVE_LASTNAME |  |
-| REPRESENTATIVE_ADDRESS |  |
-| REPRESENTATIVE_SSN_LAST4 |  |
-| REPRESENTATIVE_SSN |  |
-| REPRESENTATIVE_BIRTHDATE |  |
-| REPRESENTATIVE_JOB_TITLE |  |
-| REPRESENTATIVE_IS_CONTROLLER |  |
-| REPRESENTATIVE_IS_OWNER |  |
-| REPRESENTATIVE_IS_OWNERSHIP |  |
-| DOCUMENT |  |
+| ACCOUNT_TOS_ACCEPTANCE | Terms of service status |
+| INDIVIDUAL_MOBILE | Individual account's mobile number |
+| INDIVIDUAL_EMAIL | Individual account's email |
+| INDIVIDUAL_EMAIL_OR_MOBILE | Individual account's email or mobile number |
+| INDIVIDUAL_FIRSTNAME | Individual account holder's first name |
+| INDIVIDUAL_LASTNAME | Individual account holder's last name |
+| INDIVIDUAL_ADDRESS | Individual account's address |
+| INDIVIDUAL_SSN_LAST4 | Individual account holder's last four of Social Security Number |
+| INDIVIDUAL_SSN | Individual account holder's full Social Security Number |
+| INDIVIDUAL_BIRTHDATE | Individual account holder's birth date |
+| BUSINESS_LEGALNAME | Business's legal name |
+| BUSINESS_DESCRIPTION_OR_WEBSITE | Business's description or website |
+| BUSINESS_ENTITY_TYPE | Business's entity type |
+| BUSINESS_DBA | Business's Doing Business As name |
+| BUSINESS_EIN | Business's Employer Identification Number |
+| BUSINESS_ADDRESS | Business's address |
+| BUSINESS_PHONE | Business's phone number |
+| BUSINESS_ADMINS | Business administrators |
+| BUSINESS_CONTROLLERS | Business controllers |
+| BUSINESS_OWNERS | Business owners |
+| BUSINESS_CLASSIFICATION | Business classification |
+| BUSINESS_INDUSTRY_CODE_MCC | Business's industry code or merchant category code |
+| BANK_ACCOUNTS_NAME | Business's bank account name |
+| BANK_ACCOUNTS_ROUTING_NUMBER | Business's bank account routing number |
+| BANK_ACCOUNTS_ACCOUNT_NUMBER | Business's bank account number |
+| REPRESENTATIVE_MOBILE | Business representative's mobile number |
+| REPRESENTATIVE_EMAIL | Business representative's email |
+| REPRESENTATIVE_FIRSTNAME | Business representative's first name |
+| REPRESENTATIVE_LASTNAME | Business representative's last name |
+| REPRESENTATIVE_ADDRESS | Business representative's address |
+| REPRESENTATIVE_SSN_LAST4 | Business representative's last four of Social Security Number |
+| REPRESENTATIVE_SSN | Business representative's full Social Security Number |
+| REPRESENTATIVE_BIRTHDATE | Business representative's birth date |
+| REPRESENTATIVE_JOB_TITLE | Business representative's job title |
+| REPRESENTATIVE_IS_CONTROLLER | Business representative's controller status |
+| REPRESENTATIVE_IS_OWNER | Business representative's owner status |
+| REPRESENTATIVE_IS_OWNERSHIP | Business representative's ownership % |
+| DOCUMENT | Documents for capability enablement |
 {{</ table >}}
 
 ### REQUIREMENT_ERROR_CODE
@@ -266,23 +266,23 @@ Available capabilities
 {{< table >}}
 | Value | Description |
 | ----- | ----------- |
-| INVALID_VALUE |  |
-| FAILED_AUTOMATIC_VERIFICATION |  |
-| FAILED_OTHER |  |
-| INVALID_ADDRESS |  |
-| ADDRESS_RESTRICTED |  |
-| TAX_ID_MISMATCH |  |
-| DOCUMENT_ID_MISMATCH |  |
-| DOCUMENT_DATE_OF_BIRTH_MISMATCH |  |
-| DOCUMENT_NAME_MISMATCH |  |
-| DOCUMENT_ADDRESS_MISMATCH |  |
-| DOCUMENT_NUMBER_MISMATCH |  |
-| DOCUMENT_INCOMPLETE |  |
+| INVALID_VALUE | Invalid value |
+| FAILED_AUTOMATIC_VERIFICATION | Automatic verification failed |
+| FAILED_OTHER | Other failure reason |
+| INVALID_ADDRESS | Invalid address |
+| ADDRESS_RESTRICTED | Address restricted |
+| TAX_ID_MISMATCH | Tax ID mismatch |
+| DOCUMENT_ID_MISMATCH | Document ID mismatch |
+| DOCUMENT_DATE_OF_BIRTH_MISMATCH | Date of birth mismatch |
+| DOCUMENT_NAME_MISMATCH | Name mismatch |
+| DOCUMENT_ADDRESS_MISMATCH | Address mismatch |
+| DOCUMENT_NUMBER_MISMATCH | Number mismatch |
+| DOCUMENT_INCOMPLETE | Incomplete document |
 | DOCUMENT_FAILED_RISK |  |
-| DOCUMENT_ILLEGIBLE |  |
-| DOCUMENT_UNSUPPORTED |  |
-| DOCUMENT_NOT_UPLOADED |  |
-| DOCUMENT_CORRUPT |  |
-| DOCUMENT_EXPIRED |  |
+| DOCUMENT_ILLEGIBLE | Illegible document |
+| DOCUMENT_UNSUPPORTED | Unsupported document type |
+| DOCUMENT_NOT_UPLOADED | Document did not upload |
+| DOCUMENT_CORRUPT | Corrupt document |
+| DOCUMENT_EXPIRED | Expired document |
 {{</ table >}}
 
