@@ -313,7 +313,7 @@ Representative phone
   | email | `string`| Email Address.  string <email> <= 255 characters |
   | address | [RepresentativeAddress](#representativeaddress)| Address for an individual |
   | birthDate | [RepresentativeBirthDate](#representativebirthdate)| Birth date for an individual |
-  | governmentID | [RepresentativeGovernmentID](#representativegovernmentid)| SSN, or ITIN |
+  | governmentID | [RepresentativeGovernmentID](#representativegovernmentid)| Social Security Number, or Individual Taxpayer Identification Number |
   | responsibilities | [RepresentativeResponsibilities](#representativeresponsibilities)| Describes the job responsibilities of an individual |
 
 
