@@ -205,10 +205,10 @@
 /**
  * A person's name.
  * @typedef Name
- * @property {string} firstName
- * @property {string} middleName
- * @property {string} lastName
- * @property {string} suffix
+ * @property {string} firstName - A person's first name
+ * @property {string} middleName - A person's middle name
+ * @property {string} lastName - A person's last name
+ * @property {string} suffix - A person's suffix
  * @tag Accounts
  */
 /**

@@ -165,7 +165,7 @@ accounts.assignCountries(accountID, countries)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account to query |
-| countries |  [Countries](#countries) | Countries to add to the account. |
+| countries |  [Countries](#countries) | Countries to add to the account |
 {{</ table >}}
 
 
@@ -427,10 +427,10 @@ A person's name.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | firstName | `string`|  |
-  | middleName | `string`|  |
-  | lastName | `string`|  |
-  | suffix | `string`|  |
+  | firstName | `string`| A person's first name |
+  | middleName | `string`| A person's middle name |
+  | lastName | `string`| A person's last name |
+  | suffix | `string`| A person's suffix |
 
 
 
@@ -442,8 +442,8 @@ Profile for a Moov acocunt. May be business or individual.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | business | [BusinessProfile](#businessprofile)|  |
-  | individual | [IndividualProfile](#individualprofile)|  |
+  | business | [BusinessProfile](#businessprofile)| A business account |
+  | individual | [IndividualProfile](#individualprofile)| An individual account |
 
 
 
@@ -455,18 +455,18 @@ Describes a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | legalBusinessName | `string`|  |
-  | doingBusinessAs | `string`|  |
-  | businessType | `soleProprietorship`,  `unincorporatedAssociation`,  `trust`,  `publicCorporation`,  `privateCorporation`,  `privateCorporation`,  `llc`,  `partnership`,  `unincorporatedNonProfit`,  `incorporatedNonProfit`|  |
-  | address | [Address](#address)|  |
-  | phone | [Phone](#phone)|  |
-  | email | `string`|  |
-  | website | `string`|  |
-  | description | `string`|  |
-  | taxIDProvided | `boolean`| True if business's tax ID has been provided |
+  | legalBusinessName | `string`| Business's legal name |
+  | doingBusinessAs | `string`| - |
+  | businessType | `soleProprietorship`,  `unincorporatedAssociation`,  `trust`,  `publicCorporation`,  `privateCorporation`,  `privateCorporation`,  `llc`,  `partnership`,  `unincorporatedNonProfit`,  `incorporatedNonProfit`| The legal registered type of the business |
+  | address | [Address](#address)| Business's address |
+  | phone | [Phone](#phone)| Business's phone number |
+  | email | `string`| Business's email |
+  | website | `string`| Business's website |
+  | description | `string`| Description of the business |
+  | taxIDProvided | `boolean`| `true` if business's tax ID has been provided |
   | representatives | Array.<[Representative](#representative)>|  |
-  | ownersProvided | `boolean`| True if business owner(s) have been provided |
-  | industryCodes | [IndustryCodes](#industrycodes)|  |
+  | ownersProvided | `boolean`| `true` if business owner(s) have been provided |
+  | industryCodes | [IndustryCodes](#industrycodes)| Business's industry code (for example, `mcc`) |
 
 
 
@@ -478,12 +478,12 @@ Describes the individual associated with a non-business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | name | [Name](#name)|  |
-  | phone | [Phone](#phone)|  |
-  | email | `string`|  |
-  | address | [Address](#address)|  |
-  | birthDateProvided | `boolean`| True if individual's birth date has been provided |
-  | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
+  | name | [Name](#name)| Individual's name |
+  | phone | [Phone](#phone)| Individual's phone number |
+  | email | `string`| Individual's email address |
+  | address | [Address](#address)| Individual's address |
+  | birthDateProvided | `boolean`| `true` if individual's birth date has been provided |
+  | governmentIDProvided | `boolean`| `true` if individual's government-issued ID has been provided |
 
 
 
@@ -508,9 +508,9 @@ Standard industry codes for businesses.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | naics | `string`|  |
-  | sic | `string`|  |
-  | mcc | `string`|  |
+  | naics | `string`| North American Industry Classification System |
+  | sic | `string`| Standard Industry Classification |
+  | mcc | `string`| Merchant Category Codes |
 
 
 
@@ -522,12 +522,12 @@ Describes an individual who represents a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | name | [Name](#name)|  |
-  | phone | [Phone](#phone)|  |
-  | email | `string`|  |
-  | address | [Address](#address)|  |
-  | birthDateProvided | `boolean`| True if individual's birth date has been provided |
-  | governmentIDProvided | `boolean`| True if individual's government-issued ID has been provided |
+  | name | [Name](#name)| Representative's first and last name |
+  | phone | [Phone](#phone)| Representative's phone number |
+  | email | `string`| Representative's email address |
+  | address | [Address](#address)| Representative's address |
+  | birthDateProvided | `boolean`| `true` if individual's birth date has been provided |
+  | governmentIDProvided | `boolean`| `true` if individual's government-issued ID has been provided |
   | responsibilities | Array.<[Responsibility](#responsibility)>|  |
   | createdOn | `string`| Date representative was recorded |
   | updatedOn | `string`| Date representative was last updated |
@@ -543,10 +543,10 @@ Describes the responsibilities associated with a business representative.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | isController | `boolean`|  |
-  | isOwner | `boolean`|  |
-  | ownershipPercentage | `number`| Required if `isOwner` is true |
-  | jobTitle | `string`|  |
+  | isController | `boolean`| `true` if representative  has significant management responsibilities |
+  | isOwner | `boolean`| `true` if representative owns ≥25% of the business |
+  | ownershipPercentage | `number`| % of business representative owns (required if `isOwner` is `true`) |
+  | jobTitle | `string`| Job title of representative (for example, CEO) |
 
 
 
@@ -570,10 +570,10 @@ Describes customer support contact information for a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | phone | [Phone](#phone)|  |
-  | email | `string`|  |
-  | address | [Address](#address)|  |
-  | website | `string`|  |
+  | phone | [Phone](#phone)| Customer support phone number |
+  | email | `string`| Customer support email |
+  | address | [Address](#address)| Customer support address |
+  | website | `string`| Customer support website |
 
 
 
@@ -609,7 +609,7 @@ Describes customer support contact information for a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | countries | `Array.<string>`|  |
+  | countries | `Array.<string>`| Countries of operation for an account |
 
 
 
@@ -638,9 +638,9 @@ Describes customer support contact information for a business account.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | addressLine1 | `string`|  |
-  | addressLine2 | `string`|  |
-  | city | `string`|  |
+  | addressLine1 | `string`| Street address |
+  | addressLine2 | `string`| Unit number |
+  | city | `string`| 25 characters or less |
   | stateOrProvince | `string`| 2 characters |
   | postalCode | `string`| 5 characters |
   | country | `string`| 2 characters |
