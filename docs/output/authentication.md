@@ -20,7 +20,7 @@ moov.generateToken(scopes, accountID)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | scopes |  Array.<[SCOPES](#scopes)> | One or more permissions to request |
-| accountID |  `string` | Account on which to request permissions, default is facilitator account ID |
+| accountID |  `string` | Account on which to request permissions, default is your account ID |
 {{</ table >}}
 
 
