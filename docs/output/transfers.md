@@ -422,9 +422,9 @@ The results of submitting cardholder data to a card network for verification.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | cvv | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Card Verification Value |
-  | addressLine1 | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Street address |
-  | postalCode | `noMatch`,  `match`,  `notChecked`,  `unavailable`| 5 characters |
+  | cvv | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Card Verification Value status |
+  | addressLine1 | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Address status |
+  | postalCode | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Postal code status |
 
 
 
@@ -471,7 +471,7 @@ Models the reason for an ACH return or correction.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | status | `initiated`,  `originated`,  `corrected`,  `returned`,  `completed`| - |
+  | status | `initiated`,  `originated`,  `corrected`,  `returned`,  `completed`| ACH rail status |
   | traceNumber | `string`| Tracking number that can be used by payment recipient to trace the payment with their external financial institution |
   | return | [ACHCode](#achcode)| ACH return information per Nacha specification |
   | correction | [ACHCode](#achcode)| ACH notification of change information per Nacha specification |
@@ -488,7 +488,7 @@ Models the reason for an ACH return or correction.
 | ---- | ---- | ----------- |
   | paymentMethodID | `string`| Payment method identifier |
   | paymentMethodType | `moov-wallet`,  `ach-debit-fund`,  `ach-debit-collect`,  `ach-credit-standard`,  `ach-credit-same-day`,  `rtp-credit`,  `card-payment`| Allowed payment method types |
-  | account | [PaymentMethodAccount](#paymentmethodaccount)| - |
+  | account | [PaymentMethodAccount](#paymentmethodaccount)| Account information associated with the payment method |
   | bankAccount | [BankAccount](#bankaccount)| Optional bank account object when payment method type is one of `ach-debit-fund`, `ach-debit-collect`, `ach-credit-standard`, or `ach-credit-same-day` |
   | card | [Card](#card)| Optional card object when payment method type is one of `card-payment` or `apple-pay` |
   | wallet | [Wallet](#wallet)| Optional wallet object when payment method type is `moov-wallet` |
