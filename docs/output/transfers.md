@@ -69,7 +69,7 @@ transfers.list(criteria)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| criteria |  [TransferListCriteria](#transferlistcriteria) |  |
+| criteria |  [TransferListCriteria](#transferlistcriteria) | Optional properties by which to query and filter a transfer list |
 {{</ table >}}
 
 
@@ -113,7 +113,7 @@ transfers.get(transferID)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| transferID |  `string` | Transfer identifier |
 {{</ table >}}
 
 
@@ -149,7 +149,7 @@ transfers.updateMetadata(transferID, metadata)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| transferID |  `string` | Transfer identifier |
 | metadata |  `object` | Arbitrary key-value pairs |
 {{</ table >}}
 
@@ -238,7 +238,7 @@ transfers.refund(transferID, idempotencyKey)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| transferID |  `string` | Transfer identifier |
 | idempotencyKey |  `string` | Optional UUID to prevent duplicate refunds |
 {{</ table >}}
 
@@ -278,7 +278,7 @@ transfers.listRefunds(transferID)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| transferID |  `string` | Transfer identifier |
 {{</ table >}}
 
 
@@ -314,8 +314,8 @@ transfers.getRefund(transferID, refundID)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| transferID |  `string` |  |
-| refundID |  `string` |  |
+| transferID |  `string` | Transfer identifier |
+| refundID |  `string` | Refund identifier |
 {{</ table >}}
 
 
@@ -350,7 +350,7 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | dynamicDescriptor | `string`| An optional override of the default card statement descriptor for a single transfer. |
+  | dynamicDescriptor | `string`| An optional override of the default card statement descriptor for a single transfer |
   | transactionSource | `first-recurring`,  `recurring`,  `unscheduled`,  `null`| Enum: [first-recurring recurring unscheduled] Describes how the card transaction was initiated |
 
 
@@ -363,9 +363,9 @@ High-level account information associated with a payment method.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | accountID | `string`|  |
-  | email | `string`|  |
-  | displayName | `string`|  |
+  | accountID | `string`| Payment method identifier |
+  | email | `string`| Email associated with the payment method |
+  | displayName | `string`| Display name associated with the payment method |
 
 
 
@@ -377,15 +377,15 @@ High-level account information associated with a payment method.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | bankAccountID | `string`|  |
-  | fingerprint | `string`|  |
-  | status | `new`,  `verified`,  `verificationFailed`,  `pending`,  `errored`|  |
-  | holderName | `string`|  |
-  | holderType | `individual`,  `business`|  |
-  | bankName | `string`|  |
+  | bankAccountID | `string`| Bank Account identifier |
+  | fingerprint | `string`| Fingerprint of the bank account |
+  | status | `new`,  `verified`,  `verificationFailed`,  `pending`,  `errored`| Bank account status |
+  | holderName | `string`| Name of the account holder |
+  | holderType | `individual`,  `business`| Type of holder on a funding source |
+  | bankName | `string`| Name of the bank |
   | bankAccountType | `checking`,  `savings`,  `unknown`|  |
-  | routingNumber | `string`|  |
-  | lastFourAccountNumber | `string`|  |
+  | routingNumber | `string`| Bank account routing number |
+  | lastFourAccountNumber | `string`| Last four digits of the bank account number |
 
 
 
@@ -397,7 +397,7 @@ High-level account information associated with a payment method.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | walletID | `string`|  |
+  | walletID | `string`| Wallet identifier |
 
 
 
@@ -409,8 +409,8 @@ High-level account information associated with a payment method.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | month | `string`| Two-character month |
-  | year | `string`| Two-character year |
+  | month | `string`| 2 characters |
+  | year | `string`| 2 characters |
 
 
 
@@ -422,9 +422,9 @@ The results of submitting cardholder data to a card network for verification.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | cvv | `noMatch`,  `match`,  `notChecked`,  `unavailable`|  |
-  | addressLine1 | `noMatch`,  `match`,  `notChecked`,  `unavailable`|  |
-  | postalCode | `noMatch`,  `match`,  `notChecked`,  `unavailable`|  |
+  | cvv | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Card Verification Value |
+  | addressLine1 | `noMatch`,  `match`,  `notChecked`,  `unavailable`| Street address |
+  | postalCode | `noMatch`,  `match`,  `notChecked`,  `unavailable`| 5 characters |
 
 
 
@@ -436,16 +436,16 @@ The results of submitting cardholder data to a card network for verification.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | cardID | `string`|  |
-  | fingerprint | `string`|  |
-  | brand | `American Express`,  `Discover`,  `MasterCard`,  `Visa`|  |
-  | cardType | `debit`,  `credit`,  `prepaid`,  `unknown`|  |
-  | lastFourCardNumber | `string`|  |
-  | bin | `string`|  |
-  | expiration | [CardExpiration](#cardexpiration)|  |
-  | holderName | `string`|  |
-  | billingAddress | [Address](#address)|  |
-  | cardVerification | [CardVerification](#cardverification)|  |
+  | cardID | `string`| Card identifier |
+  | fingerprint | `string`| Fingerprint of the card |
+  | brand | `American Express`,  `Discover`,  `MasterCard`,  `Visa`| Card brand |
+  | cardType | `debit`,  `credit`,  `prepaid`,  `unknown`| Card type |
+  | lastFourCardNumber | `string`| Last four digits of the card number |
+  | bin | `string`| Bank Identification Number |
+  | expiration | [CardExpiration](#cardexpiration)| The card's expiration date |
+  | holderName | `string`| The cardholder's name |
+  | billingAddress | [Address](#address)| The billing address associated with the card |
+  | cardVerification | [CardVerification](#cardverification)| The results of submitting cardholder data to a card network for verification |
 
 
 
@@ -457,9 +457,9 @@ Models the reason for an ACH return or correction.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | code | `string`|  |
-  | reason | `string`|  |
-  | description | `string`|  |
+  | code | `string`| Ach return code (for example, R01) |
+  | reason | `string`| The network's reason for the return or correction (for example, insufficient funds) |
+  | description | `string`| Explanation of the return code and reason |
 
 
 
@@ -471,10 +471,10 @@ Models the reason for an ACH return or correction.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  |  | `initiated`,  `originated`,  `corrected`,  `returned`,  `completed`|  |
-  | traceNumber | `string`|  |
-  | return | [ACHCode](#achcode)|  |
-  | correction | [ACHCode](#achcode)|  |
+  | status | `initiated`,  `originated`,  `corrected`,  `returned`,  `completed`| - |
+  | traceNumber | `string`| Tracking number that can be used by payment recipient to trace the payment with their external financial institution |
+  | return | [ACHCode](#achcode)| ACH return information per Nacha specification |
+  | correction | [ACHCode](#achcode)| ACH notification of change information per Nacha specification |
 
 
 
@@ -486,14 +486,14 @@ Models the reason for an ACH return or correction.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | paymentMethodID | `string`|  |
-  | paymentMethodType | `moov-wallet`,  `ach-debit-fund`,  `ach-debit-collect`,  `ach-credit-standard`,  `ach-credit-same-day`,  `rtp-credit`,  `card-payment`|  |
-  | account | [PaymentMethodAccount](#paymentmethodaccount)|  |
-  | bankAccount | [BankAccount](#bankaccount)|  |
-  | wallet | [Wallet](#wallet)|  |
-  | card | [Card](#card)|  |
-  | achDetails | [ACHDetails](#achdetails)|  |
-  | cardDetails | [CardDetails](#carddetails)|  |
+  | paymentMethodID | `string`| Payment method identifier |
+  | paymentMethodType | `moov-wallet`,  `ach-debit-fund`,  `ach-debit-collect`,  `ach-credit-standard`,  `ach-credit-same-day`,  `rtp-credit`,  `card-payment`| Allowed payment method types |
+  | account | [PaymentMethodAccount](#paymentmethodaccount)| - |
+  | bankAccount | [BankAccount](#bankaccount)| Optional bank account object when payment method type is one of `ach-debit-fund`, `ach-debit-collect`, `ach-credit-standard`, or `ach-credit-same-day` |
+  | card | [Card](#card)| Optional card object when payment method type is one of `card-payment` or `apple-pay` |
+  | wallet | [Wallet](#wallet)| Optional wallet object when payment method type is `moov-wallet` |
+  | achDetails | [ACHDetails](#achdetails)| Information about ACH transfers and status details |
+  | cardDetails | [CardDetails](#carddetails)| Statement descriptor and recurring flag for card payments |
 
 
 
@@ -506,7 +506,7 @@ Models the reason for an ACH return or correction.
 | Property | Type | Description |
 | ---- | ---- | ----------- |
   | value | `number`| Integer quantity in the smallest unit of the specified currency. In USD this is cents, so $12.04 is 1204 and $0.99 would be 99. |
-  | currency | `string`| Three-letter ISO 4217 currency code |
+  | currency | `string`| 3 letter ISO 4217 currency code |
 
 
 
@@ -518,11 +518,11 @@ Models the reason for an ACH return or correction.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | refundID | `string`|  |
-  | createdOn | `string`|  |
-  | updatedOn | `string`|  |
-  | status | `created`,  `pending`,  `completed`,  `failed`|  |
-  | amount | [Amount](#amount)|  |
+  | refundID | `string`| Refund identifier |
+  | createdOn | `string`| Date-time the refund was created on |
+  | updatedOn | `string`| Date-time the refund was updated on |
+  | status | `created`,  `pending`,  `completed`,  `failed`| Refund status |
+  | amount | [Amount](#amount)| Refund amount |
 
 
 
@@ -534,17 +534,18 @@ Models the reason for an ACH return or correction.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | transferID | `string`|  |
-  | createdAt | `string`|  |
-  | status | `created`,  `pending`,  `completed`,  `failed`,  `reversed`|  |
-  | source | [PaymentMethod](#paymentmethod)|  |
-  | destination | [PaymentMethod](#paymentmethod)|  |
-  | amount | [Amount](#amount)|  |
-  | description | `string`|  |
+  | transferID | `string`| Transfer identifier |
+  | createdAt | `string`| Deprecated (now createdOn) |
+  | createdOn | `string`| Date-time the transfer was created on |
+  | status | `created`,  `pending`,  `completed`,  `failed`,  `reversed`| Transfer status |
+  | source | [PaymentMethod](#paymentmethod)| `paymentMethodID` or `transferID` |
+  | destination | [PaymentMethod](#paymentmethod)| `paymentMethodID` |
+  | amount | [Amount](#amount)| Transfer amount |
+  | description | `string`| Transfer description (128 characters max) |
   | metadata | `object`| Arbitrary key-value pairs |
-  | refundedAmount | [Amount](#amount)|  |
-  | refunds | Array.<[Refund](#refund)>|  |
-  | facilitatorFee | `object`|  |
+  | refundedAmount | [Amount](#amount)| The total refunded amount |
+  | refunds | Array.<[Refund](#refund)>| Array of refunds associated with the transfer |
+  | facilitatorFee | `object`| Total or markup fee |
   | moovFee | `number`| Integer quantity of Moov fee in USD, so $0.11 would be 11 |
 
 
@@ -561,11 +562,11 @@ Models the reason for an ACH return or correction.
   {{< table >}}
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-| source |  [PaymentMethod](#paymentmethod) |  |
-| destination |  [PaymentMethod](#paymentmethod) |  |
-| amount |  [Amount](#amount) |  |
-| facilitatorFee |  `object` |  |
-| description |  `string` |  |
+| source |  [PaymentMethod](#paymentmethod) | `paymentMethodID` or `transferID` |
+| destination |  [PaymentMethod](#paymentmethod) | `paymentMethodID` |
+| amount |  [Amount](#amount) | Transfer amount represented by an integer value and its currency |
+| facilitatorFee |  `object` | Total or markup fee |
+| description |  `string` | Transfer description (128 characters max) |
 | metadata |  `object` | Arbitrary key-value pairs |
 {{</ table >}}
   {{< /tab>}}
@@ -612,7 +613,7 @@ Models the reason for an ACH return or correction.
   {{< table >}}
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-| transferID |  `string` |  |
+| transferID |  `string` | Transfer identifier |
 {{</ table >}}
   {{< /tab>}}
 {{< tab title="Example">}}
@@ -651,13 +652,13 @@ Criteria for finding available payment types for a transfer.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | source | `object`|  |
-  | source.accountID | `string`|  |
-  | source.paymentMethodID | `string`|  |
-  | destination | `object`|  |
-  | destination.accountID | `string`|  |
-  | destination.paymentMethodID | `string`|  |
-  | amount | [Amount](#amount)|  |
+  | source | `object`| `accountID` or `paymentMethodID` |
+  | source.accountID | `string`| `accountID` associated with the transfer source |
+  | source.paymentMethodID | `string`| `paymentMethodID` associated with the transfer source |
+  | destination | `object`| `accountID` or `paymentMethodID` |
+  | destination.accountID | `string`| `accountID` associated with the transfer destination |
+  | destination.paymentMethodID | `string`| `paymentMethodID` associated with the transfer destination |
+  | amount | [Amount](#amount)| Transfer amount represented by an integer value and its currency |
 
 
 
@@ -669,11 +670,11 @@ Criteria for finding available payment types for a transfer.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | paymentMethodID | `string`|  |
+  | paymentMethodID | `string`| `paymentMethodID` associated with a transfer |
   | paymentMethodType | `moov-wallet`,  `ach-debit-fund`,  `ach-debit-collect`,  `ach-credit-standard`,  `ach-credit-same-day`,  `rtp-credit`,  `card-payment`|  |
-  | wallet | [Wallet](#wallet)| Populated when `paymentMethodType` is "moov-wallet" |
+  | wallet | [Wallet](#wallet)| Populated when `paymentMethodType` is `moov-wallet` |
   | bankAccount | [BankAccount](#bankaccount)| Populated when `paymentMethodType` is one of the ACH or FTP variations |
-  | card | [Card](#card)| Populated when `paymentMethodType` is "card-payment" |
+  | card | [Card](#card)| Populated when `paymentMethodType` is `card-payment` |
 
 
 
@@ -685,8 +686,8 @@ Criteria for finding available payment types for a transfer.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | sourceOptions | Array.<[TransferOptions](#transferoptions)>|  |
-  | destinationOptions | Array.<[TransferOptions](#transferoptions)>|  |
+  | sourceOptions | Array.<[TransferOptions](#transferoptions)>| Array of available payment methods for the source of a transfer |
+  | destinationOptions | Array.<[TransferOptions](#transferoptions)>| Array of available payment methods for the destination of a transfer |
 
 
 
@@ -698,11 +699,11 @@ Criteria for finding available payment types for a transfer.
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | refundID | `string`|  |
-  | createdOn | `string`|  |
-  | updatedOn | `string`|  |
-  | status | `created`,  `pending`,  `completed`,  `failed`|  |
-  | amount | [Amount](#amount)|  |
+  | refundID | `string`| Refund identifier |
+  | createdOn | `string`| Date-time the refund was created on |
+  | updatedOn | `string`| Date-time the refund was updated on |
+  | status | `created`,  `pending`,  `completed`,  `failed`| Refund status |
+  | amount | [Amount](#amount)| Refund amount |
 
 
 
