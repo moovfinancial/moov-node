@@ -18,7 +18,7 @@ institutions.getACHInstitution(criteria)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| criteria |  [ACHInstitutionSearchCriteria](#achinstitutionsearchcriteria) | Criteria for available search parameters. |
+| criteria |  [ACHInstitutionSearchCriteria](#achinstitutionsearchcriteria) | Criteria for available search parameters |
 {{</ table >}}
 
 
@@ -42,7 +42,7 @@ institutions.getWireInstitution(criteria)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| criteria |  [ACHInstitutionSearchCriteria](#achinstitutionsearchcriteria) | Criteria for available search parameters. |
+| criteria |  [ACHInstitutionSearchCriteria](#achinstitutionsearchcriteria) | Criteria for available search parameters |
 {{</ table >}}
 
 
@@ -66,7 +66,7 @@ institutions.getInstitution(criteria, rail)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| criteria |  [ACHInstitutionSearchCriteria](#achinstitutionsearchcriteria) | Criteria for available search parameters. |
+| criteria |  [ACHInstitutionSearchCriteria](#achinstitutionsearchcriteria) | Criteria for available search parameters |
 | rail |  `string` | The specific rail to check on, 'ach' or 'wire'. |
 {{</ table >}}
 
@@ -100,8 +100,8 @@ ACH Institution holds a FedACH dir routing record as defined by Fed ACH Format.
 | recordTypeCode |  `string` | RecordTypeCode The code indicating the ABA number to be used to route or send ACH items to the RDFI - 0 = Institution is a Federal Reserve Bank - 1 = Send items to customer routing number - 2 = Send items to customer using new routing number field |
 | revised |  `string` | Revised Date of last revision: YYYYMMDD, or blank |
 | newRoutingNumber |  `string` | Institution's new routing number resulting from a merger or renumber |
-| customerName |  `string` |  |
-| phoneNumber |  `string` |  |
+| customerName |  `string` | Customer's name |
+| phoneNumber |  `string` | Phone number |
 | statusCode |  `string` | Code is based on the customers receiver code |
 | viewCode |  `string` | ViewCode is current view |
 | location |  [ACHInstitutionLocation](#achinstitutionlocation) | Location is the delivery address |
@@ -179,7 +179,7 @@ Wire Institution holds a FedWIRE dir routing record as defined by Fed WIRE Forma
 | ---- | ---- | ----------- |
 | routingNumber |  `string` | Routing number for an Wire institution |
 | telegraphicName |  `string` | The short name of financial institution |
-| customerName |  `string` |  |
+| customerName |  `string` | Customer's name |
 | location |  [WireInstitutionLocation](#wireinstitutionlocation) | Location is the delivery address |
 | fundsTransferStatus |  `string` | Designates funds transfer status  - Y - Eligible  - N - Ineligible |
 | fundsSettlementOnlyStatus |  `string` | Designates funds settlement only status  - S - Settlement-Only |
@@ -229,8 +229,8 @@ ACH and Wire Institution participants
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | achParticipants | Array.<[ACHInstitution](#achinstitution)>|  |
-  | wireParticipants | Array.<[WireInstitution](#wireinstitution)>|  |
+  | achParticipants | Array.<[ACHInstitution](#achinstitution)>| Array of ACH institutions |
+  | wireParticipants | Array.<[WireInstitution](#wireinstitution)>| Array of Wire institutions |
 
 
 
