@@ -1,7 +1,7 @@
 export var unused: {};
 export type CardDetails = {
     /**
-     * -An optional override of the default card statement descriptor for a single transfer.
+     * -An optional override of the default card statement descriptor for a single transfer
      */
     dynamicDescriptor: string;
     /**
