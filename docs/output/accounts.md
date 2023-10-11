@@ -456,7 +456,7 @@ Describes a business account.
 | Property | Type | Description |
 | ---- | ---- | ----------- |
   | legalBusinessName | `string`| Business's legal name |
-  | doingBusinessAs | `string`| - |
+  | doingBusinessAs | `string`| Business's trade name (if different than the legal name) |
   | businessType | `soleProprietorship`,  `unincorporatedAssociation`,  `trust`,  `publicCorporation`,  `privateCorporation`,  `privateCorporation`,  `llc`,  `partnership`,  `unincorporatedNonProfit`,  `incorporatedNonProfit`| The legal registered type of the business |
   | address | [Address](#address)| Business's address |
   | phone | [Phone](#phone)| Business's phone number |

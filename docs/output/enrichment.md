@@ -19,7 +19,7 @@ enrichedaddresses.get(criteria)
 {{< table >}}
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| criteria |  [EnrichedAddressGetCriteria](#enrichedaddressgetcriteria) | Criterial for available search parameters. |
+| criteria |  [EnrichedAddressGetCriteria](#enrichedaddressgetcriteria) | Criteria for available search parameters |
 {{</ table >}}
 
 
@@ -96,12 +96,12 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | addressLine1 | `string`|  |
-  | addressLine2 | `string`|  |
-  | city | `string`|  |
-  | stateOrProvince | `string`|  |
-  | postalCode | `string`|  |
-  | entries | `number`|  |
+  | addressLine1 | `string`| Street address |
+  | addressLine2 | `string`| Unit number |
+  | city | `string`| 25 characters or less |
+  | stateOrProvince | `string`| 2 characters |
+  | postalCode | `string`| 5 characters |
+  | entries | `number`| The number of addresses matching the search criteria |
 
 
 
@@ -113,19 +113,19 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | search | `string`| Partial or complete address to search. |
-  | maxResults | `number`| Optional Maximum number of results to return. |
-  | includeCities | `string`| Optional Limits results to a list of given cities. Example: "chicago;honolulu;portland" |
-  | includeStates | `string`| Optional Limits results to a list of given states. Example: "illinois;hawaii;oregon" |
-  | includeZipcodes | `string`| Optional Limits results to a list of given ZIP codes. Example: "60412;96818;97209" |
-  | excludeStates | `string`| Optional Exclude list of states from results. No include parameters may be used with this parameter. Example: "AZ;WA;SC" |
-  | preferCities | `string`| Optional Display results with the listed cities at the top. Example: "denver;aurora;omaha" |
-  | preferStates | `string`| Optional Display results with the listed states at the top. Example: "CO;MN;WI" |
-  | preferZipcodes | `string`| Optional Display results with the listed ZIP codes at the top. Example: "60412;96818;97209" |
-  | preferRatio | `number`| Optional Specifies the percentage of address suggestions that should be preferred and will appear at the top of the results. |
-  | preferGeolocation | `none`,  `city`| Optional If omitted or set to city it uses the sender's IP address to determine location, then automatically adds the city and state to the preferCities value. This parameter takes precedence over other include or exclude parameters meaning that if it is not set to none you may see addresses from areas you do not wish to see. Example: "city" |
-  | selected | `string`| Optional Useful for narrowing results with addressLine2 suggestions such as Apt (denotes an apartment building with multiple residences). Example: "Apt" |
-  | source | `all`,  `postal`| Optional Include results from alternate data sources. Allowed values are -- all (non-postal addresses) or postal (postal addresses only). |
+  | search | `string`| Partial or complete address to search |
+  | maxResults | `number`| Optional Maximum number of results to return |
+  | includeCities | `string`| Optional - Limits results to a list of given cities (example, "chicago;honolulu;portland") |
+  | includeStates | `string`| Optional - Limits results to a list of given states (example, "illinois;hawaii;oregon") |
+  | includeZipcodes | `string`| Optional - Limits results to a list of given ZIP codes (example, "60412;96818;97209") |
+  | excludeStates | `string`| Optional - Exclude list of states from results. No include parameters may be used with this parameter. Example: "AZ;WA;SC" |
+  | preferCities | `string`| Optional-  Display results with the listed cities at the top (example, "denver;aurora;omaha") |
+  | preferStates | `string`| Optional - Display results with the listed states at the top (example, "CO;MN;WI") |
+  | preferZipcodes | `string`| Optional - Display results with the listed ZIP codes at the top (example, "60412;96818;97209") |
+  | preferRatio | `number`| Optional - Specifies the percentage of address suggestions that should be preferred and will appear at the top of the results |
+  | preferGeolocation | `none`,  `city`| Optional - If omitted or set to city it uses the sender's IP address to determine location, then automatically adds the city and state to the preferCities value (example: "city"). This parameter takes precedence over other include or exclude parameters meaning that if it is not set to none you may see addresses from areas you do not wish to see. |
+  | selected | `string`| Optional - Useful for narrowing results with `addressLine2` suggestions such as Apt. Denotes an apartment building with multiple residences (example, "Apt"). |
+  | source | `all`,  `postal`| Optional - Include results from alternate data sources. Allowed values are `all` (non-postal addresses) or `postal` (postal addresses only). |
 
 
 
@@ -150,12 +150,12 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | legalBusinessName | `string`|  |
-  | address | [EnrichedProfileAddress](#enrichedprofileaddress)|  |
-  | email | `string`|  |
-  | phone | [EnrichedProfilePhone](#enrichedprofilephone)|  |
+  | legalBusinessName | `string`| Business's legal name |
+  | address | [EnrichedProfileAddress](#enrichedprofileaddress)| Business's address |
+  | email | `string`| Business's email |
+  | phone | [EnrichedProfilePhone](#enrichedprofilephone)| Business's phone |
   | industryCodes | [EnrichedProfileIndustry](#enrichedprofileindustry)| Describes industry specific identifiers |
-  | website | `string`|  |
+  | website | `string`| Business's website |
 
 
 
@@ -167,9 +167,9 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | name | [EnrichedProfileName](#enrichedprofilename)|  |
-  | email | `string`|  |
-  | address | [EnrichedProfileAddress](#enrichedprofileaddress)|  |
+  | name | [EnrichedProfileName](#enrichedprofilename)| Individual's name |
+  | email | `string`| Individual's email |
+  | address | [EnrichedProfileAddress](#enrichedprofileaddress)| Individual's address |
 
 
 
@@ -181,12 +181,12 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | addressLine1 | `string`|  |
-  | addressLine2 | `string`|  |
-  | city | `string`|  |
-  | stateOrProvince | `string`|  |
-  | postalCode | `string`|  |
-  | country | `string`|  |
+  | addressLine1 | `string`| Street address |
+  | addressLine2 | `string`| Unit number |
+  | city | `string`| 25 characters or less |
+  | stateOrProvince | `string`| 2 characters |
+  | postalCode | `string`| 5 characters |
+  | country | `string`| 2 characters |
 
 
 
@@ -198,8 +198,8 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | naics | `string`|  |
-  | sic | `string`|  |
+  | naics | `string`| North American Industry Classification System |
+  | sic | `string`| Standard Industrial Classification |
 
 
 
@@ -211,10 +211,10 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | firstName | `string`|  |
-  | middleName | `string`|  |
-  | lastName | `string`|  |
-  | suffix | `string`|  |
+  | firstName | `string`| First name |
+  | middleName | `string`| Middle name |
+  | lastName | `string`| Last name |
+  | suffix | `string`| Suffix |
 
 
 
@@ -226,8 +226,8 @@ try {
 
 | Property | Type | Description |
 | ---- | ---- | ----------- |
-  | number | `string`|  |
-  | countryCode | `string`|  |
+  | number | `string`| Phone number |
+  | countryCode | `string`| Country code |
 
 
 
