@@ -278,7 +278,7 @@ Available capabilities
 | DOCUMENT_ADDRESS_MISMATCH | Address mismatch |
 | DOCUMENT_NUMBER_MISMATCH | Number mismatch |
 | DOCUMENT_INCOMPLETE | Incomplete document |
-| DOCUMENT_FAILED_RISK | Failed risk assessment |
+| DOCUMENT_FAILED_RISK |  |
 | DOCUMENT_ILLEGIBLE | Illegible document |
 | DOCUMENT_UNSUPPORTED | Unsupported document type |
 | DOCUMENT_NOT_UPLOADED | Document did not upload |

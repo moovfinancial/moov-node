@@ -44,8 +44,8 @@ try {
       currency: "USD"
     },
     facilitatorFee: {
-      value: 8, // $0.8
-      currency: "USD"
+      total: 8, // $0.8
+      totalDecimal: "0.8049"
     },
     description: "Yoga class"
   };
@@ -547,6 +547,7 @@ Models the reason for an ACH return or correction.
   | refunds | Array.<[Refund](#refund)>| Array of refunds associated with the transfer |
   | facilitatorFee | `object`| Total or markup fee |
   | moovFee | `number`| Integer quantity of Moov fee in USD, so $0.11 would be 11 |
+  | moovFeeDecimal | `string`| The precise fee charged - supports up to 9 decimals |
 
 
 
@@ -586,8 +587,7 @@ Models the reason for an ACH return or correction.
     "value": 1204
   },
   "facilitatorFee": {
-    "total": 0,
-    "markup": 0
+    "total": 0
   },
   "description": "Pay Instructor for May 15 Class",
   "metadata": {

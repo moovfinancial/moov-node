@@ -116,6 +116,7 @@
  * @property {Refund[]} refunds
  * @property {object} facilitatorFee
  * @property {number} moovFee - Integer quantity of Moov fee in USD, so $0.11 would be 11
+ * @property {string} moovFeeDecimal - The precise fee charged - supports up to 9 decimals
  * @tag Transfers
  */
 /**
@@ -142,8 +143,7 @@
     "value": 1204
   },
   "facilitatorFee": {
-    "total": 0,
-    "markup": 0
+    "total": 0
   },
   "description": "Pay Instructor for May 15 Class",
   "metadata": {
@@ -240,8 +240,8 @@ export class Transfers {
      *       currency: "USD"
      *     },
      *     facilitatorFee: {
-     *       value: 8, // $0.8
-     *       currency: "USD"
+     *       total: 8, // $0.8
+     *       totalDecimal: "0.8049"
      *     },
      *     description: "Yoga class"
      *   };
