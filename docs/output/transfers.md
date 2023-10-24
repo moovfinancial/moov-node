@@ -587,7 +587,8 @@ Models the reason for an ACH return or correction.
     "value": 1204
   },
   "facilitatorFee": {
-    "total": 0
+    "total": 0,
+    "totalDecimal": "0"
   },
   "description": "Pay Instructor for May 15 Class",
   "metadata": {
