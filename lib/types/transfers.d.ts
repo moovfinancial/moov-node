@@ -144,7 +144,6 @@
   },
   "facilitatorFee": {
     "total": 0,
-    "totalDecimal": "0"
   },
   "description": "Pay Instructor for May 15 Class",
   "metadata": {
@@ -241,8 +240,7 @@ export class Transfers {
      *       currency: "USD"
      *     },
      *     facilitatorFee: {
-     *       total: 8, // $0.8
-     *       totalDecimal: "0.8049"
+     *       total: 8, // $0.08
      *     },
      *     description: "Yoga class"
      *   };
