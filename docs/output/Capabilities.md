@@ -2,7 +2,7 @@
 title: "Capabilities"
 weight: 50
 ---
-Capabilities determine what a Moov account can do. Each capability has specific information requirements, depending on risk and compliance standards associated with different account activities. For more context, read our guide on [capabilities](/guides/accounts/capabilities).
+Capabilities determine what a Moov account can do. Each capability has specific information requirements, depending on risk and compliance standards associated with different account activities. For more context, read our [capabilities](/guides/accounts/capabilities) guide.
 
 
 ## RequestCapabilities

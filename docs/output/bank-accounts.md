@@ -2,7 +2,7 @@
 title: "Bank accounts"
 weight: 60
 ---
-To transfer money with Moov, you’ll need to link a bank account to your Moov account, then verify that account. You can link a bank account to a Moov account by adding the bank account number and routing number to the account object. We require micro-deposit verification to reduce the risk of fraud or unauthorized activity. You can verify a bank account by initiating micro-deposits, sending two small credit transfers to the bank account you want to confirm. Alternatively, you can link and verify a bank account in one step through an instant account verification token from a third party provider like Plaid. For more context, read our [guide on bank accounts](/guides/sources/bank-accounts/).
+To transfer money with Moov, you’ll need to link a bank account to your Moov account, then verify that account. You can link a bank account to a Moov account by adding the bank account number and routing number to the account object. We require micro-deposit verification to reduce the risk of fraud or unauthorized activity. You can verify a bank account by initiating micro-deposits, sending two small credit transfers to the bank account you want to confirm. Alternatively, you can link and verify a bank account in one step through an instant account verification token from a third party provider like Plaid. For more context, read our [bank accounts](/guides/sources/bank-accounts/) guide.
 
 
 ## Link

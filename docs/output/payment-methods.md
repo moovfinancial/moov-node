@@ -2,7 +2,7 @@
 title: "Payment methods"
 weight: 80
 ---
-Payments methods represent all of the ways an account can move funds to another Moov account. Payment methods are generated programmatically when a card or bank account is added or the status is updated. For example, `ach-debit-fund` will be added as a payment method once the bank account is verified. For more context, read our guide on [payment methods](/guides/money-movement/payment-methods/).
+Payments methods represent all of the ways an account can move funds to another Moov account. Payment methods are generated programmatically when a card or bank account is added or the status is updated. For example, `ach-debit-fund` will be added as a payment method once the bank account is verified. For more context, read our [payment methods](/guides/money-movement/payment-methods/) guide.
 
 
 ## Get
