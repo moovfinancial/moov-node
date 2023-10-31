@@ -37,7 +37,7 @@ export namespace WALLET_TRANSACTION_STATUS {
  * @property {string} transactionID - UUID v4
  * @property {WALLET_TRANSACTION_TYPE} transactionType - wallet transaction type.
  * @property {WALLET_TRANSACTION_SOURCE_TYPE} sourceType - where the transaction originated.
- * @property {string} sourceID - ID of the source Moov object to which this transaction is related.
+ * @property {string} sourceID - ID of the source Moov object to which this transaction is related (UUID string of one of `walletID`, `cardID`, `bankAccountID`, or `issuedCardID`).
  * @property {WALLET_TRANSACTION_STATUS} status - wallet transaction status.
  * @property {string} memo - Detailed description of the transaction.
  * @property {string} createdOn - Date transaction was created.
