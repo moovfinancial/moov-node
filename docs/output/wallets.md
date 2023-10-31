@@ -155,7 +155,7 @@ Describes a Moov Wallet
   | transactionID | `string`| UUID v4 |
   | transactionType | [WALLET_TRANSACTION_TYPE](#wallet_transaction_type)| wallet transaction type. |
   | sourceType | [WALLET_TRANSACTION_SOURCE_TYPE](#wallet_transaction_source_type)| where the transaction originated. |
-  | sourceID | `string`| ID of the source Moov object to which this transaction is related (UUID string of one of `walletID`, `cardID`, or `bankAccountID`). |
+  | sourceID | `string`| ID of the source Moov object to which this transaction is related. Can be one of [walletID](/api/#tag/Wallets/operation/getWalletForAccount), [cardID](/api/#tag/Cards/operation/getCard), or [bankAccountID](/api/#tag/Bank-accounts/operation/getBank). |
   | status | [WALLET_TRANSACTION_STATUS](#wallet_transaction_status)| wallet transaction status. |
   | memo | `string`| Detailed description of the transaction. |
   | createdOn | `string`| Date transaction was created. |
