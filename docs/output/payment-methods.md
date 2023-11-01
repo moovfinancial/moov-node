@@ -19,7 +19,7 @@ paymentmethods.get(accountID, paymentMethodID)
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | accountID |  `string` | Account on which to request bank account |
-| paymentMethodID |  `string` | ID of the payment method to retrieve |
+| paymentMethodID |  `string` | ID of the payment method to retrieve. Can be one of `walletID`, `cardID`, or `bankAccountID`. |
 {{</ table >}}
 
 
