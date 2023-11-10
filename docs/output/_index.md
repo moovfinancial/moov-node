@@ -6,9 +6,9 @@ weight: 10
 Learn how to download and install Moov's server-side Node SDK. 
 
 ## Installation
-You can download and install the Node SDK from npm.
+You can download and install the Node SDK from [npm](https://www.npmjs.com/package/@moovio/node).
 ```
-npm i @moovio@node
+npm i @moovio/node
 ```
 
 Then import it into your project. 
