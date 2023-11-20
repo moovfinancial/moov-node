@@ -9,6 +9,7 @@ Lookup ACH and wire participating financial institutions. We recommend using thi
 
 
 Get information on a financial institution for ACH
+The `FED_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 institutions.getACHInstitution(criteria)
