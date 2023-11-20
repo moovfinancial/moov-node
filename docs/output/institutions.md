@@ -34,6 +34,7 @@ institutions.getACHInstitution(criteria)
 
 
 Get information on a financial institution for WIRE
+The `FED_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 institutions.getWireInstitution(criteria)
@@ -58,6 +59,7 @@ institutions.getWireInstitution(criteria)
 
 
 Get information on a financial institution
+The `FED_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 institutions.getInstitution(criteria, rail)
