@@ -9,6 +9,7 @@ Accounts represent a legal entity (either a business or an individual) in Moov. 
 
 
 Create a new connected account.
+The `ACCOUNTS_CREATE` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.create(account)
@@ -33,6 +34,7 @@ accounts.create(account)
 
 
 Retrieves details for the list of accounts.
+The `ACCOUNTS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.list(accountID, criteria)
@@ -58,6 +60,7 @@ accounts.list(accountID, criteria)
 
 
 Retrieves details for the account with the specified ID.
+The `PROFILE_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.get(connectedAccountID)
@@ -82,6 +85,7 @@ accounts.get(connectedAccountID)
 
 
 Updates an existing account. Requires a complete Account object.
+The `PROFILE_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.update(account)
@@ -107,6 +111,7 @@ accounts.update(account)
 
 Updates an existing account. Does not require a complete Account object,
 but the `accountID` property is required.
+The `PROFILE_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.patch(account)
@@ -131,6 +136,7 @@ accounts.patch(account)
 
 
 Retrieve the specified countries of operation for an account.
+The `PROFILE_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.getCountries(accountID)
@@ -155,6 +161,7 @@ accounts.getCountries(accountID)
 
 
 Assign the countries of operation for an account. This endpoint will always overwrite the previously assigned values.
+The `PROFILE_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 accounts.assignCountries(accountID, countries)
