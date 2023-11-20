@@ -10,6 +10,7 @@ Access different enrichment data such as address suggestions or profile data. Ou
 
 
 Gets enriched address suggestions.
+The `PROFILE_ENRICHMENT_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 enrichedaddresses.get(criteria)
@@ -52,6 +53,7 @@ try {
 
 
 Gets enriched profile data.
+The `PROFILE_ENRICHMENT_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 enrichedprofiles.get(email)
