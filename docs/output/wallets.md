@@ -11,6 +11,7 @@ At this time, wallets can't be manually created, deleted or modified. They are r
 
 
 Get information on a specific Moov wallet (e.g., the available balance).
+The `WALLETS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 wallets.get(accountID, walletID)
@@ -36,6 +37,7 @@ wallets.get(accountID, walletID)
 
 
 List the wallets associated with a Moov account.
+The `WALLETS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 wallets.list(accountID)
@@ -60,6 +62,7 @@ wallets.list(accountID)
 
 
 Get the details of a wallet transaction.
+The `WALLETS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 wallets.getTransaction(accountID, walletID, transactionID)
@@ -86,6 +89,7 @@ wallets.getTransaction(accountID, walletID, transactionID)
 
 
 List the transactions in a wallet.
+The `WALLETS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 wallets.listTransactions(accountID, walletID, criteria)
