@@ -10,6 +10,7 @@ A transfer is the movement of money between Moov accounts, from source to destin
 
 
 Creates a transfer to move money from a source to a destination.
+The `TRANSFERS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.create(transfer, idempotencyKey)
@@ -59,6 +60,7 @@ try {
 
 
 Lists transfers that match the given criteria.
+The `TRANSFERS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.list(criteria)
@@ -103,6 +105,7 @@ try {
 
 
 Gets the details of a transfer.
+The `TRANSFERS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.get(transferID)
@@ -139,6 +142,7 @@ try {
 
 
 Update the metadata on a transfer.
+The `TRANSFERS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.updateMetadata(transferID, metadata)
@@ -179,6 +183,7 @@ try {
 
 
 Gets the available payment options for a transfer.
+The `TRANSFERS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.getTransferOptions(transferOptionsCriteria)
@@ -228,6 +233,7 @@ try {
 
 
 Initiate a refund for a card transfer.
+The `TRANSFERS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.refund(transferID, idempotencyKey)
@@ -268,6 +274,7 @@ try {
 
 
 List refunds for a card transfer.
+The `TRANSFERS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.listRefunds(transferID)
@@ -304,6 +311,7 @@ try {
 
 
 Get details of a specific refund.
+The `TRANSFERS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 transfers.getRefund(transferID, refundID)
