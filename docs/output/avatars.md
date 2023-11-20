@@ -9,6 +9,7 @@ You can retrieve an account's profile image. This is especially useful if you'd 
 
 
 Gets a binary representation of an avatar.
+The `PROFILE_ENRICHMENT_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 avatars.get(uniqueId)
