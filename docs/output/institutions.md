@@ -9,6 +9,7 @@ Lookup ACH and wire participating financial institutions. We recommend using thi
 
 
 Get information on a financial institution for ACH
+The `FED_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 institutions.getACHInstitution(criteria)
@@ -33,6 +34,7 @@ institutions.getACHInstitution(criteria)
 
 
 Get information on a financial institution for WIRE
+The `FED_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 institutions.getWireInstitution(criteria)
@@ -57,6 +59,7 @@ institutions.getWireInstitution(criteria)
 
 
 Get information on a financial institution
+The `FED_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 institutions.getInstitution(criteria, rail)

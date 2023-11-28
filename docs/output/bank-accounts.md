@@ -9,6 +9,7 @@ To transfer money with Moov, you’ll need to link a bank account to your Moov a
 
 
 Link a bank account to a Moov account
+The `BANK_ACCOUNTS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 bankaccounts.link(accountID, bankAccount, plaidToken, mxAuthorizationCode)
@@ -36,6 +37,7 @@ bankaccounts.link(accountID, bankAccount, plaidToken, mxAuthorizationCode)
 
 
 Retrieve bank account details (i.e. routing number or account type) associated with a specific Moov account.
+The `BANK_ACCOUNTS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 bankaccounts.get(accountID, bankAccountID)
@@ -61,6 +63,7 @@ bankaccounts.get(accountID, bankAccountID)
 
 
 List all the bank accounts associated with a particular Moov account.
+The `BANK_ACCOUNTS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 bankaccounts.list(accountID)
@@ -85,6 +88,7 @@ bankaccounts.list(accountID)
 
 
 Discontinue using a specified bank account linked to a Moov account.
+The `BANK_ACCOUNTS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 bankaccounts.disable(accountID, bankAccountID)
@@ -110,6 +114,7 @@ bankaccounts.disable(accountID, bankAccountID)
 
 
 Initiate a micro deposit for a bank account linked to a Moov account.
+The `BANK_ACCOUNTS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 bankaccounts.initMicroDeposits(accountID, bankAccountID)
@@ -135,6 +140,7 @@ bankaccounts.initMicroDeposits(accountID, bankAccountID)
 
 
 Complete the micro-deposit validation process by passing the amounts of the two transfers.
+The `BANK_ACCOUNTS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 bankaccounts.completeMicroDeposits(accountID, bankAccountID, amounts)

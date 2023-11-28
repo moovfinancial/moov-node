@@ -3,7 +3,7 @@ title: "{{name}}"
 weight: {{weight}}
 ---
 
-Every Moov API request requires a valid OAuth token. Our authentication flow follows the OAuth 2.0 standard.
+Every Moov API request requires a valid OAuth token. Our authentication flow follows the OAuth 2.0 standard. When making requests from the browser, you'll also need to request scope enums when generating a token. If a scope enum is required, it will be listed with the example.
 
 {{#each classes}}
   {{~>class}}

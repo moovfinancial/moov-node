@@ -10,6 +10,7 @@ You can link credit or debit cards to Moov accounts. You can use a card as a sou
 
 
 Retrieves details for the card with the specified ID.
+The `CARDS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 cards.get(accountID, cardID)
@@ -35,6 +36,7 @@ cards.get(accountID, cardID)
 
 
 Lists all the cards associated with a particular Moov account.
+The `CARDS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 cards.list(accountID)
@@ -60,6 +62,7 @@ cards.list(accountID)
 
 Links a card to a Moov account. Only use this endpoint if you have provided Moov with a
 copy of your PCI attestation of compliance.
+The `CARDS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 cards.link(accountID, card)
@@ -85,6 +88,7 @@ cards.link(accountID, card)
 
 
 Disables a card with the specified ID.
+The `CARDS_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 cards.disable(accountID, cardID)

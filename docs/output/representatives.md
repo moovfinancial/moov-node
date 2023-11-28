@@ -9,6 +9,7 @@ We require all business accounts to have valid information for at least one repr
 
 
 Create representative
+The `REPRESENTATIVE_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 representatives.create(accountID, representative)
@@ -34,6 +35,7 @@ representatives.create(accountID, representative)
 
 
 List representatives
+The `REPRESENTATIVE_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 representatives.list(accountID)
@@ -58,6 +60,7 @@ representatives.list(accountID)
 
 
 Retrieve a specific representative associated with a given Moov account.
+The `REPRESENTATIVE_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 representatives.get(accountID, representativeID)
@@ -83,6 +86,7 @@ representatives.get(accountID, representativeID)
 
 
 Deletes a business representative associated with a Moov account.
+The `REPRESENTATIVE_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 representatives.delete(accountID, representativeID)
@@ -108,6 +112,7 @@ representatives.delete(accountID, representativeID)
 
 
 Update a specific representative.
+The `REPRESENTATIVE_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 representatives.update(accountID, representativeID, representative)

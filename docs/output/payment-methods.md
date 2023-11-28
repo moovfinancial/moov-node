@@ -9,6 +9,7 @@ Payments methods represent all of the ways an account can move funds to another 
 
 
 Get the specified payment method associated with a Moov account.
+The `PAYMENT_METHODS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 paymentmethods.get(accountID, paymentMethodID)
@@ -34,6 +35,7 @@ paymentmethods.get(accountID, paymentMethodID)
 
 
 Retrieve all of the payment methods associated with a Moov account.
+The `PAYMENT_METHODS_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 paymentmethods.list(accountID)

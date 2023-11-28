@@ -9,6 +9,7 @@ Capabilities determine what a Moov account can do. Each capability has specific 
 
 
 Request a capability to be added to an account.
+The `CAPABILITIES_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 capabilities.requestCapabilities(accountID, capabilities)
@@ -34,6 +35,7 @@ capabilities.requestCapabilities(accountID, capabilities)
 
 
 Retrieve a capability of an account
+The `CAPABILITIES_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 capabilities.get(accountID, capability)
@@ -59,6 +61,7 @@ capabilities.get(accountID, capability)
 
 
 List capabilities on an account
+The `CAPABILITIES_READ` scope enum is required when making a request from the browser.
 
 ```javascript
 capabilities.list(accountID)
@@ -83,6 +86,7 @@ capabilities.list(accountID)
 
 
 Disable a capability of an account
+The `CAPABILITIES_WRITE` scope enum is required when making a request from the browser.
 
 ```javascript
 capabilities.disable(accountID, capability)
