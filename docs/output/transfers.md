@@ -358,7 +358,7 @@ try {
 | Property | Type | Description |
 | ---- | ---- | ----------- |
   | dynamicDescriptor | `string`| An optional override of the default card statement descriptor for a single transfer |
-  | transactionSource | `first-recurring`,  `recurring`,  `unscheduled`,  `null`| Enum: [first-recurring recurring unscheduled] Describes how the card transaction was initiated |
+  | transactionSource | `first-recurring`,  `recurring`,  `unscheduled`,  `null`| Enum: [first-recurring, recurring, unscheduled] Describes how the card transaction was initiated |
 
 
 
