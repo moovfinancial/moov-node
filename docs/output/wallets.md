@@ -4,7 +4,7 @@ weight: 100
 ---
 
 Every Moov account automatically comes with a Moov wallet, which serves as a funding source as you accumulate funds. 
-At this time, wallets can't be manually created, deleted or modified. They are read-only and are automatically created when a Moov account is associated with an application. For more context, read our [wallets](/guides/wallet/) guide.
+At this time, wallets can't be manually created, deleted or modified. They are read-only and are automatically created when a Moov account is associated with an application. For more context, read our [wallets](/guides/sources/wallets/) guide.
 
 
 ## Get
@@ -159,7 +159,7 @@ Describes a Moov Wallet
   | transactionID | `string`| UUID v4 |
   | transactionType | [WALLET_TRANSACTION_TYPE](#wallet_transaction_type)| wallet transaction type. |
   | sourceType | [WALLET_TRANSACTION_SOURCE_TYPE](#wallet_transaction_source_type)| where the transaction originated. |
-  | sourceID | `string`| ID of the source Moov object to which this transaction is related. Can be one of [walletID](/api/#tag/Wallets/operation/getWalletForAccount), [cardID](/api/#tag/Cards/operation/getCard), or [bankAccountID](/api/#tag/Bank-accounts/operation/getBank). |
+  | sourceID | `string`| ID of the source Moov object to which this transaction is related. Can be one of [walletID](/api/sources/wallets/list/), [cardID](/api/sources/cards/list/), or [bankAccountID](/api/sources/bank-accounts/list/). |
   | status | [WALLET_TRANSACTION_STATUS](#wallet_transaction_status)| wallet transaction status. |
   | memo | `string`| Detailed description of the transaction. |
   | createdOn | `string`| Date transaction was created. |
