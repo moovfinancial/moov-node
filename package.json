@@ -40,6 +40,7 @@
         "docs": "node ./scripts/generateDocs.cjs",
         "docs-watch": "watch \"npm run docs\" ./docs/templates",
         "docs-clean": "rm ./docs/output/*.*",
+        "prepare": "npm run build",
         "test": "ava ./lib/**/*.test.js",
         "generate-types": "tsc",
         "test-watch": "ava --watch ./lib/**/*.test.js"
