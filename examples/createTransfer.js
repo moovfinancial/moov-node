@@ -28,13 +28,15 @@ async function run() {
     amount: TRANSFER_AMOUNT,
   });
 
-  try
-  {
-  // Select ACH
-    const sourcePaymentMethodID = sourceOptions.find(
+  try {
+    // Select ACH
+    const sourceOption = sourceOptions.find(
       (x) => x.paymentMethodType === "ach-debit-fund"
-    ).paymentMethodID;
-
+    );
+    if (!sourceOption) {
+      throw new Error("No ACH debit fund option available");
+    }
+    const sourcePaymentMethodID = sourceOption.paymentMethodID;
     // Get destination transfer options given the source transfer option
     const { destinationOptions } = await moov.transfers.getTransferOptions({
       source: {
@@ -47,12 +49,16 @@ async function run() {
     });
 
     // Select ACH standard
-    const destinationPaymentMethodID = destinationOptions.find(
+    const destinationOption = destinationOptions.find(
       (x) => x.paymentMethodType === "ach-credit-standard"
-    ).paymentMethodID;
+    );
+    if (!destinationOption) {
+      throw new Error("No ACH credit standard option available");
+    }
+    const destinationPaymentMethodID = destinationOption.paymentMethodID;
 
     // Create the transfer
-    const transfer = await moov.transfers.create({
+    await moov.transfers.create({
       source: {
         paymentMethodID: sourcePaymentMethodID,
       },
@@ -61,9 +67,7 @@ async function run() {
       },
       amount: TRANSFER_AMOUNT,
     });
-  }
-  catch(err)
-  {
+  } catch (err) {
     // catch an exception you plan to handle, if not allow it to bubble up
     console.error("Error: ", err.message);
   }
