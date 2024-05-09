@@ -205,7 +205,6 @@ Describes a Moov account associated with an individual or a business.
 | profile |  [Profile](#profile) | Details for individual or business |
 | metadata |  `object` | Arbitrary key-value pairs |
 | foreignID |  `string` | Optional identification or alias |
-| verification |  [AccountVerification](#accountverification) | Describes identity verification status and relevant identity verification documents |
 | customerSupport |  [CustomerSupport](#customersupport),  `null` | Displayed on credit card transactions (business only) |
 | settings |  [AccountSettings](#accountsettings),  `null` | Account settings |
 | createdOn |  `string` | Date account was created |
@@ -554,18 +553,6 @@ Describes the responsibilities associated with a business representative.
   | isOwner | `boolean`| `true` if representative owns ≥25% of the business |
   | ownershipPercentage | `number`| % of business representative owns (required if `isOwner` is `true`) |
   | jobTitle | `string`| Job title of representative (for example, CEO) |
-
-
-
-### AccountVerification
-
-Describes the verification state of an account
-
-**Properties**
-
-| Property | Type | Description |
-| ---- | ---- | ----------- |
-  | verificationStatus | `unverified`,  `pending`,  `resubmit`,  `review`,  `verified`,  `failed`| The status of an identity verification for a profile |
 
 
 
