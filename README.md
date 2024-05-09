@@ -39,7 +39,7 @@ const moov = new Moov({
 const token = await moov.generateToken([SCOPES.ACCOUNTS_CREATE]);
 ```
 
-See the [`/examples`]() folder for more details.
+See the [`/examples`](./examples) folder for more details.
 
 ## Documentation
 
@@ -96,4 +96,4 @@ Apache 2.0. See [LICENSE](/LICENSE) for details.
 
 ## Contributing
 
-Yes, please! Be sure to start a [discussion](moovfinancial/moov-node/discussions) or create an [issue](moovfinancial/moov-node/issues) before submitting a pull request.
+Yes, please! Be sure to start a [discussion](https://github.com/moovfinancial/moov-node/discussions) or create an [issue](https://github.com/moovfinancial/moov-node/issues) before submitting a pull request.
