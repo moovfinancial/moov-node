@@ -241,7 +241,7 @@ Available capabilities
 | BUSINESS_ADDRESS | Business's address |
 | BUSINESS_PHONE | Business's phone number |
 | BUSINESS_ADMINS | Business administrators |
-| BUSINESS_CONTROLLERS | Business controllers |
+| BUSINESS_CONTROLLERS | Business control officers |
 | BUSINESS_OWNERS | Business owners |
 | BUSINESS_CLASSIFICATION | Business classification |
 | BUSINESS_INDUSTRY_CODE_MCC | Business's industry code or merchant category code |
