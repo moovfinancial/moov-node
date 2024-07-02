@@ -1,7 +1,7 @@
 /**
  * @typedef CardDetails
  * @type {object}
- * @property {string} dynamicDescriptor -An optional override of the default card statement descriptor for a single transfer.
+ * @property {string} dynamicDescriptor -An optional override of the default card statement descriptor for a transfer. Accounts must be enabled by Moov to set this field.
  * @property {"recurring"|"unscheduled"|null} merchantInitiatedType - Enum: [recurring unscheduled] Describes how the card transaction was initiated
  * @tag Cards
  */
@@ -393,7 +393,7 @@ export class Transfers {
 }
 export type CardDetails = {
     /**
-     * -An optional override of the default card statement descriptor for a single transfer
+     * -An optional override of the default card statement descriptor for a transfer. Accounts must be enabled by Moov to set this field.
      */
     dynamicDescriptor: string;
     /**
