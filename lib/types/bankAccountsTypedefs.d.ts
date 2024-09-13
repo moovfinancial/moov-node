@@ -15,7 +15,8 @@ export type BANK_ACCOUNT_TYPE = any;
 export namespace BANK_ACCOUNT_TYPE {
     const CHECKING: string;
     const SAVINGS: string;
-    const UNKNOWN: string;
+    const LOAN: string;
+    const GENERAL_LEDGER: string;
 }
 /**
  * Describes a Bank Account.

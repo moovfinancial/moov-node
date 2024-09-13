@@ -21,7 +21,7 @@
  * @property {string} holderName
  * @property {"individual"|"business"} holderType
  * @property {string} bankName
- * @property {"checking"|"savings"|"unknown"} bankAccountType
+ * @property {"checking"|"savings"|"loan"|"general-ledger"} bankAccountType
  * @property {string} routingNumber
  * @property {string} lastFourAccountNumber
  * @tag Transfers
@@ -416,7 +416,7 @@ export type BankAccount = {
     holderName: string;
     holderType: "individual" | "business";
     bankName: string;
-    bankAccountType: "checking" | "savings" | "unknown";
+    bankAccountType: "checking" | "savings" | "loan" | "general-ledger";
     routingNumber: string;
     lastFourAccountNumber: string;
 };
