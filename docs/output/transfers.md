@@ -390,7 +390,7 @@ High-level account information associated with a payment method.
   | holderName | `string`| Name of the account holder |
   | holderType | `individual`,  `business`| Type of holder on a funding source |
   | bankName | `string`| Name of the bank |
-  | bankAccountType | `checking`,  `savings`,  `unknown`|  |
+  | bankAccountType | `checking`,  `savings`,  `loan`,  `general-ledger`|  |
   | routingNumber | `string`| Bank account routing number |
   | lastFourAccountNumber | `string`| Last four digits of the bank account number |
 

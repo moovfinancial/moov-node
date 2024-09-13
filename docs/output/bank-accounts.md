@@ -261,6 +261,7 @@ Describes a Bank Account to be added.
 | ----- | ----------- |
 | CHECKING | Bank Account is a type of checking. |
 | SAVINGS | Bank Account is a type of savings. |
-| UNKNOWN | Bank Account is a type of unknown. |
+| LOAN | Bank Account is a type of loan. |
+| GENERAL_LEDGER | Bank Account is a type of general ledger. |
 {{</ table >}}
 
